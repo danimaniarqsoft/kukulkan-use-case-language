@@ -1,0 +1,24 @@
+grammar mx.infotec.dsl.UseCase with org.eclipse.xtext.common.Terminals
+
+generate useCase "http://www.infotec.mx/dsl/UseCase"
+
+Model:
+	(actors+=Actor)+
+	(concepts+=DomainConcept)*
+	(usecases+=UseCase)+;
+
+Actor:
+	"Actor:" name=ID actor_description=STRING?;
+
+DomainConcept:
+	"DomainConcept:" name=ID
+	domainconcept_desctiption=STRING?;
+
+UseCase:
+	"UC:" name=ID usecase_name=STRING
+	"Actors:" (uc_actor+=[Actor])+
+	"Use case domain concept :"
+	usecase_domainconcept=[DomainConcept]
+	precondition=Precondition?
+	usecase_flow=UseCaseFlow
+	"END USE CASE";

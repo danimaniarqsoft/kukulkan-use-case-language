@@ -1,0 +1,9 @@
+grammar mx.infotec.dsl.UseCase with org.eclipse.xtext.common.Terminals
+
+generate useCase "http://www.infotec.mx/dsl/UseCase"
+
+Model:
+	greetings+=Greeting*;
+	
+Greeting:
+	'Hello' name=ID '!';

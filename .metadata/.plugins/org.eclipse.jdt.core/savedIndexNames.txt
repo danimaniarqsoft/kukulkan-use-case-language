@@ -1,0 +1,19 @@
+INDEX VERSION 1.131+/home/daniel/eclipse-wksp-xtext/.metadata/.plugins/org.eclipse.jdt.core
+1125175363.index
+3950491261.index
+1657983410.index
+3276367843.index
+1063285993.index
+2123685343.index
+2391023895.index
+232431145.index
+801555323.index
+4160822451.index
+1529752099.index
+3134155595.index
+4002773195.index
+2751903499.index
+2791761949.index
+2770136468.index
+351532801.index
+3328066026.index
