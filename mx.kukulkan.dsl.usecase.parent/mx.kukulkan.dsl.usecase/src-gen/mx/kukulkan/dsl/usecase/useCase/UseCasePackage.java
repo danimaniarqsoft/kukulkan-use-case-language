@@ -58,60 +58,61 @@ public interface UseCasePackage extends EPackage
   UseCasePackage eINSTANCE = mx.kukulkan.dsl.usecase.useCase.impl.UseCasePackageImpl.init();
 
   /**
-   * The meta object id for the '{@link mx.kukulkan.dsl.usecase.useCase.impl.RequirementsUseCaseModelImpl <em>Requirements Use Case Model</em>}' class.
+   * The meta object id for the '{@link mx.kukulkan.dsl.usecase.useCase.impl.DomainmodelImpl <em>Domainmodel</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see mx.kukulkan.dsl.usecase.useCase.impl.RequirementsUseCaseModelImpl
-   * @see mx.kukulkan.dsl.usecase.useCase.impl.UseCasePackageImpl#getRequirementsUseCaseModel()
+   * @see mx.kukulkan.dsl.usecase.useCase.impl.DomainmodelImpl
+   * @see mx.kukulkan.dsl.usecase.useCase.impl.UseCasePackageImpl#getDomainmodel()
    * @generated
    */
-  int REQUIREMENTS_USE_CASE_MODEL = 0;
+  int DOMAINMODEL = 0;
 
   /**
-   * The feature id for the '<em><b>Actors</b></em>' containment reference list.
+   * The feature id for the '<em><b>Elements</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int REQUIREMENTS_USE_CASE_MODEL__ACTORS = 0;
+  int DOMAINMODEL__ELEMENTS = 0;
 
   /**
-   * The feature id for the '<em><b>Data</b></em>' containment reference list.
+   * The number of structural features of the '<em>Domainmodel</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int REQUIREMENTS_USE_CASE_MODEL__DATA = 1;
+  int DOMAINMODEL_FEATURE_COUNT = 1;
 
   /**
-   * The feature id for the '<em><b>Usecases</b></em>' containment reference list.
+   * The meta object id for the '{@link mx.kukulkan.dsl.usecase.useCase.impl.AbstractElementImpl <em>Abstract Element</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see mx.kukulkan.dsl.usecase.useCase.impl.AbstractElementImpl
+   * @see mx.kukulkan.dsl.usecase.useCase.impl.UseCasePackageImpl#getAbstractElement()
+   * @generated
+   */
+  int ABSTRACT_ELEMENT = 2;
+
+  /**
+   * The number of structural features of the '<em>Abstract Element</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int REQUIREMENTS_USE_CASE_MODEL__USECASES = 2;
+  int ABSTRACT_ELEMENT_FEATURE_COUNT = 0;
 
   /**
-   * The number of structural features of the '<em>Requirements Use Case Model</em>' class.
+   * The meta object id for the '{@link mx.kukulkan.dsl.usecase.useCase.impl.PackageDeclarationImpl <em>Package Declaration</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int REQUIREMENTS_USE_CASE_MODEL_FEATURE_COUNT = 3;
-
-  /**
-   * The meta object id for the '{@link mx.kukulkan.dsl.usecase.useCase.impl.ActorImpl <em>Actor</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see mx.kukulkan.dsl.usecase.useCase.impl.ActorImpl
-   * @see mx.kukulkan.dsl.usecase.useCase.impl.UseCasePackageImpl#getActor()
+   * @see mx.kukulkan.dsl.usecase.useCase.impl.PackageDeclarationImpl
+   * @see mx.kukulkan.dsl.usecase.useCase.impl.UseCasePackageImpl#getPackageDeclaration()
    * @generated
    */
-  int ACTOR = 1;
+  int PACKAGE_DECLARATION = 1;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -120,35 +121,63 @@ public interface UseCasePackage extends EPackage
    * @generated
    * @ordered
    */
-  int ACTOR__NAME = 0;
+  int PACKAGE_DECLARATION__NAME = ABSTRACT_ELEMENT_FEATURE_COUNT + 0;
 
   /**
-   * The feature id for the '<em><b>Description</b></em>' attribute.
+   * The feature id for the '<em><b>Elements</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int ACTOR__DESCRIPTION = 1;
+  int PACKAGE_DECLARATION__ELEMENTS = ABSTRACT_ELEMENT_FEATURE_COUNT + 1;
 
   /**
-   * The number of structural features of the '<em>Actor</em>' class.
+   * The number of structural features of the '<em>Package Declaration</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int ACTOR_FEATURE_COUNT = 2;
+  int PACKAGE_DECLARATION_FEATURE_COUNT = ABSTRACT_ELEMENT_FEATURE_COUNT + 2;
 
   /**
-   * The meta object id for the '{@link mx.kukulkan.dsl.usecase.useCase.impl.ConceptImpl <em>Concept</em>}' class.
+   * The meta object id for the '{@link mx.kukulkan.dsl.usecase.useCase.impl.ImportImpl <em>Import</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see mx.kukulkan.dsl.usecase.useCase.impl.ConceptImpl
-   * @see mx.kukulkan.dsl.usecase.useCase.impl.UseCasePackageImpl#getConcept()
+   * @see mx.kukulkan.dsl.usecase.useCase.impl.ImportImpl
+   * @see mx.kukulkan.dsl.usecase.useCase.impl.UseCasePackageImpl#getImport()
    * @generated
    */
-  int CONCEPT = 2;
+  int IMPORT = 3;
+
+  /**
+   * The feature id for the '<em><b>Imported Namespace</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int IMPORT__IMPORTED_NAMESPACE = ABSTRACT_ELEMENT_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Import</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int IMPORT_FEATURE_COUNT = ABSTRACT_ELEMENT_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link mx.kukulkan.dsl.usecase.useCase.impl.TypeImpl <em>Type</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see mx.kukulkan.dsl.usecase.useCase.impl.TypeImpl
+   * @see mx.kukulkan.dsl.usecase.useCase.impl.UseCasePackageImpl#getType()
+   * @generated
+   */
+  int TYPE = 4;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -157,35 +186,26 @@ public interface UseCasePackage extends EPackage
    * @generated
    * @ordered
    */
-  int CONCEPT__NAME = 0;
+  int TYPE__NAME = ABSTRACT_ELEMENT_FEATURE_COUNT + 0;
 
   /**
-   * The feature id for the '<em><b>Concept Description</b></em>' attribute.
+   * The number of structural features of the '<em>Type</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int CONCEPT__CONCEPT_DESCRIPTION = 1;
+  int TYPE_FEATURE_COUNT = ABSTRACT_ELEMENT_FEATURE_COUNT + 1;
 
   /**
-   * The number of structural features of the '<em>Concept</em>' class.
+   * The meta object id for the '{@link mx.kukulkan.dsl.usecase.useCase.impl.DataTypeImpl <em>Data Type</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int CONCEPT_FEATURE_COUNT = 2;
-
-  /**
-   * The meta object id for the '{@link mx.kukulkan.dsl.usecase.useCase.impl.UseCaseImpl <em>Use Case</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see mx.kukulkan.dsl.usecase.useCase.impl.UseCaseImpl
-   * @see mx.kukulkan.dsl.usecase.useCase.impl.UseCasePackageImpl#getUseCase()
+   * @see mx.kukulkan.dsl.usecase.useCase.impl.DataTypeImpl
+   * @see mx.kukulkan.dsl.usecase.useCase.impl.UseCasePackageImpl#getDataType()
    * @generated
    */
-  int USE_CASE = 3;
+  int DATA_TYPE = 5;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -194,127 +214,26 @@ public interface UseCasePackage extends EPackage
    * @generated
    * @ordered
    */
-  int USE_CASE__NAME = 0;
+  int DATA_TYPE__NAME = TYPE__NAME;
 
   /**
-   * The feature id for the '<em><b>Use Case Name</b></em>' attribute.
+   * The number of structural features of the '<em>Data Type</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int USE_CASE__USE_CASE_NAME = 1;
+  int DATA_TYPE_FEATURE_COUNT = TYPE_FEATURE_COUNT + 0;
 
   /**
-   * The feature id for the '<em><b>Actors</b></em>' reference list.
+   * The meta object id for the '{@link mx.kukulkan.dsl.usecase.useCase.impl.EntityImpl <em>Entity</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int USE_CASE__ACTORS = 2;
-
-  /**
-   * The feature id for the '<em><b>Concepts</b></em>' reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int USE_CASE__CONCEPTS = 3;
-
-  /**
-   * The feature id for the '<em><b>Use Cases Flow</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int USE_CASE__USE_CASES_FLOW = 4;
-
-  /**
-   * The number of structural features of the '<em>Use Case</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int USE_CASE_FEATURE_COUNT = 5;
-
-  /**
-   * The meta object id for the '{@link mx.kukulkan.dsl.usecase.useCase.impl.UseCaseFlowImpl <em>Flow</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see mx.kukulkan.dsl.usecase.useCase.impl.UseCaseFlowImpl
-   * @see mx.kukulkan.dsl.usecase.useCase.impl.UseCasePackageImpl#getUseCaseFlow()
+   * @see mx.kukulkan.dsl.usecase.useCase.impl.EntityImpl
+   * @see mx.kukulkan.dsl.usecase.useCase.impl.UseCasePackageImpl#getEntity()
    * @generated
    */
-  int USE_CASE_FLOW = 4;
-
-  /**
-   * The feature id for the '<em><b>Complete Actions Block</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int USE_CASE_FLOW__COMPLETE_ACTIONS_BLOCK = 0;
-
-  /**
-   * The number of structural features of the '<em>Flow</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int USE_CASE_FLOW_FEATURE_COUNT = 1;
-
-  /**
-   * The meta object id for the '{@link mx.kukulkan.dsl.usecase.useCase.impl.CompleteActionBlockImpl <em>Complete Action Block</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see mx.kukulkan.dsl.usecase.useCase.impl.CompleteActionBlockImpl
-   * @see mx.kukulkan.dsl.usecase.useCase.impl.UseCasePackageImpl#getCompleteActionBlock()
-   * @generated
-   */
-  int COMPLETE_ACTION_BLOCK = 5;
-
-  /**
-   * The feature id for the '<em><b>User Actions Block</b></em>' attribute list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int COMPLETE_ACTION_BLOCK__USER_ACTIONS_BLOCK = 0;
-
-  /**
-   * The feature id for the '<em><b>System Actions Block</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int COMPLETE_ACTION_BLOCK__SYSTEM_ACTIONS_BLOCK = 1;
-
-  /**
-   * The number of structural features of the '<em>Complete Action Block</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int COMPLETE_ACTION_BLOCK_FEATURE_COUNT = 2;
-
-  /**
-   * The meta object id for the '{@link mx.kukulkan.dsl.usecase.useCase.impl.SystemActionBlockImpl <em>System Action Block</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see mx.kukulkan.dsl.usecase.useCase.impl.SystemActionBlockImpl
-   * @see mx.kukulkan.dsl.usecase.useCase.impl.UseCasePackageImpl#getSystemActionBlock()
-   * @generated
-   */
-  int SYSTEM_ACTION_BLOCK = 6;
+  int ENTITY = 6;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -323,283 +242,271 @@ public interface UseCasePackage extends EPackage
    * @generated
    * @ordered
    */
-  int SYSTEM_ACTION_BLOCK__NAME = 0;
+  int ENTITY__NAME = TYPE__NAME;
 
   /**
-   * The feature id for the '<em><b>Description</b></em>' attribute.
+   * The feature id for the '<em><b>Super Type</b></em>' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int SYSTEM_ACTION_BLOCK__DESCRIPTION = 1;
+  int ENTITY__SUPER_TYPE = TYPE_FEATURE_COUNT + 0;
 
   /**
-   * The number of structural features of the '<em>System Action Block</em>' class.
+   * The feature id for the '<em><b>Features</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int SYSTEM_ACTION_BLOCK_FEATURE_COUNT = 2;
-
+  int ENTITY__FEATURES = TYPE_FEATURE_COUNT + 1;
 
   /**
-   * Returns the meta object for class '{@link mx.kukulkan.dsl.usecase.useCase.RequirementsUseCaseModel <em>Requirements Use Case Model</em>}'.
+   * The number of structural features of the '<em>Entity</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Requirements Use Case Model</em>'.
-   * @see mx.kukulkan.dsl.usecase.useCase.RequirementsUseCaseModel
    * @generated
+   * @ordered
    */
-  EClass getRequirementsUseCaseModel();
+  int ENTITY_FEATURE_COUNT = TYPE_FEATURE_COUNT + 2;
 
   /**
-   * Returns the meta object for the containment reference list '{@link mx.kukulkan.dsl.usecase.useCase.RequirementsUseCaseModel#getActors <em>Actors</em>}'.
+   * The meta object id for the '{@link mx.kukulkan.dsl.usecase.useCase.impl.FeatureImpl <em>Feature</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Actors</em>'.
-   * @see mx.kukulkan.dsl.usecase.useCase.RequirementsUseCaseModel#getActors()
-   * @see #getRequirementsUseCaseModel()
+   * @see mx.kukulkan.dsl.usecase.useCase.impl.FeatureImpl
+   * @see mx.kukulkan.dsl.usecase.useCase.impl.UseCasePackageImpl#getFeature()
    * @generated
    */
-  EReference getRequirementsUseCaseModel_Actors();
+  int FEATURE = 7;
 
   /**
-   * Returns the meta object for the containment reference list '{@link mx.kukulkan.dsl.usecase.useCase.RequirementsUseCaseModel#getData <em>Data</em>}'.
+   * The feature id for the '<em><b>Many</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Data</em>'.
-   * @see mx.kukulkan.dsl.usecase.useCase.RequirementsUseCaseModel#getData()
-   * @see #getRequirementsUseCaseModel()
    * @generated
+   * @ordered
    */
-  EReference getRequirementsUseCaseModel_Data();
+  int FEATURE__MANY = 0;
 
   /**
-   * Returns the meta object for the containment reference list '{@link mx.kukulkan.dsl.usecase.useCase.RequirementsUseCaseModel#getUsecases <em>Usecases</em>}'.
+   * The feature id for the '<em><b>Name</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Usecases</em>'.
-   * @see mx.kukulkan.dsl.usecase.useCase.RequirementsUseCaseModel#getUsecases()
-   * @see #getRequirementsUseCaseModel()
    * @generated
+   * @ordered
    */
-  EReference getRequirementsUseCaseModel_Usecases();
+  int FEATURE__NAME = 1;
 
   /**
-   * Returns the meta object for class '{@link mx.kukulkan.dsl.usecase.useCase.Actor <em>Actor</em>}'.
+   * The feature id for the '<em><b>Type</b></em>' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Actor</em>'.
-   * @see mx.kukulkan.dsl.usecase.useCase.Actor
    * @generated
+   * @ordered
    */
-  EClass getActor();
+  int FEATURE__TYPE = 2;
 
   /**
-   * Returns the meta object for the attribute '{@link mx.kukulkan.dsl.usecase.useCase.Actor#getName <em>Name</em>}'.
+   * The number of structural features of the '<em>Feature</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Name</em>'.
-   * @see mx.kukulkan.dsl.usecase.useCase.Actor#getName()
-   * @see #getActor()
    * @generated
+   * @ordered
    */
-  EAttribute getActor_Name();
+  int FEATURE_FEATURE_COUNT = 3;
+
 
   /**
-   * Returns the meta object for the attribute '{@link mx.kukulkan.dsl.usecase.useCase.Actor#getDescription <em>Description</em>}'.
+   * Returns the meta object for class '{@link mx.kukulkan.dsl.usecase.useCase.Domainmodel <em>Domainmodel</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Description</em>'.
-   * @see mx.kukulkan.dsl.usecase.useCase.Actor#getDescription()
-   * @see #getActor()
+   * @return the meta object for class '<em>Domainmodel</em>'.
+   * @see mx.kukulkan.dsl.usecase.useCase.Domainmodel
    * @generated
    */
-  EAttribute getActor_Description();
+  EClass getDomainmodel();
 
   /**
-   * Returns the meta object for class '{@link mx.kukulkan.dsl.usecase.useCase.Concept <em>Concept</em>}'.
+   * Returns the meta object for the containment reference list '{@link mx.kukulkan.dsl.usecase.useCase.Domainmodel#getElements <em>Elements</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Concept</em>'.
-   * @see mx.kukulkan.dsl.usecase.useCase.Concept
+   * @return the meta object for the containment reference list '<em>Elements</em>'.
+   * @see mx.kukulkan.dsl.usecase.useCase.Domainmodel#getElements()
+   * @see #getDomainmodel()
    * @generated
    */
-  EClass getConcept();
+  EReference getDomainmodel_Elements();
 
   /**
-   * Returns the meta object for the attribute '{@link mx.kukulkan.dsl.usecase.useCase.Concept#getName <em>Name</em>}'.
+   * Returns the meta object for class '{@link mx.kukulkan.dsl.usecase.useCase.PackageDeclaration <em>Package Declaration</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Name</em>'.
-   * @see mx.kukulkan.dsl.usecase.useCase.Concept#getName()
-   * @see #getConcept()
+   * @return the meta object for class '<em>Package Declaration</em>'.
+   * @see mx.kukulkan.dsl.usecase.useCase.PackageDeclaration
    * @generated
    */
-  EAttribute getConcept_Name();
+  EClass getPackageDeclaration();
 
   /**
-   * Returns the meta object for the attribute '{@link mx.kukulkan.dsl.usecase.useCase.Concept#getConceptDescription <em>Concept Description</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Concept Description</em>'.
-   * @see mx.kukulkan.dsl.usecase.useCase.Concept#getConceptDescription()
-   * @see #getConcept()
-   * @generated
-   */
-  EAttribute getConcept_ConceptDescription();
-
-  /**
-   * Returns the meta object for class '{@link mx.kukulkan.dsl.usecase.useCase.UseCase <em>Use Case</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Use Case</em>'.
-   * @see mx.kukulkan.dsl.usecase.useCase.UseCase
-   * @generated
-   */
-  EClass getUseCase();
-
-  /**
-   * Returns the meta object for the attribute '{@link mx.kukulkan.dsl.usecase.useCase.UseCase#getName <em>Name</em>}'.
+   * Returns the meta object for the attribute '{@link mx.kukulkan.dsl.usecase.useCase.PackageDeclaration#getName <em>Name</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Name</em>'.
-   * @see mx.kukulkan.dsl.usecase.useCase.UseCase#getName()
-   * @see #getUseCase()
+   * @see mx.kukulkan.dsl.usecase.useCase.PackageDeclaration#getName()
+   * @see #getPackageDeclaration()
    * @generated
    */
-  EAttribute getUseCase_Name();
+  EAttribute getPackageDeclaration_Name();
 
   /**
-   * Returns the meta object for the attribute '{@link mx.kukulkan.dsl.usecase.useCase.UseCase#getUseCaseName <em>Use Case Name</em>}'.
+   * Returns the meta object for the containment reference list '{@link mx.kukulkan.dsl.usecase.useCase.PackageDeclaration#getElements <em>Elements</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Use Case Name</em>'.
-   * @see mx.kukulkan.dsl.usecase.useCase.UseCase#getUseCaseName()
-   * @see #getUseCase()
+   * @return the meta object for the containment reference list '<em>Elements</em>'.
+   * @see mx.kukulkan.dsl.usecase.useCase.PackageDeclaration#getElements()
+   * @see #getPackageDeclaration()
    * @generated
    */
-  EAttribute getUseCase_UseCaseName();
+  EReference getPackageDeclaration_Elements();
 
   /**
-   * Returns the meta object for the reference list '{@link mx.kukulkan.dsl.usecase.useCase.UseCase#getActors <em>Actors</em>}'.
+   * Returns the meta object for class '{@link mx.kukulkan.dsl.usecase.useCase.AbstractElement <em>Abstract Element</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the reference list '<em>Actors</em>'.
-   * @see mx.kukulkan.dsl.usecase.useCase.UseCase#getActors()
-   * @see #getUseCase()
+   * @return the meta object for class '<em>Abstract Element</em>'.
+   * @see mx.kukulkan.dsl.usecase.useCase.AbstractElement
    * @generated
    */
-  EReference getUseCase_Actors();
+  EClass getAbstractElement();
 
   /**
-   * Returns the meta object for the reference list '{@link mx.kukulkan.dsl.usecase.useCase.UseCase#getConcepts <em>Concepts</em>}'.
+   * Returns the meta object for class '{@link mx.kukulkan.dsl.usecase.useCase.Import <em>Import</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the reference list '<em>Concepts</em>'.
-   * @see mx.kukulkan.dsl.usecase.useCase.UseCase#getConcepts()
-   * @see #getUseCase()
+   * @return the meta object for class '<em>Import</em>'.
+   * @see mx.kukulkan.dsl.usecase.useCase.Import
    * @generated
    */
-  EReference getUseCase_Concepts();
+  EClass getImport();
 
   /**
-   * Returns the meta object for the containment reference list '{@link mx.kukulkan.dsl.usecase.useCase.UseCase#getUseCasesFlow <em>Use Cases Flow</em>}'.
+   * Returns the meta object for the attribute '{@link mx.kukulkan.dsl.usecase.useCase.Import#getImportedNamespace <em>Imported Namespace</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Use Cases Flow</em>'.
-   * @see mx.kukulkan.dsl.usecase.useCase.UseCase#getUseCasesFlow()
-   * @see #getUseCase()
+   * @return the meta object for the attribute '<em>Imported Namespace</em>'.
+   * @see mx.kukulkan.dsl.usecase.useCase.Import#getImportedNamespace()
+   * @see #getImport()
    * @generated
    */
-  EReference getUseCase_UseCasesFlow();
+  EAttribute getImport_ImportedNamespace();
 
   /**
-   * Returns the meta object for class '{@link mx.kukulkan.dsl.usecase.useCase.UseCaseFlow <em>Flow</em>}'.
+   * Returns the meta object for class '{@link mx.kukulkan.dsl.usecase.useCase.Type <em>Type</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Flow</em>'.
-   * @see mx.kukulkan.dsl.usecase.useCase.UseCaseFlow
+   * @return the meta object for class '<em>Type</em>'.
+   * @see mx.kukulkan.dsl.usecase.useCase.Type
    * @generated
    */
-  EClass getUseCaseFlow();
+  EClass getType();
 
   /**
-   * Returns the meta object for the containment reference list '{@link mx.kukulkan.dsl.usecase.useCase.UseCaseFlow#getCompleteActionsBlock <em>Complete Actions Block</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Complete Actions Block</em>'.
-   * @see mx.kukulkan.dsl.usecase.useCase.UseCaseFlow#getCompleteActionsBlock()
-   * @see #getUseCaseFlow()
-   * @generated
-   */
-  EReference getUseCaseFlow_CompleteActionsBlock();
-
-  /**
-   * Returns the meta object for class '{@link mx.kukulkan.dsl.usecase.useCase.CompleteActionBlock <em>Complete Action Block</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Complete Action Block</em>'.
-   * @see mx.kukulkan.dsl.usecase.useCase.CompleteActionBlock
-   * @generated
-   */
-  EClass getCompleteActionBlock();
-
-  /**
-   * Returns the meta object for the attribute list '{@link mx.kukulkan.dsl.usecase.useCase.CompleteActionBlock#getUserActionsBlock <em>User Actions Block</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute list '<em>User Actions Block</em>'.
-   * @see mx.kukulkan.dsl.usecase.useCase.CompleteActionBlock#getUserActionsBlock()
-   * @see #getCompleteActionBlock()
-   * @generated
-   */
-  EAttribute getCompleteActionBlock_UserActionsBlock();
-
-  /**
-   * Returns the meta object for the containment reference list '{@link mx.kukulkan.dsl.usecase.useCase.CompleteActionBlock#getSystemActionsBlock <em>System Actions Block</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>System Actions Block</em>'.
-   * @see mx.kukulkan.dsl.usecase.useCase.CompleteActionBlock#getSystemActionsBlock()
-   * @see #getCompleteActionBlock()
-   * @generated
-   */
-  EReference getCompleteActionBlock_SystemActionsBlock();
-
-  /**
-   * Returns the meta object for class '{@link mx.kukulkan.dsl.usecase.useCase.SystemActionBlock <em>System Action Block</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>System Action Block</em>'.
-   * @see mx.kukulkan.dsl.usecase.useCase.SystemActionBlock
-   * @generated
-   */
-  EClass getSystemActionBlock();
-
-  /**
-   * Returns the meta object for the attribute '{@link mx.kukulkan.dsl.usecase.useCase.SystemActionBlock#getName <em>Name</em>}'.
+   * Returns the meta object for the attribute '{@link mx.kukulkan.dsl.usecase.useCase.Type#getName <em>Name</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Name</em>'.
-   * @see mx.kukulkan.dsl.usecase.useCase.SystemActionBlock#getName()
-   * @see #getSystemActionBlock()
+   * @see mx.kukulkan.dsl.usecase.useCase.Type#getName()
+   * @see #getType()
    * @generated
    */
-  EAttribute getSystemActionBlock_Name();
+  EAttribute getType_Name();
 
   /**
-   * Returns the meta object for the attribute '{@link mx.kukulkan.dsl.usecase.useCase.SystemActionBlock#getDescription <em>Description</em>}'.
+   * Returns the meta object for class '{@link mx.kukulkan.dsl.usecase.useCase.DataType <em>Data Type</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Description</em>'.
-   * @see mx.kukulkan.dsl.usecase.useCase.SystemActionBlock#getDescription()
-   * @see #getSystemActionBlock()
+   * @return the meta object for class '<em>Data Type</em>'.
+   * @see mx.kukulkan.dsl.usecase.useCase.DataType
    * @generated
    */
-  EAttribute getSystemActionBlock_Description();
+  EClass getDataType();
+
+  /**
+   * Returns the meta object for class '{@link mx.kukulkan.dsl.usecase.useCase.Entity <em>Entity</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Entity</em>'.
+   * @see mx.kukulkan.dsl.usecase.useCase.Entity
+   * @generated
+   */
+  EClass getEntity();
+
+  /**
+   * Returns the meta object for the reference '{@link mx.kukulkan.dsl.usecase.useCase.Entity#getSuperType <em>Super Type</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference '<em>Super Type</em>'.
+   * @see mx.kukulkan.dsl.usecase.useCase.Entity#getSuperType()
+   * @see #getEntity()
+   * @generated
+   */
+  EReference getEntity_SuperType();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link mx.kukulkan.dsl.usecase.useCase.Entity#getFeatures <em>Features</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Features</em>'.
+   * @see mx.kukulkan.dsl.usecase.useCase.Entity#getFeatures()
+   * @see #getEntity()
+   * @generated
+   */
+  EReference getEntity_Features();
+
+  /**
+   * Returns the meta object for class '{@link mx.kukulkan.dsl.usecase.useCase.Feature <em>Feature</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Feature</em>'.
+   * @see mx.kukulkan.dsl.usecase.useCase.Feature
+   * @generated
+   */
+  EClass getFeature();
+
+  /**
+   * Returns the meta object for the attribute '{@link mx.kukulkan.dsl.usecase.useCase.Feature#isMany <em>Many</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Many</em>'.
+   * @see mx.kukulkan.dsl.usecase.useCase.Feature#isMany()
+   * @see #getFeature()
+   * @generated
+   */
+  EAttribute getFeature_Many();
+
+  /**
+   * Returns the meta object for the attribute '{@link mx.kukulkan.dsl.usecase.useCase.Feature#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see mx.kukulkan.dsl.usecase.useCase.Feature#getName()
+   * @see #getFeature()
+   * @generated
+   */
+  EAttribute getFeature_Name();
+
+  /**
+   * Returns the meta object for the reference '{@link mx.kukulkan.dsl.usecase.useCase.Feature#getType <em>Type</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference '<em>Type</em>'.
+   * @see mx.kukulkan.dsl.usecase.useCase.Feature#getType()
+   * @see #getFeature()
+   * @generated
+   */
+  EReference getFeature_Type();
 
   /**
    * Returns the factory that creates the instances of the model.
@@ -625,48 +532,32 @@ public interface UseCasePackage extends EPackage
   interface Literals
   {
     /**
-     * The meta object literal for the '{@link mx.kukulkan.dsl.usecase.useCase.impl.RequirementsUseCaseModelImpl <em>Requirements Use Case Model</em>}' class.
+     * The meta object literal for the '{@link mx.kukulkan.dsl.usecase.useCase.impl.DomainmodelImpl <em>Domainmodel</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see mx.kukulkan.dsl.usecase.useCase.impl.RequirementsUseCaseModelImpl
-     * @see mx.kukulkan.dsl.usecase.useCase.impl.UseCasePackageImpl#getRequirementsUseCaseModel()
+     * @see mx.kukulkan.dsl.usecase.useCase.impl.DomainmodelImpl
+     * @see mx.kukulkan.dsl.usecase.useCase.impl.UseCasePackageImpl#getDomainmodel()
      * @generated
      */
-    EClass REQUIREMENTS_USE_CASE_MODEL = eINSTANCE.getRequirementsUseCaseModel();
+    EClass DOMAINMODEL = eINSTANCE.getDomainmodel();
 
     /**
-     * The meta object literal for the '<em><b>Actors</b></em>' containment reference list feature.
+     * The meta object literal for the '<em><b>Elements</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference REQUIREMENTS_USE_CASE_MODEL__ACTORS = eINSTANCE.getRequirementsUseCaseModel_Actors();
+    EReference DOMAINMODEL__ELEMENTS = eINSTANCE.getDomainmodel_Elements();
 
     /**
-     * The meta object literal for the '<em><b>Data</b></em>' containment reference list feature.
+     * The meta object literal for the '{@link mx.kukulkan.dsl.usecase.useCase.impl.PackageDeclarationImpl <em>Package Declaration</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
+     * @see mx.kukulkan.dsl.usecase.useCase.impl.PackageDeclarationImpl
+     * @see mx.kukulkan.dsl.usecase.useCase.impl.UseCasePackageImpl#getPackageDeclaration()
      * @generated
      */
-    EReference REQUIREMENTS_USE_CASE_MODEL__DATA = eINSTANCE.getRequirementsUseCaseModel_Data();
-
-    /**
-     * The meta object literal for the '<em><b>Usecases</b></em>' containment reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference REQUIREMENTS_USE_CASE_MODEL__USECASES = eINSTANCE.getRequirementsUseCaseModel_Usecases();
-
-    /**
-     * The meta object literal for the '{@link mx.kukulkan.dsl.usecase.useCase.impl.ActorImpl <em>Actor</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see mx.kukulkan.dsl.usecase.useCase.impl.ActorImpl
-     * @see mx.kukulkan.dsl.usecase.useCase.impl.UseCasePackageImpl#getActor()
-     * @generated
-     */
-    EClass ACTOR = eINSTANCE.getActor();
+    EClass PACKAGE_DECLARATION = eINSTANCE.getPackageDeclaration();
 
     /**
      * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
@@ -674,145 +565,53 @@ public interface UseCasePackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute ACTOR__NAME = eINSTANCE.getActor_Name();
+    EAttribute PACKAGE_DECLARATION__NAME = eINSTANCE.getPackageDeclaration_Name();
 
     /**
-     * The meta object literal for the '<em><b>Description</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Elements</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute ACTOR__DESCRIPTION = eINSTANCE.getActor_Description();
+    EReference PACKAGE_DECLARATION__ELEMENTS = eINSTANCE.getPackageDeclaration_Elements();
 
     /**
-     * The meta object literal for the '{@link mx.kukulkan.dsl.usecase.useCase.impl.ConceptImpl <em>Concept</em>}' class.
+     * The meta object literal for the '{@link mx.kukulkan.dsl.usecase.useCase.impl.AbstractElementImpl <em>Abstract Element</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see mx.kukulkan.dsl.usecase.useCase.impl.ConceptImpl
-     * @see mx.kukulkan.dsl.usecase.useCase.impl.UseCasePackageImpl#getConcept()
+     * @see mx.kukulkan.dsl.usecase.useCase.impl.AbstractElementImpl
+     * @see mx.kukulkan.dsl.usecase.useCase.impl.UseCasePackageImpl#getAbstractElement()
      * @generated
      */
-    EClass CONCEPT = eINSTANCE.getConcept();
+    EClass ABSTRACT_ELEMENT = eINSTANCE.getAbstractElement();
 
     /**
-     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * The meta object literal for the '{@link mx.kukulkan.dsl.usecase.useCase.impl.ImportImpl <em>Import</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
+     * @see mx.kukulkan.dsl.usecase.useCase.impl.ImportImpl
+     * @see mx.kukulkan.dsl.usecase.useCase.impl.UseCasePackageImpl#getImport()
      * @generated
      */
-    EAttribute CONCEPT__NAME = eINSTANCE.getConcept_Name();
+    EClass IMPORT = eINSTANCE.getImport();
 
     /**
-     * The meta object literal for the '<em><b>Concept Description</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute CONCEPT__CONCEPT_DESCRIPTION = eINSTANCE.getConcept_ConceptDescription();
-
-    /**
-     * The meta object literal for the '{@link mx.kukulkan.dsl.usecase.useCase.impl.UseCaseImpl <em>Use Case</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see mx.kukulkan.dsl.usecase.useCase.impl.UseCaseImpl
-     * @see mx.kukulkan.dsl.usecase.useCase.impl.UseCasePackageImpl#getUseCase()
-     * @generated
-     */
-    EClass USE_CASE = eINSTANCE.getUseCase();
-
-    /**
-     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Imported Namespace</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute USE_CASE__NAME = eINSTANCE.getUseCase_Name();
+    EAttribute IMPORT__IMPORTED_NAMESPACE = eINSTANCE.getImport_ImportedNamespace();
 
     /**
-     * The meta object literal for the '<em><b>Use Case Name</b></em>' attribute feature.
+     * The meta object literal for the '{@link mx.kukulkan.dsl.usecase.useCase.impl.TypeImpl <em>Type</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
+     * @see mx.kukulkan.dsl.usecase.useCase.impl.TypeImpl
+     * @see mx.kukulkan.dsl.usecase.useCase.impl.UseCasePackageImpl#getType()
      * @generated
      */
-    EAttribute USE_CASE__USE_CASE_NAME = eINSTANCE.getUseCase_UseCaseName();
-
-    /**
-     * The meta object literal for the '<em><b>Actors</b></em>' reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference USE_CASE__ACTORS = eINSTANCE.getUseCase_Actors();
-
-    /**
-     * The meta object literal for the '<em><b>Concepts</b></em>' reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference USE_CASE__CONCEPTS = eINSTANCE.getUseCase_Concepts();
-
-    /**
-     * The meta object literal for the '<em><b>Use Cases Flow</b></em>' containment reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference USE_CASE__USE_CASES_FLOW = eINSTANCE.getUseCase_UseCasesFlow();
-
-    /**
-     * The meta object literal for the '{@link mx.kukulkan.dsl.usecase.useCase.impl.UseCaseFlowImpl <em>Flow</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see mx.kukulkan.dsl.usecase.useCase.impl.UseCaseFlowImpl
-     * @see mx.kukulkan.dsl.usecase.useCase.impl.UseCasePackageImpl#getUseCaseFlow()
-     * @generated
-     */
-    EClass USE_CASE_FLOW = eINSTANCE.getUseCaseFlow();
-
-    /**
-     * The meta object literal for the '<em><b>Complete Actions Block</b></em>' containment reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference USE_CASE_FLOW__COMPLETE_ACTIONS_BLOCK = eINSTANCE.getUseCaseFlow_CompleteActionsBlock();
-
-    /**
-     * The meta object literal for the '{@link mx.kukulkan.dsl.usecase.useCase.impl.CompleteActionBlockImpl <em>Complete Action Block</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see mx.kukulkan.dsl.usecase.useCase.impl.CompleteActionBlockImpl
-     * @see mx.kukulkan.dsl.usecase.useCase.impl.UseCasePackageImpl#getCompleteActionBlock()
-     * @generated
-     */
-    EClass COMPLETE_ACTION_BLOCK = eINSTANCE.getCompleteActionBlock();
-
-    /**
-     * The meta object literal for the '<em><b>User Actions Block</b></em>' attribute list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute COMPLETE_ACTION_BLOCK__USER_ACTIONS_BLOCK = eINSTANCE.getCompleteActionBlock_UserActionsBlock();
-
-    /**
-     * The meta object literal for the '<em><b>System Actions Block</b></em>' containment reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference COMPLETE_ACTION_BLOCK__SYSTEM_ACTIONS_BLOCK = eINSTANCE.getCompleteActionBlock_SystemActionsBlock();
-
-    /**
-     * The meta object literal for the '{@link mx.kukulkan.dsl.usecase.useCase.impl.SystemActionBlockImpl <em>System Action Block</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see mx.kukulkan.dsl.usecase.useCase.impl.SystemActionBlockImpl
-     * @see mx.kukulkan.dsl.usecase.useCase.impl.UseCasePackageImpl#getSystemActionBlock()
-     * @generated
-     */
-    EClass SYSTEM_ACTION_BLOCK = eINSTANCE.getSystemActionBlock();
+    EClass TYPE = eINSTANCE.getType();
 
     /**
      * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
@@ -820,15 +619,77 @@ public interface UseCasePackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute SYSTEM_ACTION_BLOCK__NAME = eINSTANCE.getSystemActionBlock_Name();
+    EAttribute TYPE__NAME = eINSTANCE.getType_Name();
 
     /**
-     * The meta object literal for the '<em><b>Description</b></em>' attribute feature.
+     * The meta object literal for the '{@link mx.kukulkan.dsl.usecase.useCase.impl.DataTypeImpl <em>Data Type</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see mx.kukulkan.dsl.usecase.useCase.impl.DataTypeImpl
+     * @see mx.kukulkan.dsl.usecase.useCase.impl.UseCasePackageImpl#getDataType()
+     * @generated
+     */
+    EClass DATA_TYPE = eINSTANCE.getDataType();
+
+    /**
+     * The meta object literal for the '{@link mx.kukulkan.dsl.usecase.useCase.impl.EntityImpl <em>Entity</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see mx.kukulkan.dsl.usecase.useCase.impl.EntityImpl
+     * @see mx.kukulkan.dsl.usecase.useCase.impl.UseCasePackageImpl#getEntity()
+     * @generated
+     */
+    EClass ENTITY = eINSTANCE.getEntity();
+
+    /**
+     * The meta object literal for the '<em><b>Super Type</b></em>' reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute SYSTEM_ACTION_BLOCK__DESCRIPTION = eINSTANCE.getSystemActionBlock_Description();
+    EReference ENTITY__SUPER_TYPE = eINSTANCE.getEntity_SuperType();
+
+    /**
+     * The meta object literal for the '<em><b>Features</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference ENTITY__FEATURES = eINSTANCE.getEntity_Features();
+
+    /**
+     * The meta object literal for the '{@link mx.kukulkan.dsl.usecase.useCase.impl.FeatureImpl <em>Feature</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see mx.kukulkan.dsl.usecase.useCase.impl.FeatureImpl
+     * @see mx.kukulkan.dsl.usecase.useCase.impl.UseCasePackageImpl#getFeature()
+     * @generated
+     */
+    EClass FEATURE = eINSTANCE.getFeature();
+
+    /**
+     * The meta object literal for the '<em><b>Many</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute FEATURE__MANY = eINSTANCE.getFeature_Many();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute FEATURE__NAME = eINSTANCE.getFeature_Name();
+
+    /**
+     * The meta object literal for the '<em><b>Type</b></em>' reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference FEATURE__TYPE = eINSTANCE.getFeature_Type();
 
   }
 

@@ -6,13 +6,12 @@ package mx.kukulkan.dsl.usecase.serializer;
 import com.google.inject.Inject;
 import java.util.Set;
 import mx.kukulkan.dsl.usecase.services.UseCaseGrammarAccess;
-import mx.kukulkan.dsl.usecase.useCase.Actor;
-import mx.kukulkan.dsl.usecase.useCase.CompleteActionBlock;
-import mx.kukulkan.dsl.usecase.useCase.Concept;
-import mx.kukulkan.dsl.usecase.useCase.RequirementsUseCaseModel;
-import mx.kukulkan.dsl.usecase.useCase.SystemActionBlock;
-import mx.kukulkan.dsl.usecase.useCase.UseCase;
-import mx.kukulkan.dsl.usecase.useCase.UseCaseFlow;
+import mx.kukulkan.dsl.usecase.useCase.DataType;
+import mx.kukulkan.dsl.usecase.useCase.Domainmodel;
+import mx.kukulkan.dsl.usecase.useCase.Entity;
+import mx.kukulkan.dsl.usecase.useCase.Feature;
+import mx.kukulkan.dsl.usecase.useCase.Import;
+import mx.kukulkan.dsl.usecase.useCase.PackageDeclaration;
 import mx.kukulkan.dsl.usecase.useCase.UseCasePackage;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
@@ -20,7 +19,9 @@ import org.eclipse.xtext.Action;
 import org.eclipse.xtext.Parameter;
 import org.eclipse.xtext.ParserRule;
 import org.eclipse.xtext.serializer.ISerializationContext;
+import org.eclipse.xtext.serializer.acceptor.SequenceFeeder;
 import org.eclipse.xtext.serializer.sequencer.AbstractDelegatingSemanticSequencer;
+import org.eclipse.xtext.serializer.sequencer.ITransientValueService.ValueTransient;
 
 @SuppressWarnings("all")
 public class UseCaseSemanticSequencer extends AbstractDelegatingSemanticSequencer {
@@ -36,26 +37,23 @@ public class UseCaseSemanticSequencer extends AbstractDelegatingSemanticSequence
 		Set<Parameter> parameters = context.getEnabledBooleanParameters();
 		if (epackage == UseCasePackage.eINSTANCE)
 			switch (semanticObject.eClass().getClassifierID()) {
-			case UseCasePackage.ACTOR:
-				sequence_Actor(context, (Actor) semanticObject); 
+			case UseCasePackage.DATA_TYPE:
+				sequence_DataType(context, (DataType) semanticObject); 
 				return; 
-			case UseCasePackage.COMPLETE_ACTION_BLOCK:
-				sequence_CompleteActionBlock(context, (CompleteActionBlock) semanticObject); 
+			case UseCasePackage.DOMAINMODEL:
+				sequence_Domainmodel(context, (Domainmodel) semanticObject); 
 				return; 
-			case UseCasePackage.CONCEPT:
-				sequence_Concept(context, (Concept) semanticObject); 
+			case UseCasePackage.ENTITY:
+				sequence_Entity(context, (Entity) semanticObject); 
 				return; 
-			case UseCasePackage.REQUIREMENTS_USE_CASE_MODEL:
-				sequence_RequirementsUseCaseModel(context, (RequirementsUseCaseModel) semanticObject); 
+			case UseCasePackage.FEATURE:
+				sequence_Feature(context, (Feature) semanticObject); 
 				return; 
-			case UseCasePackage.SYSTEM_ACTION_BLOCK:
-				sequence_SystemActionBlock(context, (SystemActionBlock) semanticObject); 
+			case UseCasePackage.IMPORT:
+				sequence_Import(context, (Import) semanticObject); 
 				return; 
-			case UseCasePackage.USE_CASE:
-				sequence_UseCase(context, (UseCase) semanticObject); 
-				return; 
-			case UseCasePackage.USE_CASE_FLOW:
-				sequence_UseCaseFlow(context, (UseCaseFlow) semanticObject); 
+			case UseCasePackage.PACKAGE_DECLARATION:
+				sequence_PackageDeclaration(context, (PackageDeclaration) semanticObject); 
 				return; 
 			}
 		if (errorAcceptor != null)
@@ -64,84 +62,90 @@ public class UseCaseSemanticSequencer extends AbstractDelegatingSemanticSequence
 	
 	/**
 	 * Contexts:
-	 *     Actor returns Actor
+	 *     AbstractElement returns DataType
+	 *     Type returns DataType
+	 *     DataType returns DataType
 	 *
 	 * Constraint:
-	 *     (name=ID description=STRING?)
+	 *     name=ID
 	 */
-	protected void sequence_Actor(ISerializationContext context, Actor semanticObject) {
+	protected void sequence_DataType(ISerializationContext context, DataType semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, UseCasePackage.Literals.TYPE__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, UseCasePackage.Literals.TYPE__NAME));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getDataTypeAccess().getNameIDTerminalRuleCall_1_0(), semanticObject.getName());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     Domainmodel returns Domainmodel
+	 *
+	 * Constraint:
+	 *     elements+=AbstractElement+
+	 */
+	protected void sequence_Domainmodel(ISerializationContext context, Domainmodel semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
 	/**
 	 * Contexts:
-	 *     CompleteActionBlock returns CompleteActionBlock
+	 *     AbstractElement returns Entity
+	 *     Type returns Entity
+	 *     Entity returns Entity
 	 *
 	 * Constraint:
-	 *     ((userActionsBlock+=UserActionBlock+ systemActionsBlock+=SystemActionBlock+) | systemActionsBlock+=SystemActionBlock+)?
+	 *     (name=ID superType=[Entity|QualifiedName]? features+=Feature*)
 	 */
-	protected void sequence_CompleteActionBlock(ISerializationContext context, CompleteActionBlock semanticObject) {
+	protected void sequence_Entity(ISerializationContext context, Entity semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
 	/**
 	 * Contexts:
-	 *     Concept returns Concept
+	 *     Feature returns Feature
 	 *
 	 * Constraint:
-	 *     (name=ID conceptDescription=STRING?)
+	 *     (many?='many'? name=ID type=[Type|QualifiedName])
 	 */
-	protected void sequence_Concept(ISerializationContext context, Concept semanticObject) {
+	protected void sequence_Feature(ISerializationContext context, Feature semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
 	/**
 	 * Contexts:
-	 *     RequirementsUseCaseModel returns RequirementsUseCaseModel
+	 *     AbstractElement returns Import
+	 *     Import returns Import
 	 *
 	 * Constraint:
-	 *     (actors+=Actor+ data+=Concept* usecases+=UseCase+)
+	 *     importedNamespace=QualifiedNameWithWildcard
 	 */
-	protected void sequence_RequirementsUseCaseModel(ISerializationContext context, RequirementsUseCaseModel semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
+	protected void sequence_Import(ISerializationContext context, Import semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, UseCasePackage.Literals.IMPORT__IMPORTED_NAMESPACE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, UseCasePackage.Literals.IMPORT__IMPORTED_NAMESPACE));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getImportAccess().getImportedNamespaceQualifiedNameWithWildcardParserRuleCall_1_0(), semanticObject.getImportedNamespace());
+		feeder.finish();
 	}
 	
 	
 	/**
 	 * Contexts:
-	 *     SystemActionBlock returns SystemActionBlock
+	 *     PackageDeclaration returns PackageDeclaration
+	 *     AbstractElement returns PackageDeclaration
 	 *
 	 * Constraint:
-	 *     (name=ID description=STRING?)
+	 *     (name=QualifiedName elements+=AbstractElement*)
 	 */
-	protected void sequence_SystemActionBlock(ISerializationContext context, SystemActionBlock semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Contexts:
-	 *     UseCaseFlow returns UseCaseFlow
-	 *
-	 * Constraint:
-	 *     completeActionsBlock+=CompleteActionBlock+
-	 */
-	protected void sequence_UseCaseFlow(ISerializationContext context, UseCaseFlow semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Contexts:
-	 *     UseCase returns UseCase
-	 *
-	 * Constraint:
-	 *     (name=ID useCaseName=STRING? actors+=[Actor|ID]* concepts+=[Concept|ID]* useCasesFlow+=UseCaseFlow*)
-	 */
-	protected void sequence_UseCase(ISerializationContext context, UseCase semanticObject) {
+	protected void sequence_PackageDeclaration(ISerializationContext context, PackageDeclaration semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	

@@ -24,67 +24,76 @@ public interface UseCaseFactory extends EFactory
   UseCaseFactory eINSTANCE = mx.kukulkan.dsl.usecase.useCase.impl.UseCaseFactoryImpl.init();
 
   /**
-   * Returns a new object of class '<em>Requirements Use Case Model</em>'.
+   * Returns a new object of class '<em>Domainmodel</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Requirements Use Case Model</em>'.
+   * @return a new object of class '<em>Domainmodel</em>'.
    * @generated
    */
-  RequirementsUseCaseModel createRequirementsUseCaseModel();
+  Domainmodel createDomainmodel();
 
   /**
-   * Returns a new object of class '<em>Actor</em>'.
+   * Returns a new object of class '<em>Package Declaration</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Actor</em>'.
+   * @return a new object of class '<em>Package Declaration</em>'.
    * @generated
    */
-  Actor createActor();
+  PackageDeclaration createPackageDeclaration();
 
   /**
-   * Returns a new object of class '<em>Concept</em>'.
+   * Returns a new object of class '<em>Abstract Element</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Concept</em>'.
+   * @return a new object of class '<em>Abstract Element</em>'.
    * @generated
    */
-  Concept createConcept();
+  AbstractElement createAbstractElement();
 
   /**
-   * Returns a new object of class '<em>Use Case</em>'.
+   * Returns a new object of class '<em>Import</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Use Case</em>'.
+   * @return a new object of class '<em>Import</em>'.
    * @generated
    */
-  UseCase createUseCase();
+  Import createImport();
 
   /**
-   * Returns a new object of class '<em>Flow</em>'.
+   * Returns a new object of class '<em>Type</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Flow</em>'.
+   * @return a new object of class '<em>Type</em>'.
    * @generated
    */
-  UseCaseFlow createUseCaseFlow();
+  Type createType();
 
   /**
-   * Returns a new object of class '<em>Complete Action Block</em>'.
+   * Returns a new object of class '<em>Data Type</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Complete Action Block</em>'.
+   * @return a new object of class '<em>Data Type</em>'.
    * @generated
    */
-  CompleteActionBlock createCompleteActionBlock();
+  DataType createDataType();
 
   /**
-   * Returns a new object of class '<em>System Action Block</em>'.
+   * Returns a new object of class '<em>Entity</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>System Action Block</em>'.
+   * @return a new object of class '<em>Entity</em>'.
    * @generated
    */
-  SystemActionBlock createSystemActionBlock();
+  Entity createEntity();
+
+  /**
+   * Returns a new object of class '<em>Feature</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Feature</em>'.
+   * @generated
+   */
+  Feature createFeature();
 
   /**
    * Returns the package supported by this factory.

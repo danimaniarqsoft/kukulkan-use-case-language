@@ -5,7 +5,7 @@ package mx.kukulkan.dsl.usecase.tests;
 
 import com.google.inject.Inject;
 import mx.kukulkan.dsl.usecase.tests.UseCaseInjectorProvider;
-import mx.kukulkan.dsl.usecase.useCase.RequirementsUseCaseModel;
+import mx.kukulkan.dsl.usecase.useCase.Domainmodel;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.xtend2.lib.StringConcatenation;
@@ -23,7 +23,7 @@ import org.junit.jupiter.api.extension.ExtendWith;
 @SuppressWarnings("all")
 public class UseCaseParsingTest {
   @Inject
-  private ParseHelper<RequirementsUseCaseModel> parseHelper;
+  private ParseHelper<Domainmodel> parseHelper;
   
   @Test
   public void loadModel() {
@@ -31,7 +31,7 @@ public class UseCaseParsingTest {
       StringConcatenation _builder = new StringConcatenation();
       _builder.append("Hello Xtext!");
       _builder.newLine();
-      final RequirementsUseCaseModel result = this.parseHelper.parse(_builder);
+      final Domainmodel result = this.parseHelper.parse(_builder);
       Assertions.assertNotNull(result);
       final EList<Resource.Diagnostic> errors = result.eResource().getErrors();
       boolean _isEmpty = errors.isEmpty();

@@ -3,14 +3,15 @@
  */
 package mx.kukulkan.dsl.usecase.useCase.impl;
 
-import mx.kukulkan.dsl.usecase.useCase.Actor;
-import mx.kukulkan.dsl.usecase.useCase.CompleteActionBlock;
-import mx.kukulkan.dsl.usecase.useCase.Concept;
-import mx.kukulkan.dsl.usecase.useCase.RequirementsUseCaseModel;
-import mx.kukulkan.dsl.usecase.useCase.SystemActionBlock;
-import mx.kukulkan.dsl.usecase.useCase.UseCase;
+import mx.kukulkan.dsl.usecase.useCase.AbstractElement;
+import mx.kukulkan.dsl.usecase.useCase.DataType;
+import mx.kukulkan.dsl.usecase.useCase.Domainmodel;
+import mx.kukulkan.dsl.usecase.useCase.Entity;
+import mx.kukulkan.dsl.usecase.useCase.Feature;
+import mx.kukulkan.dsl.usecase.useCase.Import;
+import mx.kukulkan.dsl.usecase.useCase.PackageDeclaration;
+import mx.kukulkan.dsl.usecase.useCase.Type;
 import mx.kukulkan.dsl.usecase.useCase.UseCaseFactory;
-import mx.kukulkan.dsl.usecase.useCase.UseCaseFlow;
 import mx.kukulkan.dsl.usecase.useCase.UseCasePackage;
 
 import org.eclipse.emf.ecore.EAttribute;
@@ -33,49 +34,56 @@ public class UseCasePackageImpl extends EPackageImpl implements UseCasePackage
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass requirementsUseCaseModelEClass = null;
+  private EClass domainmodelEClass = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass actorEClass = null;
+  private EClass packageDeclarationEClass = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass conceptEClass = null;
+  private EClass abstractElementEClass = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass useCaseEClass = null;
+  private EClass importEClass = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass useCaseFlowEClass = null;
+  private EClass typeEClass = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass completeActionBlockEClass = null;
+  private EClass dataTypeEClass = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass systemActionBlockEClass = null;
+  private EClass entityEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass featureEClass = null;
 
   /**
    * Creates an instance of the model <b>Package</b>, registered with
@@ -145,9 +153,9 @@ public class UseCasePackageImpl extends EPackageImpl implements UseCasePackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getRequirementsUseCaseModel()
+  public EClass getDomainmodel()
   {
-    return requirementsUseCaseModelEClass;
+    return domainmodelEClass;
   }
 
   /**
@@ -155,9 +163,9 @@ public class UseCasePackageImpl extends EPackageImpl implements UseCasePackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getRequirementsUseCaseModel_Actors()
+  public EReference getDomainmodel_Elements()
   {
-    return (EReference)requirementsUseCaseModelEClass.getEStructuralFeatures().get(0);
+    return (EReference)domainmodelEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -165,9 +173,9 @@ public class UseCasePackageImpl extends EPackageImpl implements UseCasePackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getRequirementsUseCaseModel_Data()
+  public EClass getPackageDeclaration()
   {
-    return (EReference)requirementsUseCaseModelEClass.getEStructuralFeatures().get(1);
+    return packageDeclarationEClass;
   }
 
   /**
@@ -175,9 +183,9 @@ public class UseCasePackageImpl extends EPackageImpl implements UseCasePackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getRequirementsUseCaseModel_Usecases()
+  public EAttribute getPackageDeclaration_Name()
   {
-    return (EReference)requirementsUseCaseModelEClass.getEStructuralFeatures().get(2);
+    return (EAttribute)packageDeclarationEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -185,9 +193,9 @@ public class UseCasePackageImpl extends EPackageImpl implements UseCasePackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getActor()
+  public EReference getPackageDeclaration_Elements()
   {
-    return actorEClass;
+    return (EReference)packageDeclarationEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -195,9 +203,9 @@ public class UseCasePackageImpl extends EPackageImpl implements UseCasePackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getActor_Name()
+  public EClass getAbstractElement()
   {
-    return (EAttribute)actorEClass.getEStructuralFeatures().get(0);
+    return abstractElementEClass;
   }
 
   /**
@@ -205,9 +213,9 @@ public class UseCasePackageImpl extends EPackageImpl implements UseCasePackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getActor_Description()
+  public EClass getImport()
   {
-    return (EAttribute)actorEClass.getEStructuralFeatures().get(1);
+    return importEClass;
   }
 
   /**
@@ -215,9 +223,9 @@ public class UseCasePackageImpl extends EPackageImpl implements UseCasePackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getConcept()
+  public EAttribute getImport_ImportedNamespace()
   {
-    return conceptEClass;
+    return (EAttribute)importEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -225,9 +233,9 @@ public class UseCasePackageImpl extends EPackageImpl implements UseCasePackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getConcept_Name()
+  public EClass getType()
   {
-    return (EAttribute)conceptEClass.getEStructuralFeatures().get(0);
+    return typeEClass;
   }
 
   /**
@@ -235,9 +243,9 @@ public class UseCasePackageImpl extends EPackageImpl implements UseCasePackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getConcept_ConceptDescription()
+  public EAttribute getType_Name()
   {
-    return (EAttribute)conceptEClass.getEStructuralFeatures().get(1);
+    return (EAttribute)typeEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -245,9 +253,9 @@ public class UseCasePackageImpl extends EPackageImpl implements UseCasePackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getUseCase()
+  public EClass getDataType()
   {
-    return useCaseEClass;
+    return dataTypeEClass;
   }
 
   /**
@@ -255,9 +263,9 @@ public class UseCasePackageImpl extends EPackageImpl implements UseCasePackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getUseCase_Name()
+  public EClass getEntity()
   {
-    return (EAttribute)useCaseEClass.getEStructuralFeatures().get(0);
+    return entityEClass;
   }
 
   /**
@@ -265,9 +273,9 @@ public class UseCasePackageImpl extends EPackageImpl implements UseCasePackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getUseCase_UseCaseName()
+  public EReference getEntity_SuperType()
   {
-    return (EAttribute)useCaseEClass.getEStructuralFeatures().get(1);
+    return (EReference)entityEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -275,9 +283,9 @@ public class UseCasePackageImpl extends EPackageImpl implements UseCasePackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getUseCase_Actors()
+  public EReference getEntity_Features()
   {
-    return (EReference)useCaseEClass.getEStructuralFeatures().get(2);
+    return (EReference)entityEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -285,9 +293,9 @@ public class UseCasePackageImpl extends EPackageImpl implements UseCasePackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getUseCase_Concepts()
+  public EClass getFeature()
   {
-    return (EReference)useCaseEClass.getEStructuralFeatures().get(3);
+    return featureEClass;
   }
 
   /**
@@ -295,9 +303,9 @@ public class UseCasePackageImpl extends EPackageImpl implements UseCasePackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getUseCase_UseCasesFlow()
+  public EAttribute getFeature_Many()
   {
-    return (EReference)useCaseEClass.getEStructuralFeatures().get(4);
+    return (EAttribute)featureEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -305,9 +313,9 @@ public class UseCasePackageImpl extends EPackageImpl implements UseCasePackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getUseCaseFlow()
+  public EAttribute getFeature_Name()
   {
-    return useCaseFlowEClass;
+    return (EAttribute)featureEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -315,69 +323,9 @@ public class UseCasePackageImpl extends EPackageImpl implements UseCasePackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getUseCaseFlow_CompleteActionsBlock()
+  public EReference getFeature_Type()
   {
-    return (EReference)useCaseFlowEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EClass getCompleteActionBlock()
-  {
-    return completeActionBlockEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getCompleteActionBlock_UserActionsBlock()
-  {
-    return (EAttribute)completeActionBlockEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getCompleteActionBlock_SystemActionsBlock()
-  {
-    return (EReference)completeActionBlockEClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EClass getSystemActionBlock()
-  {
-    return systemActionBlockEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getSystemActionBlock_Name()
-  {
-    return (EAttribute)systemActionBlockEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getSystemActionBlock_Description()
-  {
-    return (EAttribute)systemActionBlockEClass.getEStructuralFeatures().get(1);
+    return (EReference)featureEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -410,36 +358,31 @@ public class UseCasePackageImpl extends EPackageImpl implements UseCasePackage
     isCreated = true;
 
     // Create classes and their features
-    requirementsUseCaseModelEClass = createEClass(REQUIREMENTS_USE_CASE_MODEL);
-    createEReference(requirementsUseCaseModelEClass, REQUIREMENTS_USE_CASE_MODEL__ACTORS);
-    createEReference(requirementsUseCaseModelEClass, REQUIREMENTS_USE_CASE_MODEL__DATA);
-    createEReference(requirementsUseCaseModelEClass, REQUIREMENTS_USE_CASE_MODEL__USECASES);
+    domainmodelEClass = createEClass(DOMAINMODEL);
+    createEReference(domainmodelEClass, DOMAINMODEL__ELEMENTS);
 
-    actorEClass = createEClass(ACTOR);
-    createEAttribute(actorEClass, ACTOR__NAME);
-    createEAttribute(actorEClass, ACTOR__DESCRIPTION);
+    packageDeclarationEClass = createEClass(PACKAGE_DECLARATION);
+    createEAttribute(packageDeclarationEClass, PACKAGE_DECLARATION__NAME);
+    createEReference(packageDeclarationEClass, PACKAGE_DECLARATION__ELEMENTS);
 
-    conceptEClass = createEClass(CONCEPT);
-    createEAttribute(conceptEClass, CONCEPT__NAME);
-    createEAttribute(conceptEClass, CONCEPT__CONCEPT_DESCRIPTION);
+    abstractElementEClass = createEClass(ABSTRACT_ELEMENT);
 
-    useCaseEClass = createEClass(USE_CASE);
-    createEAttribute(useCaseEClass, USE_CASE__NAME);
-    createEAttribute(useCaseEClass, USE_CASE__USE_CASE_NAME);
-    createEReference(useCaseEClass, USE_CASE__ACTORS);
-    createEReference(useCaseEClass, USE_CASE__CONCEPTS);
-    createEReference(useCaseEClass, USE_CASE__USE_CASES_FLOW);
+    importEClass = createEClass(IMPORT);
+    createEAttribute(importEClass, IMPORT__IMPORTED_NAMESPACE);
 
-    useCaseFlowEClass = createEClass(USE_CASE_FLOW);
-    createEReference(useCaseFlowEClass, USE_CASE_FLOW__COMPLETE_ACTIONS_BLOCK);
+    typeEClass = createEClass(TYPE);
+    createEAttribute(typeEClass, TYPE__NAME);
 
-    completeActionBlockEClass = createEClass(COMPLETE_ACTION_BLOCK);
-    createEAttribute(completeActionBlockEClass, COMPLETE_ACTION_BLOCK__USER_ACTIONS_BLOCK);
-    createEReference(completeActionBlockEClass, COMPLETE_ACTION_BLOCK__SYSTEM_ACTIONS_BLOCK);
+    dataTypeEClass = createEClass(DATA_TYPE);
 
-    systemActionBlockEClass = createEClass(SYSTEM_ACTION_BLOCK);
-    createEAttribute(systemActionBlockEClass, SYSTEM_ACTION_BLOCK__NAME);
-    createEAttribute(systemActionBlockEClass, SYSTEM_ACTION_BLOCK__DESCRIPTION);
+    entityEClass = createEClass(ENTITY);
+    createEReference(entityEClass, ENTITY__SUPER_TYPE);
+    createEReference(entityEClass, ENTITY__FEATURES);
+
+    featureEClass = createEClass(FEATURE);
+    createEAttribute(featureEClass, FEATURE__MANY);
+    createEAttribute(featureEClass, FEATURE__NAME);
+    createEReference(featureEClass, FEATURE__TYPE);
   }
 
   /**
@@ -471,38 +414,38 @@ public class UseCasePackageImpl extends EPackageImpl implements UseCasePackage
     // Set bounds for type parameters
 
     // Add supertypes to classes
+    packageDeclarationEClass.getESuperTypes().add(this.getAbstractElement());
+    importEClass.getESuperTypes().add(this.getAbstractElement());
+    typeEClass.getESuperTypes().add(this.getAbstractElement());
+    dataTypeEClass.getESuperTypes().add(this.getType());
+    entityEClass.getESuperTypes().add(this.getType());
 
     // Initialize classes and features; add operations and parameters
-    initEClass(requirementsUseCaseModelEClass, RequirementsUseCaseModel.class, "RequirementsUseCaseModel", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getRequirementsUseCaseModel_Actors(), this.getActor(), null, "actors", null, 0, -1, RequirementsUseCaseModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getRequirementsUseCaseModel_Data(), this.getConcept(), null, "data", null, 0, -1, RequirementsUseCaseModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getRequirementsUseCaseModel_Usecases(), this.getUseCase(), null, "usecases", null, 0, -1, RequirementsUseCaseModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(domainmodelEClass, Domainmodel.class, "Domainmodel", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getDomainmodel_Elements(), this.getAbstractElement(), null, "elements", null, 0, -1, Domainmodel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(actorEClass, Actor.class, "Actor", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getActor_Name(), ecorePackage.getEString(), "name", null, 0, 1, Actor.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getActor_Description(), ecorePackage.getEString(), "description", null, 0, 1, Actor.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(packageDeclarationEClass, PackageDeclaration.class, "PackageDeclaration", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getPackageDeclaration_Name(), ecorePackage.getEString(), "name", null, 0, 1, PackageDeclaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getPackageDeclaration_Elements(), this.getAbstractElement(), null, "elements", null, 0, -1, PackageDeclaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(conceptEClass, Concept.class, "Concept", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getConcept_Name(), ecorePackage.getEString(), "name", null, 0, 1, Concept.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getConcept_ConceptDescription(), ecorePackage.getEString(), "conceptDescription", null, 0, 1, Concept.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(abstractElementEClass, AbstractElement.class, "AbstractElement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-    initEClass(useCaseEClass, UseCase.class, "UseCase", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getUseCase_Name(), ecorePackage.getEString(), "name", null, 0, 1, UseCase.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getUseCase_UseCaseName(), ecorePackage.getEString(), "useCaseName", null, 0, 1, UseCase.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getUseCase_Actors(), this.getActor(), null, "actors", null, 0, -1, UseCase.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getUseCase_Concepts(), this.getConcept(), null, "concepts", null, 0, -1, UseCase.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getUseCase_UseCasesFlow(), this.getUseCaseFlow(), null, "useCasesFlow", null, 0, -1, UseCase.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(importEClass, Import.class, "Import", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getImport_ImportedNamespace(), ecorePackage.getEString(), "importedNamespace", null, 0, 1, Import.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(useCaseFlowEClass, UseCaseFlow.class, "UseCaseFlow", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getUseCaseFlow_CompleteActionsBlock(), this.getCompleteActionBlock(), null, "completeActionsBlock", null, 0, -1, UseCaseFlow.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(typeEClass, Type.class, "Type", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getType_Name(), ecorePackage.getEString(), "name", null, 0, 1, Type.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(completeActionBlockEClass, CompleteActionBlock.class, "CompleteActionBlock", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getCompleteActionBlock_UserActionsBlock(), ecorePackage.getEString(), "userActionsBlock", null, 0, -1, CompleteActionBlock.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getCompleteActionBlock_SystemActionsBlock(), this.getSystemActionBlock(), null, "systemActionsBlock", null, 0, -1, CompleteActionBlock.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(dataTypeEClass, DataType.class, "DataType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-    initEClass(systemActionBlockEClass, SystemActionBlock.class, "SystemActionBlock", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getSystemActionBlock_Name(), ecorePackage.getEString(), "name", null, 0, 1, SystemActionBlock.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getSystemActionBlock_Description(), ecorePackage.getEString(), "description", null, 0, 1, SystemActionBlock.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(entityEClass, Entity.class, "Entity", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getEntity_SuperType(), this.getEntity(), null, "superType", null, 0, 1, Entity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getEntity_Features(), this.getFeature(), null, "features", null, 0, -1, Entity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(featureEClass, Feature.class, "Feature", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getFeature_Many(), ecorePackage.getEBoolean(), "many", null, 0, 1, Feature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getFeature_Name(), ecorePackage.getEString(), "name", null, 0, 1, Feature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getFeature_Type(), this.getType(), null, "type", null, 0, 1, Feature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     // Create resource
     createResource(eNS_URI);

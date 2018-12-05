@@ -73,52 +73,66 @@ public class UseCaseSwitch<T> extends Switch<T>
   {
     switch (classifierID)
     {
-      case UseCasePackage.REQUIREMENTS_USE_CASE_MODEL:
+      case UseCasePackage.DOMAINMODEL:
       {
-        RequirementsUseCaseModel requirementsUseCaseModel = (RequirementsUseCaseModel)theEObject;
-        T result = caseRequirementsUseCaseModel(requirementsUseCaseModel);
+        Domainmodel domainmodel = (Domainmodel)theEObject;
+        T result = caseDomainmodel(domainmodel);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case UseCasePackage.ACTOR:
+      case UseCasePackage.PACKAGE_DECLARATION:
       {
-        Actor actor = (Actor)theEObject;
-        T result = caseActor(actor);
+        PackageDeclaration packageDeclaration = (PackageDeclaration)theEObject;
+        T result = casePackageDeclaration(packageDeclaration);
+        if (result == null) result = caseAbstractElement(packageDeclaration);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case UseCasePackage.CONCEPT:
+      case UseCasePackage.ABSTRACT_ELEMENT:
       {
-        Concept concept = (Concept)theEObject;
-        T result = caseConcept(concept);
+        AbstractElement abstractElement = (AbstractElement)theEObject;
+        T result = caseAbstractElement(abstractElement);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case UseCasePackage.USE_CASE:
+      case UseCasePackage.IMPORT:
       {
-        UseCase useCase = (UseCase)theEObject;
-        T result = caseUseCase(useCase);
+        Import import_ = (Import)theEObject;
+        T result = caseImport(import_);
+        if (result == null) result = caseAbstractElement(import_);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case UseCasePackage.USE_CASE_FLOW:
+      case UseCasePackage.TYPE:
       {
-        UseCaseFlow useCaseFlow = (UseCaseFlow)theEObject;
-        T result = caseUseCaseFlow(useCaseFlow);
+        Type type = (Type)theEObject;
+        T result = caseType(type);
+        if (result == null) result = caseAbstractElement(type);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case UseCasePackage.COMPLETE_ACTION_BLOCK:
+      case UseCasePackage.DATA_TYPE:
       {
-        CompleteActionBlock completeActionBlock = (CompleteActionBlock)theEObject;
-        T result = caseCompleteActionBlock(completeActionBlock);
+        DataType dataType = (DataType)theEObject;
+        T result = caseDataType(dataType);
+        if (result == null) result = caseType(dataType);
+        if (result == null) result = caseAbstractElement(dataType);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case UseCasePackage.SYSTEM_ACTION_BLOCK:
+      case UseCasePackage.ENTITY:
       {
-        SystemActionBlock systemActionBlock = (SystemActionBlock)theEObject;
-        T result = caseSystemActionBlock(systemActionBlock);
+        Entity entity = (Entity)theEObject;
+        T result = caseEntity(entity);
+        if (result == null) result = caseType(entity);
+        if (result == null) result = caseAbstractElement(entity);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case UseCasePackage.FEATURE:
+      {
+        Feature feature = (Feature)theEObject;
+        T result = caseFeature(feature);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -127,113 +141,129 @@ public class UseCaseSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Requirements Use Case Model</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Domainmodel</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Requirements Use Case Model</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Domainmodel</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseRequirementsUseCaseModel(RequirementsUseCaseModel object)
+  public T caseDomainmodel(Domainmodel object)
   {
     return null;
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Actor</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Package Declaration</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Actor</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Package Declaration</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseActor(Actor object)
+  public T casePackageDeclaration(PackageDeclaration object)
   {
     return null;
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Concept</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Abstract Element</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Concept</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Abstract Element</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseConcept(Concept object)
+  public T caseAbstractElement(AbstractElement object)
   {
     return null;
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Use Case</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Import</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Use Case</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Import</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseUseCase(UseCase object)
+  public T caseImport(Import object)
   {
     return null;
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Flow</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Type</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Flow</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Type</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseUseCaseFlow(UseCaseFlow object)
+  public T caseType(Type object)
   {
     return null;
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Complete Action Block</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Data Type</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Complete Action Block</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Data Type</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseCompleteActionBlock(CompleteActionBlock object)
+  public T caseDataType(DataType object)
   {
     return null;
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>System Action Block</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Entity</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>System Action Block</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Entity</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseSystemActionBlock(SystemActionBlock object)
+  public T caseEntity(Entity object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Feature</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Feature</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseFeature(Feature object)
   {
     return null;
   }

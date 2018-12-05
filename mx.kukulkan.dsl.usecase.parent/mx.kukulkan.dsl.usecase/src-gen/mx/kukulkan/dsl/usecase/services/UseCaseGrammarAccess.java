@@ -6,6 +6,7 @@ package mx.kukulkan.dsl.usecase.services;
 import com.google.inject.Inject;
 import com.google.inject.Singleton;
 import java.util.List;
+import org.eclipse.xtext.Alternatives;
 import org.eclipse.xtext.Assignment;
 import org.eclipse.xtext.CrossReference;
 import org.eclipse.xtext.Grammar;
@@ -22,61 +23,223 @@ import org.eclipse.xtext.service.GrammarProvider;
 @Singleton
 public class UseCaseGrammarAccess extends AbstractGrammarElementFinder {
 	
-	public class RequirementsUseCaseModelElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "mx.kukulkan.dsl.usecase.UseCase.RequirementsUseCaseModel");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Assignment cActorsAssignment_0 = (Assignment)cGroup.eContents().get(0);
-		private final RuleCall cActorsActorParserRuleCall_0_0 = (RuleCall)cActorsAssignment_0.eContents().get(0);
-		private final Assignment cDataAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cDataConceptParserRuleCall_1_0 = (RuleCall)cDataAssignment_1.eContents().get(0);
-		private final Assignment cUsecasesAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cUsecasesUseCaseParserRuleCall_2_0 = (RuleCall)cUsecasesAssignment_2.eContents().get(0);
+	public class DomainmodelElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "mx.kukulkan.dsl.usecase.UseCase.Domainmodel");
+		private final Assignment cElementsAssignment = (Assignment)rule.eContents().get(1);
+		private final RuleCall cElementsAbstractElementParserRuleCall_0 = (RuleCall)cElementsAssignment.eContents().get(0);
 		
-		//RequirementsUseCaseModel:
-		//	actors+=Actor+
-		//	data+=Concept*
-		//	usecases+=UseCase+;
+		//Domainmodel:
+		//	elements+=AbstractElement*;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//actors+=Actor+ data+=Concept* usecases+=UseCase+
+		//elements+=AbstractElement*
+		public Assignment getElementsAssignment() { return cElementsAssignment; }
+		
+		//AbstractElement
+		public RuleCall getElementsAbstractElementParserRuleCall_0() { return cElementsAbstractElementParserRuleCall_0; }
+	}
+	public class PackageDeclarationElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "mx.kukulkan.dsl.usecase.UseCase.PackageDeclaration");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cPackageKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cNameQualifiedNameParserRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Assignment cElementsAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cElementsAbstractElementParserRuleCall_3_0 = (RuleCall)cElementsAssignment_3.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		
+		//PackageDeclaration:
+		//	'package' name=QualifiedName '{'
+		//	elements+=AbstractElement*
+		//	'}';
+		@Override public ParserRule getRule() { return rule; }
+		
+		//'package' name=QualifiedName '{' elements+=AbstractElement* '}'
 		public Group getGroup() { return cGroup; }
 		
-		//actors+=Actor+
-		public Assignment getActorsAssignment_0() { return cActorsAssignment_0; }
+		//'package'
+		public Keyword getPackageKeyword_0() { return cPackageKeyword_0; }
 		
-		//Actor
-		public RuleCall getActorsActorParserRuleCall_0_0() { return cActorsActorParserRuleCall_0_0; }
+		//name=QualifiedName
+		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
 		
-		//data+=Concept*
-		public Assignment getDataAssignment_1() { return cDataAssignment_1; }
+		//QualifiedName
+		public RuleCall getNameQualifiedNameParserRuleCall_1_0() { return cNameQualifiedNameParserRuleCall_1_0; }
 		
-		//Concept
-		public RuleCall getDataConceptParserRuleCall_1_0() { return cDataConceptParserRuleCall_1_0; }
+		//'{'
+		public Keyword getLeftCurlyBracketKeyword_2() { return cLeftCurlyBracketKeyword_2; }
 		
-		//usecases+=UseCase+
-		public Assignment getUsecasesAssignment_2() { return cUsecasesAssignment_2; }
+		//elements+=AbstractElement*
+		public Assignment getElementsAssignment_3() { return cElementsAssignment_3; }
 		
-		//UseCase
-		public RuleCall getUsecasesUseCaseParserRuleCall_2_0() { return cUsecasesUseCaseParserRuleCall_2_0; }
+		//AbstractElement
+		public RuleCall getElementsAbstractElementParserRuleCall_3_0() { return cElementsAbstractElementParserRuleCall_3_0; }
+		
+		//'}'
+		public Keyword getRightCurlyBracketKeyword_4() { return cRightCurlyBracketKeyword_4; }
 	}
-	public class ActorElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "mx.kukulkan.dsl.usecase.UseCase.Actor");
+	public class AbstractElementElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "mx.kukulkan.dsl.usecase.UseCase.AbstractElement");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final RuleCall cPackageDeclarationParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
+		private final RuleCall cTypeParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		private final RuleCall cImportParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
+		
+		//AbstractElement:
+		//	PackageDeclaration | Type | Import;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//PackageDeclaration | Type | Import
+		public Alternatives getAlternatives() { return cAlternatives; }
+		
+		//PackageDeclaration
+		public RuleCall getPackageDeclarationParserRuleCall_0() { return cPackageDeclarationParserRuleCall_0; }
+		
+		//Type
+		public RuleCall getTypeParserRuleCall_1() { return cTypeParserRuleCall_1; }
+		
+		//Import
+		public RuleCall getImportParserRuleCall_2() { return cImportParserRuleCall_2; }
+	}
+	public class QualifiedNameElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "mx.kukulkan.dsl.usecase.UseCase.QualifiedName");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cActorKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final RuleCall cIDTerminalRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
+		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
+		private final Keyword cFullStopKeyword_1_0 = (Keyword)cGroup_1.eContents().get(0);
+		private final RuleCall cIDTerminalRuleCall_1_1 = (RuleCall)cGroup_1.eContents().get(1);
+		
+		//QualifiedName:
+		//	ID ('.' ID)*;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//ID ('.' ID)*
+		public Group getGroup() { return cGroup; }
+		
+		//ID
+		public RuleCall getIDTerminalRuleCall_0() { return cIDTerminalRuleCall_0; }
+		
+		//('.' ID)*
+		public Group getGroup_1() { return cGroup_1; }
+		
+		//'.'
+		public Keyword getFullStopKeyword_1_0() { return cFullStopKeyword_1_0; }
+		
+		//ID
+		public RuleCall getIDTerminalRuleCall_1_1() { return cIDTerminalRuleCall_1_1; }
+	}
+	public class ImportElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "mx.kukulkan.dsl.usecase.UseCase.Import");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cImportKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cImportedNamespaceAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cImportedNamespaceQualifiedNameWithWildcardParserRuleCall_1_0 = (RuleCall)cImportedNamespaceAssignment_1.eContents().get(0);
+		
+		//Import:
+		//	'import' importedNamespace=QualifiedNameWithWildcard;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//'import' importedNamespace=QualifiedNameWithWildcard
+		public Group getGroup() { return cGroup; }
+		
+		//'import'
+		public Keyword getImportKeyword_0() { return cImportKeyword_0; }
+		
+		//importedNamespace=QualifiedNameWithWildcard
+		public Assignment getImportedNamespaceAssignment_1() { return cImportedNamespaceAssignment_1; }
+		
+		//QualifiedNameWithWildcard
+		public RuleCall getImportedNamespaceQualifiedNameWithWildcardParserRuleCall_1_0() { return cImportedNamespaceQualifiedNameWithWildcardParserRuleCall_1_0; }
+	}
+	public class QualifiedNameWithWildcardElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "mx.kukulkan.dsl.usecase.UseCase.QualifiedNameWithWildcard");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final RuleCall cQualifiedNameParserRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
+		private final Keyword cFullStopAsteriskKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		
+		//QualifiedNameWithWildcard:
+		//	QualifiedName '.*'?;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//QualifiedName '.*'?
+		public Group getGroup() { return cGroup; }
+		
+		//QualifiedName
+		public RuleCall getQualifiedNameParserRuleCall_0() { return cQualifiedNameParserRuleCall_0; }
+		
+		//'.*'?
+		public Keyword getFullStopAsteriskKeyword_1() { return cFullStopAsteriskKeyword_1; }
+	}
+	public class TypeElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "mx.kukulkan.dsl.usecase.UseCase.Type");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final RuleCall cDataTypeParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
+		private final RuleCall cEntityParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		
+		//Type:
+		//	DataType | Entity;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//DataType | Entity
+		public Alternatives getAlternatives() { return cAlternatives; }
+		
+		//DataType
+		public RuleCall getDataTypeParserRuleCall_0() { return cDataTypeParserRuleCall_0; }
+		
+		//Entity
+		public RuleCall getEntityParserRuleCall_1() { return cEntityParserRuleCall_1; }
+	}
+	public class DataTypeElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "mx.kukulkan.dsl.usecase.UseCase.DataType");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cDatatypeKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
-		private final Assignment cDescriptionAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cDescriptionSTRINGTerminalRuleCall_2_0 = (RuleCall)cDescriptionAssignment_2.eContents().get(0);
 		
-		//Actor:
-		//	"Actor:" name=ID description=STRING?;
+		//DataType:
+		//	'datatype' name=ID;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//"Actor:" name=ID description=STRING?
+		//'datatype' name=ID
 		public Group getGroup() { return cGroup; }
 		
-		//"Actor:"
-		public Keyword getActorKeyword_0() { return cActorKeyword_0; }
+		//'datatype'
+		public Keyword getDatatypeKeyword_0() { return cDatatypeKeyword_0; }
+		
+		//name=ID
+		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
+		
+		//ID
+		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
+	}
+	public class EntityElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "mx.kukulkan.dsl.usecase.UseCase.Entity");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cEntityKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
+		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
+		private final Keyword cExtendsKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
+		private final Assignment cSuperTypeAssignment_2_1 = (Assignment)cGroup_2.eContents().get(1);
+		private final CrossReference cSuperTypeEntityCrossReference_2_1_0 = (CrossReference)cSuperTypeAssignment_2_1.eContents().get(0);
+		private final RuleCall cSuperTypeEntityQualifiedNameParserRuleCall_2_1_0_1 = (RuleCall)cSuperTypeEntityCrossReference_2_1_0.eContents().get(1);
+		private final Keyword cLeftCurlyBracketKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Assignment cFeaturesAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final RuleCall cFeaturesFeatureParserRuleCall_4_0 = (RuleCall)cFeaturesAssignment_4.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		
+		//Entity:
+		//	'entity' name=ID ('extends' superType=[Entity|QualifiedName])? '{'
+		//	features+=Feature*
+		//	'}';
+		@Override public ParserRule getRule() { return rule; }
+		
+		//'entity' name=ID ('extends' superType=[Entity|QualifiedName])? '{' features+=Feature* '}'
+		public Group getGroup() { return cGroup; }
+		
+		//'entity'
+		public Keyword getEntityKeyword_0() { return cEntityKeyword_0; }
 		
 		//name=ID
 		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
@@ -84,30 +247,57 @@ public class UseCaseGrammarAccess extends AbstractGrammarElementFinder {
 		//ID
 		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
 		
-		//description=STRING?
-		public Assignment getDescriptionAssignment_2() { return cDescriptionAssignment_2; }
+		//('extends' superType=[Entity|QualifiedName])?
+		public Group getGroup_2() { return cGroup_2; }
 		
-		//STRING
-		public RuleCall getDescriptionSTRINGTerminalRuleCall_2_0() { return cDescriptionSTRINGTerminalRuleCall_2_0; }
+		//'extends'
+		public Keyword getExtendsKeyword_2_0() { return cExtendsKeyword_2_0; }
+		
+		//superType=[Entity|QualifiedName]
+		public Assignment getSuperTypeAssignment_2_1() { return cSuperTypeAssignment_2_1; }
+		
+		//[Entity|QualifiedName]
+		public CrossReference getSuperTypeEntityCrossReference_2_1_0() { return cSuperTypeEntityCrossReference_2_1_0; }
+		
+		//QualifiedName
+		public RuleCall getSuperTypeEntityQualifiedNameParserRuleCall_2_1_0_1() { return cSuperTypeEntityQualifiedNameParserRuleCall_2_1_0_1; }
+		
+		//'{'
+		public Keyword getLeftCurlyBracketKeyword_3() { return cLeftCurlyBracketKeyword_3; }
+		
+		//features+=Feature*
+		public Assignment getFeaturesAssignment_4() { return cFeaturesAssignment_4; }
+		
+		//Feature
+		public RuleCall getFeaturesFeatureParserRuleCall_4_0() { return cFeaturesFeatureParserRuleCall_4_0; }
+		
+		//'}'
+		public Keyword getRightCurlyBracketKeyword_5() { return cRightCurlyBracketKeyword_5; }
 	}
-	public class ConceptElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "mx.kukulkan.dsl.usecase.UseCase.Concept");
+	public class FeatureElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "mx.kukulkan.dsl.usecase.UseCase.Feature");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cDataConceptKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cManyAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final Keyword cManyManyKeyword_0_0 = (Keyword)cManyAssignment_0.eContents().get(0);
 		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
-		private final Assignment cConceptDescriptionAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cConceptDescriptionSTRINGTerminalRuleCall_2_0 = (RuleCall)cConceptDescriptionAssignment_2.eContents().get(0);
+		private final Keyword cColonKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Assignment cTypeAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final CrossReference cTypeTypeCrossReference_3_0 = (CrossReference)cTypeAssignment_3.eContents().get(0);
+		private final RuleCall cTypeTypeQualifiedNameParserRuleCall_3_0_1 = (RuleCall)cTypeTypeCrossReference_3_0.eContents().get(1);
 		
-		//Concept:
-		//	"DataConcept:" name=ID conceptDescription=STRING?;
+		//Feature:
+		//	many?='many'? name=ID ':' type=[Type|QualifiedName];
 		@Override public ParserRule getRule() { return rule; }
 		
-		//"DataConcept:" name=ID conceptDescription=STRING?
+		//many?='many'? name=ID ':' type=[Type|QualifiedName]
 		public Group getGroup() { return cGroup; }
 		
-		//"DataConcept:"
-		public Keyword getDataConceptKeyword_0() { return cDataConceptKeyword_0; }
+		//many?='many'?
+		public Assignment getManyAssignment_0() { return cManyAssignment_0; }
+		
+		//'many'
+		public Keyword getManyManyKeyword_0_0() { return cManyManyKeyword_0_0; }
 		
 		//name=ID
 		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
@@ -115,187 +305,30 @@ public class UseCaseGrammarAccess extends AbstractGrammarElementFinder {
 		//ID
 		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
 		
-		//conceptDescription=STRING?
-		public Assignment getConceptDescriptionAssignment_2() { return cConceptDescriptionAssignment_2; }
+		//':'
+		public Keyword getColonKeyword_2() { return cColonKeyword_2; }
 		
-		//STRING
-		public RuleCall getConceptDescriptionSTRINGTerminalRuleCall_2_0() { return cConceptDescriptionSTRINGTerminalRuleCall_2_0; }
-	}
-	public class UseCaseElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "mx.kukulkan.dsl.usecase.UseCase.UseCase");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cUseCaseKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
-		private final Assignment cUseCaseNameAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cUseCaseNameSTRINGTerminalRuleCall_2_0 = (RuleCall)cUseCaseNameAssignment_2.eContents().get(0);
-		private final Assignment cActorsAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final CrossReference cActorsActorCrossReference_3_0 = (CrossReference)cActorsAssignment_3.eContents().get(0);
-		private final RuleCall cActorsActorIDTerminalRuleCall_3_0_1 = (RuleCall)cActorsActorCrossReference_3_0.eContents().get(1);
-		private final Assignment cConceptsAssignment_4 = (Assignment)cGroup.eContents().get(4);
-		private final CrossReference cConceptsConceptCrossReference_4_0 = (CrossReference)cConceptsAssignment_4.eContents().get(0);
-		private final RuleCall cConceptsConceptIDTerminalRuleCall_4_0_1 = (RuleCall)cConceptsConceptCrossReference_4_0.eContents().get(1);
-		private final Assignment cUseCasesFlowAssignment_5 = (Assignment)cGroup.eContents().get(5);
-		private final RuleCall cUseCasesFlowUseCaseFlowParserRuleCall_5_0 = (RuleCall)cUseCasesFlowAssignment_5.eContents().get(0);
+		//type=[Type|QualifiedName]
+		public Assignment getTypeAssignment_3() { return cTypeAssignment_3; }
 		
-		//UseCase:
-		//	"UseCase:" name=ID useCaseName=STRING?
-		//	actors+=[Actor]*
-		//	concepts+=[Concept]*
-		//	useCasesFlow+=UseCaseFlow*;
-		@Override public ParserRule getRule() { return rule; }
+		//[Type|QualifiedName]
+		public CrossReference getTypeTypeCrossReference_3_0() { return cTypeTypeCrossReference_3_0; }
 		
-		//"UseCase:" name=ID useCaseName=STRING? actors+=[Actor]* concepts+=[Concept]* useCasesFlow+=UseCaseFlow*
-		public Group getGroup() { return cGroup; }
-		
-		//"UseCase:"
-		public Keyword getUseCaseKeyword_0() { return cUseCaseKeyword_0; }
-		
-		//name=ID
-		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
-		
-		//ID
-		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
-		
-		//useCaseName=STRING?
-		public Assignment getUseCaseNameAssignment_2() { return cUseCaseNameAssignment_2; }
-		
-		//STRING
-		public RuleCall getUseCaseNameSTRINGTerminalRuleCall_2_0() { return cUseCaseNameSTRINGTerminalRuleCall_2_0; }
-		
-		//actors+=[Actor]*
-		public Assignment getActorsAssignment_3() { return cActorsAssignment_3; }
-		
-		//[Actor]
-		public CrossReference getActorsActorCrossReference_3_0() { return cActorsActorCrossReference_3_0; }
-		
-		//ID
-		public RuleCall getActorsActorIDTerminalRuleCall_3_0_1() { return cActorsActorIDTerminalRuleCall_3_0_1; }
-		
-		//concepts+=[Concept]*
-		public Assignment getConceptsAssignment_4() { return cConceptsAssignment_4; }
-		
-		//[Concept]
-		public CrossReference getConceptsConceptCrossReference_4_0() { return cConceptsConceptCrossReference_4_0; }
-		
-		//ID
-		public RuleCall getConceptsConceptIDTerminalRuleCall_4_0_1() { return cConceptsConceptIDTerminalRuleCall_4_0_1; }
-		
-		//useCasesFlow+=UseCaseFlow*
-		public Assignment getUseCasesFlowAssignment_5() { return cUseCasesFlowAssignment_5; }
-		
-		//UseCaseFlow
-		public RuleCall getUseCasesFlowUseCaseFlowParserRuleCall_5_0() { return cUseCasesFlowUseCaseFlowParserRuleCall_5_0; }
-	}
-	public class UseCaseFlowElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "mx.kukulkan.dsl.usecase.UseCase.UseCaseFlow");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cUseCaseFlowKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Assignment cCompleteActionsBlockAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cCompleteActionsBlockCompleteActionBlockParserRuleCall_1_0 = (RuleCall)cCompleteActionsBlockAssignment_1.eContents().get(0);
-		
-		//UseCaseFlow:
-		//	"UseCaseFlow:"
-		//	completeActionsBlock+=CompleteActionBlock*;
-		@Override public ParserRule getRule() { return rule; }
-		
-		//"UseCaseFlow:" completeActionsBlock+=CompleteActionBlock*
-		public Group getGroup() { return cGroup; }
-		
-		//"UseCaseFlow:"
-		public Keyword getUseCaseFlowKeyword_0() { return cUseCaseFlowKeyword_0; }
-		
-		//completeActionsBlock+=CompleteActionBlock*
-		public Assignment getCompleteActionsBlockAssignment_1() { return cCompleteActionsBlockAssignment_1; }
-		
-		//CompleteActionBlock
-		public RuleCall getCompleteActionsBlockCompleteActionBlockParserRuleCall_1_0() { return cCompleteActionsBlockCompleteActionBlockParserRuleCall_1_0; }
-	}
-	public class CompleteActionBlockElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "mx.kukulkan.dsl.usecase.UseCase.CompleteActionBlock");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cCompleteActionBlockKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Assignment cUserActionsBlockAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cUserActionsBlockUserActionBlockParserRuleCall_1_0 = (RuleCall)cUserActionsBlockAssignment_1.eContents().get(0);
-		private final Assignment cSystemActionsBlockAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cSystemActionsBlockSystemActionBlockParserRuleCall_2_0 = (RuleCall)cSystemActionsBlockAssignment_2.eContents().get(0);
-		
-		//CompleteActionBlock:
-		//	"CompleteActionBlock:"
-		//	userActionsBlock+=UserActionBlock*
-		//	systemActionsBlock+=SystemActionBlock*;
-		@Override public ParserRule getRule() { return rule; }
-		
-		//"CompleteActionBlock:" userActionsBlock+=UserActionBlock* systemActionsBlock+=SystemActionBlock*
-		public Group getGroup() { return cGroup; }
-		
-		//"CompleteActionBlock:"
-		public Keyword getCompleteActionBlockKeyword_0() { return cCompleteActionBlockKeyword_0; }
-		
-		//userActionsBlock+=UserActionBlock*
-		public Assignment getUserActionsBlockAssignment_1() { return cUserActionsBlockAssignment_1; }
-		
-		//UserActionBlock
-		public RuleCall getUserActionsBlockUserActionBlockParserRuleCall_1_0() { return cUserActionsBlockUserActionBlockParserRuleCall_1_0; }
-		
-		//systemActionsBlock+=SystemActionBlock*
-		public Assignment getSystemActionsBlockAssignment_2() { return cSystemActionsBlockAssignment_2; }
-		
-		//SystemActionBlock
-		public RuleCall getSystemActionsBlockSystemActionBlockParserRuleCall_2_0() { return cSystemActionsBlockSystemActionBlockParserRuleCall_2_0; }
-	}
-	public class UserActionBlockElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "mx.kukulkan.dsl.usecase.UseCase.UserActionBlock");
-		private final Keyword cUserActionBlockKeyword = (Keyword)rule.eContents().get(1);
-		
-		//UserActionBlock:
-		//	"UserActionBlock";
-		@Override public ParserRule getRule() { return rule; }
-		
-		//"UserActionBlock"
-		public Keyword getUserActionBlockKeyword() { return cUserActionBlockKeyword; }
-	}
-	public class SystemActionBlockElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "mx.kukulkan.dsl.usecase.UseCase.SystemActionBlock");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cSystemActionBlockKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
-		private final Assignment cDescriptionAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cDescriptionSTRINGTerminalRuleCall_2_0 = (RuleCall)cDescriptionAssignment_2.eContents().get(0);
-		
-		//SystemActionBlock:
-		//	"SystemActionBlock:" name=ID description=STRING?;
-		@Override public ParserRule getRule() { return rule; }
-		
-		//"SystemActionBlock:" name=ID description=STRING?
-		public Group getGroup() { return cGroup; }
-		
-		//"SystemActionBlock:"
-		public Keyword getSystemActionBlockKeyword_0() { return cSystemActionBlockKeyword_0; }
-		
-		//name=ID
-		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
-		
-		//ID
-		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
-		
-		//description=STRING?
-		public Assignment getDescriptionAssignment_2() { return cDescriptionAssignment_2; }
-		
-		//STRING
-		public RuleCall getDescriptionSTRINGTerminalRuleCall_2_0() { return cDescriptionSTRINGTerminalRuleCall_2_0; }
+		//QualifiedName
+		public RuleCall getTypeTypeQualifiedNameParserRuleCall_3_0_1() { return cTypeTypeQualifiedNameParserRuleCall_3_0_1; }
 	}
 	
 	
-	private final RequirementsUseCaseModelElements pRequirementsUseCaseModel;
-	private final ActorElements pActor;
-	private final ConceptElements pConcept;
-	private final UseCaseElements pUseCase;
-	private final UseCaseFlowElements pUseCaseFlow;
-	private final CompleteActionBlockElements pCompleteActionBlock;
-	private final UserActionBlockElements pUserActionBlock;
-	private final SystemActionBlockElements pSystemActionBlock;
+	private final DomainmodelElements pDomainmodel;
+	private final PackageDeclarationElements pPackageDeclaration;
+	private final AbstractElementElements pAbstractElement;
+	private final QualifiedNameElements pQualifiedName;
+	private final ImportElements pImport;
+	private final QualifiedNameWithWildcardElements pQualifiedNameWithWildcard;
+	private final TypeElements pType;
+	private final DataTypeElements pDataType;
+	private final EntityElements pEntity;
+	private final FeatureElements pFeature;
 	
 	private final Grammar grammar;
 	
@@ -306,14 +339,16 @@ public class UseCaseGrammarAccess extends AbstractGrammarElementFinder {
 			TerminalsGrammarAccess gaTerminals) {
 		this.grammar = internalFindGrammar(grammarProvider);
 		this.gaTerminals = gaTerminals;
-		this.pRequirementsUseCaseModel = new RequirementsUseCaseModelElements();
-		this.pActor = new ActorElements();
-		this.pConcept = new ConceptElements();
-		this.pUseCase = new UseCaseElements();
-		this.pUseCaseFlow = new UseCaseFlowElements();
-		this.pCompleteActionBlock = new CompleteActionBlockElements();
-		this.pUserActionBlock = new UserActionBlockElements();
-		this.pSystemActionBlock = new SystemActionBlockElements();
+		this.pDomainmodel = new DomainmodelElements();
+		this.pPackageDeclaration = new PackageDeclarationElements();
+		this.pAbstractElement = new AbstractElementElements();
+		this.pQualifiedName = new QualifiedNameElements();
+		this.pImport = new ImportElements();
+		this.pQualifiedNameWithWildcard = new QualifiedNameWithWildcardElements();
+		this.pType = new TypeElements();
+		this.pDataType = new DataTypeElements();
+		this.pEntity = new EntityElements();
+		this.pFeature = new FeatureElements();
 	}
 	
 	protected Grammar internalFindGrammar(GrammarProvider grammarProvider) {
@@ -343,92 +378,108 @@ public class UseCaseGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	
-	//RequirementsUseCaseModel:
-	//	actors+=Actor+
-	//	data+=Concept*
-	//	usecases+=UseCase+;
-	public RequirementsUseCaseModelElements getRequirementsUseCaseModelAccess() {
-		return pRequirementsUseCaseModel;
+	//Domainmodel:
+	//	elements+=AbstractElement*;
+	public DomainmodelElements getDomainmodelAccess() {
+		return pDomainmodel;
 	}
 	
-	public ParserRule getRequirementsUseCaseModelRule() {
-		return getRequirementsUseCaseModelAccess().getRule();
+	public ParserRule getDomainmodelRule() {
+		return getDomainmodelAccess().getRule();
 	}
 	
-	//Actor:
-	//	"Actor:" name=ID description=STRING?;
-	public ActorElements getActorAccess() {
-		return pActor;
+	//PackageDeclaration:
+	//	'package' name=QualifiedName '{'
+	//	elements+=AbstractElement*
+	//	'}';
+	public PackageDeclarationElements getPackageDeclarationAccess() {
+		return pPackageDeclaration;
 	}
 	
-	public ParserRule getActorRule() {
-		return getActorAccess().getRule();
+	public ParserRule getPackageDeclarationRule() {
+		return getPackageDeclarationAccess().getRule();
 	}
 	
-	//Concept:
-	//	"DataConcept:" name=ID conceptDescription=STRING?;
-	public ConceptElements getConceptAccess() {
-		return pConcept;
+	//AbstractElement:
+	//	PackageDeclaration | Type | Import;
+	public AbstractElementElements getAbstractElementAccess() {
+		return pAbstractElement;
 	}
 	
-	public ParserRule getConceptRule() {
-		return getConceptAccess().getRule();
+	public ParserRule getAbstractElementRule() {
+		return getAbstractElementAccess().getRule();
 	}
 	
-	//UseCase:
-	//	"UseCase:" name=ID useCaseName=STRING?
-	//	actors+=[Actor]*
-	//	concepts+=[Concept]*
-	//	useCasesFlow+=UseCaseFlow*;
-	public UseCaseElements getUseCaseAccess() {
-		return pUseCase;
+	//QualifiedName:
+	//	ID ('.' ID)*;
+	public QualifiedNameElements getQualifiedNameAccess() {
+		return pQualifiedName;
 	}
 	
-	public ParserRule getUseCaseRule() {
-		return getUseCaseAccess().getRule();
+	public ParserRule getQualifiedNameRule() {
+		return getQualifiedNameAccess().getRule();
 	}
 	
-	//UseCaseFlow:
-	//	"UseCaseFlow:"
-	//	completeActionsBlock+=CompleteActionBlock*;
-	public UseCaseFlowElements getUseCaseFlowAccess() {
-		return pUseCaseFlow;
+	//Import:
+	//	'import' importedNamespace=QualifiedNameWithWildcard;
+	public ImportElements getImportAccess() {
+		return pImport;
 	}
 	
-	public ParserRule getUseCaseFlowRule() {
-		return getUseCaseFlowAccess().getRule();
+	public ParserRule getImportRule() {
+		return getImportAccess().getRule();
 	}
 	
-	//CompleteActionBlock:
-	//	"CompleteActionBlock:"
-	//	userActionsBlock+=UserActionBlock*
-	//	systemActionsBlock+=SystemActionBlock*;
-	public CompleteActionBlockElements getCompleteActionBlockAccess() {
-		return pCompleteActionBlock;
+	//QualifiedNameWithWildcard:
+	//	QualifiedName '.*'?;
+	public QualifiedNameWithWildcardElements getQualifiedNameWithWildcardAccess() {
+		return pQualifiedNameWithWildcard;
 	}
 	
-	public ParserRule getCompleteActionBlockRule() {
-		return getCompleteActionBlockAccess().getRule();
+	public ParserRule getQualifiedNameWithWildcardRule() {
+		return getQualifiedNameWithWildcardAccess().getRule();
 	}
 	
-	//UserActionBlock:
-	//	"UserActionBlock";
-	public UserActionBlockElements getUserActionBlockAccess() {
-		return pUserActionBlock;
+	//Type:
+	//	DataType | Entity;
+	public TypeElements getTypeAccess() {
+		return pType;
 	}
 	
-	public ParserRule getUserActionBlockRule() {
-		return getUserActionBlockAccess().getRule();
+	public ParserRule getTypeRule() {
+		return getTypeAccess().getRule();
 	}
 	
-	//SystemActionBlock:
-	//	"SystemActionBlock:" name=ID description=STRING?;
-	public SystemActionBlockElements getSystemActionBlockAccess() {
-		return pSystemActionBlock;
+	//DataType:
+	//	'datatype' name=ID;
+	public DataTypeElements getDataTypeAccess() {
+		return pDataType;
 	}
 	
-	public ParserRule getSystemActionBlockRule() {
-		return getSystemActionBlockAccess().getRule();
+	public ParserRule getDataTypeRule() {
+		return getDataTypeAccess().getRule();
+	}
+	
+	//Entity:
+	//	'entity' name=ID ('extends' superType=[Entity|QualifiedName])? '{'
+	//	features+=Feature*
+	//	'}';
+	public EntityElements getEntityAccess() {
+		return pEntity;
+	}
+	
+	public ParserRule getEntityRule() {
+		return getEntityAccess().getRule();
+	}
+	
+	//Feature:
+	//	many?='many'? name=ID ':' type=[Type|QualifiedName];
+	public FeatureElements getFeatureAccess() {
+		return pFeature;
+	}
+	
+	public ParserRule getFeatureRule() {
+		return getFeatureAccess().getRule();
 	}
 	
 	//terminal ID:

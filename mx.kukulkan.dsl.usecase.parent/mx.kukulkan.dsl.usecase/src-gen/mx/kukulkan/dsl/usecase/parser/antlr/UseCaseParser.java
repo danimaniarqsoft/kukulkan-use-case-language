@@ -27,7 +27,7 @@ public class UseCaseParser extends AbstractAntlrParser {
 
 	@Override 
 	protected String getDefaultRuleName() {
-		return "RequirementsUseCaseModel";
+		return "Domainmodel";
 	}
 
 	public UseCaseGrammarAccess getGrammarAccess() {

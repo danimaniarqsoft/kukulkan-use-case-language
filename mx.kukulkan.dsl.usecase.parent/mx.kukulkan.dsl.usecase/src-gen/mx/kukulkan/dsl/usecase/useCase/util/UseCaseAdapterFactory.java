@@ -76,39 +76,44 @@ public class UseCaseAdapterFactory extends AdapterFactoryImpl
     new UseCaseSwitch<Adapter>()
     {
       @Override
-      public Adapter caseRequirementsUseCaseModel(RequirementsUseCaseModel object)
+      public Adapter caseDomainmodel(Domainmodel object)
       {
-        return createRequirementsUseCaseModelAdapter();
+        return createDomainmodelAdapter();
       }
       @Override
-      public Adapter caseActor(Actor object)
+      public Adapter casePackageDeclaration(PackageDeclaration object)
       {
-        return createActorAdapter();
+        return createPackageDeclarationAdapter();
       }
       @Override
-      public Adapter caseConcept(Concept object)
+      public Adapter caseAbstractElement(AbstractElement object)
       {
-        return createConceptAdapter();
+        return createAbstractElementAdapter();
       }
       @Override
-      public Adapter caseUseCase(UseCase object)
+      public Adapter caseImport(Import object)
       {
-        return createUseCaseAdapter();
+        return createImportAdapter();
       }
       @Override
-      public Adapter caseUseCaseFlow(UseCaseFlow object)
+      public Adapter caseType(Type object)
       {
-        return createUseCaseFlowAdapter();
+        return createTypeAdapter();
       }
       @Override
-      public Adapter caseCompleteActionBlock(CompleteActionBlock object)
+      public Adapter caseDataType(DataType object)
       {
-        return createCompleteActionBlockAdapter();
+        return createDataTypeAdapter();
       }
       @Override
-      public Adapter caseSystemActionBlock(SystemActionBlock object)
+      public Adapter caseEntity(Entity object)
       {
-        return createSystemActionBlockAdapter();
+        return createEntityAdapter();
+      }
+      @Override
+      public Adapter caseFeature(Feature object)
+      {
+        return createFeatureAdapter();
       }
       @Override
       public Adapter defaultCase(EObject object)
@@ -133,106 +138,121 @@ public class UseCaseAdapterFactory extends AdapterFactoryImpl
 
 
   /**
-   * Creates a new adapter for an object of class '{@link mx.kukulkan.dsl.usecase.useCase.RequirementsUseCaseModel <em>Requirements Use Case Model</em>}'.
+   * Creates a new adapter for an object of class '{@link mx.kukulkan.dsl.usecase.useCase.Domainmodel <em>Domainmodel</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see mx.kukulkan.dsl.usecase.useCase.RequirementsUseCaseModel
+   * @see mx.kukulkan.dsl.usecase.useCase.Domainmodel
    * @generated
    */
-  public Adapter createRequirementsUseCaseModelAdapter()
+  public Adapter createDomainmodelAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link mx.kukulkan.dsl.usecase.useCase.Actor <em>Actor</em>}'.
+   * Creates a new adapter for an object of class '{@link mx.kukulkan.dsl.usecase.useCase.PackageDeclaration <em>Package Declaration</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see mx.kukulkan.dsl.usecase.useCase.Actor
+   * @see mx.kukulkan.dsl.usecase.useCase.PackageDeclaration
    * @generated
    */
-  public Adapter createActorAdapter()
+  public Adapter createPackageDeclarationAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link mx.kukulkan.dsl.usecase.useCase.Concept <em>Concept</em>}'.
+   * Creates a new adapter for an object of class '{@link mx.kukulkan.dsl.usecase.useCase.AbstractElement <em>Abstract Element</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see mx.kukulkan.dsl.usecase.useCase.Concept
+   * @see mx.kukulkan.dsl.usecase.useCase.AbstractElement
    * @generated
    */
-  public Adapter createConceptAdapter()
+  public Adapter createAbstractElementAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link mx.kukulkan.dsl.usecase.useCase.UseCase <em>Use Case</em>}'.
+   * Creates a new adapter for an object of class '{@link mx.kukulkan.dsl.usecase.useCase.Import <em>Import</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see mx.kukulkan.dsl.usecase.useCase.UseCase
+   * @see mx.kukulkan.dsl.usecase.useCase.Import
    * @generated
    */
-  public Adapter createUseCaseAdapter()
+  public Adapter createImportAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link mx.kukulkan.dsl.usecase.useCase.UseCaseFlow <em>Flow</em>}'.
+   * Creates a new adapter for an object of class '{@link mx.kukulkan.dsl.usecase.useCase.Type <em>Type</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see mx.kukulkan.dsl.usecase.useCase.UseCaseFlow
+   * @see mx.kukulkan.dsl.usecase.useCase.Type
    * @generated
    */
-  public Adapter createUseCaseFlowAdapter()
+  public Adapter createTypeAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link mx.kukulkan.dsl.usecase.useCase.CompleteActionBlock <em>Complete Action Block</em>}'.
+   * Creates a new adapter for an object of class '{@link mx.kukulkan.dsl.usecase.useCase.DataType <em>Data Type</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see mx.kukulkan.dsl.usecase.useCase.CompleteActionBlock
+   * @see mx.kukulkan.dsl.usecase.useCase.DataType
    * @generated
    */
-  public Adapter createCompleteActionBlockAdapter()
+  public Adapter createDataTypeAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link mx.kukulkan.dsl.usecase.useCase.SystemActionBlock <em>System Action Block</em>}'.
+   * Creates a new adapter for an object of class '{@link mx.kukulkan.dsl.usecase.useCase.Entity <em>Entity</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see mx.kukulkan.dsl.usecase.useCase.SystemActionBlock
+   * @see mx.kukulkan.dsl.usecase.useCase.Entity
    * @generated
    */
-  public Adapter createSystemActionBlockAdapter()
+  public Adapter createEntityAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link mx.kukulkan.dsl.usecase.useCase.Feature <em>Feature</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see mx.kukulkan.dsl.usecase.useCase.Feature
+   * @generated
+   */
+  public Adapter createFeatureAdapter()
   {
     return null;
   }

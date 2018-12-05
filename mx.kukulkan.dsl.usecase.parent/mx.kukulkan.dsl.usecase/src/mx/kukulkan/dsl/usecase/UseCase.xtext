@@ -2,34 +2,36 @@ grammar mx.kukulkan.dsl.usecase.UseCase with org.eclipse.xtext.common.Terminals
 
 generate useCase "http://www.kukulkan.mx/dsl/usecase/UseCase"
 
-RequirementsUseCaseModel:
-	(actors+=Actor)+
-	(data+=Concept)*
-	(usecases+=UseCase)+;
-
-Actor:
-	"Actor:" name=ID description=STRING?;
-
-Concept:
-	"DataConcept:" name=ID conceptDescription=STRING?;
-
-UseCase:
-	"UseCase:" name=ID useCaseName=STRING?
-	(actors+=[Actor])*
-	(concepts+=[Concept])*
-	(useCasesFlow+=UseCaseFlow)*;
-
-UseCaseFlow:
-	"UseCaseFlow:"
-	(completeActionsBlock+=CompleteActionBlock)*;
-
-CompleteActionBlock:
-	"CompleteActionBlock:"
-	(userActionsBlock+=UserActionBlock)*
-	(systemActionsBlock+=SystemActionBlock)*;
-
-UserActionBlock:
-	"UserActionBlock";
-
-SystemActionBlock:
-	"SystemActionBlock:" name=ID description=STRING?;
+Domainmodel:
+    (elements+=AbstractElement)*;
+ 
+PackageDeclaration:
+    'package' name=QualifiedName '{'
+        (elements+=AbstractElement)*
+    '}';
+ 
+AbstractElement:
+    PackageDeclaration | Type | Import;
+ 
+QualifiedName:
+    ID ('.' ID)*;
+ 
+Import:
+    'import' importedNamespace=QualifiedNameWithWildcard;
+  
+QualifiedNameWithWildcard:
+    QualifiedName '.*'?;
+  
+Type:
+    DataType | Entity;
+  
+DataType:
+    'datatype' name=ID;
+ 
+Entity:
+    'entity' name=ID ('extends' superType=[Entity|QualifiedName])? '{'
+        (features+=Feature)*
+    '}';
+ 
+Feature:
+    (many?='many')? name=ID ':' type=[Type|QualifiedName];

@@ -4,7 +4,7 @@
 package mx.kukulkan.dsl.usecase.tests
 
 import com.google.inject.Inject
-import mx.kukulkan.dsl.usecase.useCase.RequirementsUseCaseModel
+import mx.kukulkan.dsl.usecase.useCase.Domainmodel
 import org.eclipse.xtext.testing.InjectWith
 import org.eclipse.xtext.testing.extensions.InjectionExtension
 import org.eclipse.xtext.testing.util.ParseHelper
@@ -16,7 +16,7 @@ import org.junit.jupiter.api.^extension.ExtendWith
 @InjectWith(UseCaseInjectorProvider)
 class UseCaseParsingTest {
 	@Inject
-	ParseHelper<RequirementsUseCaseModel> parseHelper
+	ParseHelper<Domainmodel> parseHelper
 	
 	@Test
 	def void loadModel() {

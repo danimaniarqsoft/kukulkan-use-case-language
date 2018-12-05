@@ -65,13 +65,14 @@ public class UseCaseFactoryImpl extends EFactoryImpl implements UseCaseFactory
   {
     switch (eClass.getClassifierID())
     {
-      case UseCasePackage.REQUIREMENTS_USE_CASE_MODEL: return createRequirementsUseCaseModel();
-      case UseCasePackage.ACTOR: return createActor();
-      case UseCasePackage.CONCEPT: return createConcept();
-      case UseCasePackage.USE_CASE: return createUseCase();
-      case UseCasePackage.USE_CASE_FLOW: return createUseCaseFlow();
-      case UseCasePackage.COMPLETE_ACTION_BLOCK: return createCompleteActionBlock();
-      case UseCasePackage.SYSTEM_ACTION_BLOCK: return createSystemActionBlock();
+      case UseCasePackage.DOMAINMODEL: return createDomainmodel();
+      case UseCasePackage.PACKAGE_DECLARATION: return createPackageDeclaration();
+      case UseCasePackage.ABSTRACT_ELEMENT: return createAbstractElement();
+      case UseCasePackage.IMPORT: return createImport();
+      case UseCasePackage.TYPE: return createType();
+      case UseCasePackage.DATA_TYPE: return createDataType();
+      case UseCasePackage.ENTITY: return createEntity();
+      case UseCasePackage.FEATURE: return createFeature();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
@@ -82,10 +83,10 @@ public class UseCaseFactoryImpl extends EFactoryImpl implements UseCaseFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public RequirementsUseCaseModel createRequirementsUseCaseModel()
+  public Domainmodel createDomainmodel()
   {
-    RequirementsUseCaseModelImpl requirementsUseCaseModel = new RequirementsUseCaseModelImpl();
-    return requirementsUseCaseModel;
+    DomainmodelImpl domainmodel = new DomainmodelImpl();
+    return domainmodel;
   }
 
   /**
@@ -93,10 +94,10 @@ public class UseCaseFactoryImpl extends EFactoryImpl implements UseCaseFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public Actor createActor()
+  public PackageDeclaration createPackageDeclaration()
   {
-    ActorImpl actor = new ActorImpl();
-    return actor;
+    PackageDeclarationImpl packageDeclaration = new PackageDeclarationImpl();
+    return packageDeclaration;
   }
 
   /**
@@ -104,10 +105,10 @@ public class UseCaseFactoryImpl extends EFactoryImpl implements UseCaseFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public Concept createConcept()
+  public AbstractElement createAbstractElement()
   {
-    ConceptImpl concept = new ConceptImpl();
-    return concept;
+    AbstractElementImpl abstractElement = new AbstractElementImpl();
+    return abstractElement;
   }
 
   /**
@@ -115,10 +116,10 @@ public class UseCaseFactoryImpl extends EFactoryImpl implements UseCaseFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public UseCase createUseCase()
+  public Import createImport()
   {
-    UseCaseImpl useCase = new UseCaseImpl();
-    return useCase;
+    ImportImpl import_ = new ImportImpl();
+    return import_;
   }
 
   /**
@@ -126,10 +127,10 @@ public class UseCaseFactoryImpl extends EFactoryImpl implements UseCaseFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public UseCaseFlow createUseCaseFlow()
+  public Type createType()
   {
-    UseCaseFlowImpl useCaseFlow = new UseCaseFlowImpl();
-    return useCaseFlow;
+    TypeImpl type = new TypeImpl();
+    return type;
   }
 
   /**
@@ -137,10 +138,10 @@ public class UseCaseFactoryImpl extends EFactoryImpl implements UseCaseFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public CompleteActionBlock createCompleteActionBlock()
+  public DataType createDataType()
   {
-    CompleteActionBlockImpl completeActionBlock = new CompleteActionBlockImpl();
-    return completeActionBlock;
+    DataTypeImpl dataType = new DataTypeImpl();
+    return dataType;
   }
 
   /**
@@ -148,10 +149,21 @@ public class UseCaseFactoryImpl extends EFactoryImpl implements UseCaseFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public SystemActionBlock createSystemActionBlock()
+  public Entity createEntity()
   {
-    SystemActionBlockImpl systemActionBlock = new SystemActionBlockImpl();
-    return systemActionBlock;
+    EntityImpl entity = new EntityImpl();
+    return entity;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Feature createFeature()
+  {
+    FeatureImpl feature = new FeatureImpl();
+    return feature;
   }
 
   /**

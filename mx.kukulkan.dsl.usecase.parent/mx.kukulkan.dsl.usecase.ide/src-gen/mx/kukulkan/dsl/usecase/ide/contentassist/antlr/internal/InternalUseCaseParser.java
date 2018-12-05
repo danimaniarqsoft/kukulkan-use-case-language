@@ -22,23 +22,27 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalUseCaseParser extends AbstractInternalContentAssistParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_STRING", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'UserActionBlock'", "'Actor:'", "'DataConcept:'", "'UseCase:'", "'UseCaseFlow:'", "'CompleteActionBlock:'", "'SystemActionBlock:'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_INT", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'package'", "'{'", "'}'", "'.'", "'import'", "'.*'", "'datatype'", "'entity'", "'extends'", "':'", "'many'"
     };
-    public static final int RULE_ID=4;
-    public static final int RULE_WS=9;
-    public static final int RULE_STRING=5;
-    public static final int RULE_ANY_OTHER=10;
+    public static final int RULE_STRING=6;
     public static final int RULE_SL_COMMENT=8;
+    public static final int T__19=19;
     public static final int T__15=15;
     public static final int T__16=16;
     public static final int T__17=17;
-    public static final int RULE_INT=6;
+    public static final int T__18=18;
     public static final int T__11=11;
-    public static final int RULE_ML_COMMENT=7;
     public static final int T__12=12;
     public static final int T__13=13;
     public static final int T__14=14;
     public static final int EOF=-1;
+    public static final int RULE_ID=4;
+    public static final int RULE_WS=9;
+    public static final int RULE_ANY_OTHER=10;
+    public static final int RULE_INT=5;
+    public static final int RULE_ML_COMMENT=7;
+    public static final int T__20=20;
+    public static final int T__21=21;
 
     // delegates
     // delegators
@@ -75,20 +79,20 @@ public class InternalUseCaseParser extends AbstractInternalContentAssistParser {
 
 
 
-    // $ANTLR start "entryRuleRequirementsUseCaseModel"
-    // InternalUseCase.g:53:1: entryRuleRequirementsUseCaseModel : ruleRequirementsUseCaseModel EOF ;
-    public final void entryRuleRequirementsUseCaseModel() throws RecognitionException {
+    // $ANTLR start "entryRuleDomainmodel"
+    // InternalUseCase.g:53:1: entryRuleDomainmodel : ruleDomainmodel EOF ;
+    public final void entryRuleDomainmodel() throws RecognitionException {
         try {
-            // InternalUseCase.g:54:1: ( ruleRequirementsUseCaseModel EOF )
-            // InternalUseCase.g:55:1: ruleRequirementsUseCaseModel EOF
+            // InternalUseCase.g:54:1: ( ruleDomainmodel EOF )
+            // InternalUseCase.g:55:1: ruleDomainmodel EOF
             {
-             before(grammarAccess.getRequirementsUseCaseModelRule()); 
+             before(grammarAccess.getDomainmodelRule()); 
             pushFollow(FOLLOW_1);
-            ruleRequirementsUseCaseModel();
+            ruleDomainmodel();
 
             state._fsp--;
 
-             after(grammarAccess.getRequirementsUseCaseModelRule()); 
+             after(grammarAccess.getDomainmodelRule()); 
             match(input,EOF,FOLLOW_2); 
 
             }
@@ -102,676 +106,40 @@ public class InternalUseCaseParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "entryRuleRequirementsUseCaseModel"
+    // $ANTLR end "entryRuleDomainmodel"
 
 
-    // $ANTLR start "ruleRequirementsUseCaseModel"
-    // InternalUseCase.g:62:1: ruleRequirementsUseCaseModel : ( ( rule__RequirementsUseCaseModel__Group__0 ) ) ;
-    public final void ruleRequirementsUseCaseModel() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalUseCase.g:66:2: ( ( ( rule__RequirementsUseCaseModel__Group__0 ) ) )
-            // InternalUseCase.g:67:2: ( ( rule__RequirementsUseCaseModel__Group__0 ) )
-            {
-            // InternalUseCase.g:67:2: ( ( rule__RequirementsUseCaseModel__Group__0 ) )
-            // InternalUseCase.g:68:3: ( rule__RequirementsUseCaseModel__Group__0 )
-            {
-             before(grammarAccess.getRequirementsUseCaseModelAccess().getGroup()); 
-            // InternalUseCase.g:69:3: ( rule__RequirementsUseCaseModel__Group__0 )
-            // InternalUseCase.g:69:4: rule__RequirementsUseCaseModel__Group__0
-            {
-            pushFollow(FOLLOW_2);
-            rule__RequirementsUseCaseModel__Group__0();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getRequirementsUseCaseModelAccess().getGroup()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "ruleRequirementsUseCaseModel"
-
-
-    // $ANTLR start "entryRuleActor"
-    // InternalUseCase.g:78:1: entryRuleActor : ruleActor EOF ;
-    public final void entryRuleActor() throws RecognitionException {
-        try {
-            // InternalUseCase.g:79:1: ( ruleActor EOF )
-            // InternalUseCase.g:80:1: ruleActor EOF
-            {
-             before(grammarAccess.getActorRule()); 
-            pushFollow(FOLLOW_1);
-            ruleActor();
-
-            state._fsp--;
-
-             after(grammarAccess.getActorRule()); 
-            match(input,EOF,FOLLOW_2); 
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-        }
-        return ;
-    }
-    // $ANTLR end "entryRuleActor"
-
-
-    // $ANTLR start "ruleActor"
-    // InternalUseCase.g:87:1: ruleActor : ( ( rule__Actor__Group__0 ) ) ;
-    public final void ruleActor() throws RecognitionException {
+    // $ANTLR start "ruleDomainmodel"
+    // InternalUseCase.g:62:1: ruleDomainmodel : ( ( rule__Domainmodel__ElementsAssignment )* ) ;
+    public final void ruleDomainmodel() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalUseCase.g:91:2: ( ( ( rule__Actor__Group__0 ) ) )
-            // InternalUseCase.g:92:2: ( ( rule__Actor__Group__0 ) )
+            // InternalUseCase.g:66:2: ( ( ( rule__Domainmodel__ElementsAssignment )* ) )
+            // InternalUseCase.g:67:2: ( ( rule__Domainmodel__ElementsAssignment )* )
             {
-            // InternalUseCase.g:92:2: ( ( rule__Actor__Group__0 ) )
-            // InternalUseCase.g:93:3: ( rule__Actor__Group__0 )
+            // InternalUseCase.g:67:2: ( ( rule__Domainmodel__ElementsAssignment )* )
+            // InternalUseCase.g:68:3: ( rule__Domainmodel__ElementsAssignment )*
             {
-             before(grammarAccess.getActorAccess().getGroup()); 
-            // InternalUseCase.g:94:3: ( rule__Actor__Group__0 )
-            // InternalUseCase.g:94:4: rule__Actor__Group__0
-            {
-            pushFollow(FOLLOW_2);
-            rule__Actor__Group__0();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getActorAccess().getGroup()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "ruleActor"
-
-
-    // $ANTLR start "entryRuleConcept"
-    // InternalUseCase.g:103:1: entryRuleConcept : ruleConcept EOF ;
-    public final void entryRuleConcept() throws RecognitionException {
-        try {
-            // InternalUseCase.g:104:1: ( ruleConcept EOF )
-            // InternalUseCase.g:105:1: ruleConcept EOF
-            {
-             before(grammarAccess.getConceptRule()); 
-            pushFollow(FOLLOW_1);
-            ruleConcept();
-
-            state._fsp--;
-
-             after(grammarAccess.getConceptRule()); 
-            match(input,EOF,FOLLOW_2); 
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-        }
-        return ;
-    }
-    // $ANTLR end "entryRuleConcept"
-
-
-    // $ANTLR start "ruleConcept"
-    // InternalUseCase.g:112:1: ruleConcept : ( ( rule__Concept__Group__0 ) ) ;
-    public final void ruleConcept() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalUseCase.g:116:2: ( ( ( rule__Concept__Group__0 ) ) )
-            // InternalUseCase.g:117:2: ( ( rule__Concept__Group__0 ) )
-            {
-            // InternalUseCase.g:117:2: ( ( rule__Concept__Group__0 ) )
-            // InternalUseCase.g:118:3: ( rule__Concept__Group__0 )
-            {
-             before(grammarAccess.getConceptAccess().getGroup()); 
-            // InternalUseCase.g:119:3: ( rule__Concept__Group__0 )
-            // InternalUseCase.g:119:4: rule__Concept__Group__0
-            {
-            pushFollow(FOLLOW_2);
-            rule__Concept__Group__0();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getConceptAccess().getGroup()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "ruleConcept"
-
-
-    // $ANTLR start "entryRuleUseCase"
-    // InternalUseCase.g:128:1: entryRuleUseCase : ruleUseCase EOF ;
-    public final void entryRuleUseCase() throws RecognitionException {
-        try {
-            // InternalUseCase.g:129:1: ( ruleUseCase EOF )
-            // InternalUseCase.g:130:1: ruleUseCase EOF
-            {
-             before(grammarAccess.getUseCaseRule()); 
-            pushFollow(FOLLOW_1);
-            ruleUseCase();
-
-            state._fsp--;
-
-             after(grammarAccess.getUseCaseRule()); 
-            match(input,EOF,FOLLOW_2); 
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-        }
-        return ;
-    }
-    // $ANTLR end "entryRuleUseCase"
-
-
-    // $ANTLR start "ruleUseCase"
-    // InternalUseCase.g:137:1: ruleUseCase : ( ( rule__UseCase__Group__0 ) ) ;
-    public final void ruleUseCase() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalUseCase.g:141:2: ( ( ( rule__UseCase__Group__0 ) ) )
-            // InternalUseCase.g:142:2: ( ( rule__UseCase__Group__0 ) )
-            {
-            // InternalUseCase.g:142:2: ( ( rule__UseCase__Group__0 ) )
-            // InternalUseCase.g:143:3: ( rule__UseCase__Group__0 )
-            {
-             before(grammarAccess.getUseCaseAccess().getGroup()); 
-            // InternalUseCase.g:144:3: ( rule__UseCase__Group__0 )
-            // InternalUseCase.g:144:4: rule__UseCase__Group__0
-            {
-            pushFollow(FOLLOW_2);
-            rule__UseCase__Group__0();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getUseCaseAccess().getGroup()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "ruleUseCase"
-
-
-    // $ANTLR start "entryRuleUseCaseFlow"
-    // InternalUseCase.g:153:1: entryRuleUseCaseFlow : ruleUseCaseFlow EOF ;
-    public final void entryRuleUseCaseFlow() throws RecognitionException {
-        try {
-            // InternalUseCase.g:154:1: ( ruleUseCaseFlow EOF )
-            // InternalUseCase.g:155:1: ruleUseCaseFlow EOF
-            {
-             before(grammarAccess.getUseCaseFlowRule()); 
-            pushFollow(FOLLOW_1);
-            ruleUseCaseFlow();
-
-            state._fsp--;
-
-             after(grammarAccess.getUseCaseFlowRule()); 
-            match(input,EOF,FOLLOW_2); 
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-        }
-        return ;
-    }
-    // $ANTLR end "entryRuleUseCaseFlow"
-
-
-    // $ANTLR start "ruleUseCaseFlow"
-    // InternalUseCase.g:162:1: ruleUseCaseFlow : ( ( rule__UseCaseFlow__Group__0 ) ) ;
-    public final void ruleUseCaseFlow() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalUseCase.g:166:2: ( ( ( rule__UseCaseFlow__Group__0 ) ) )
-            // InternalUseCase.g:167:2: ( ( rule__UseCaseFlow__Group__0 ) )
-            {
-            // InternalUseCase.g:167:2: ( ( rule__UseCaseFlow__Group__0 ) )
-            // InternalUseCase.g:168:3: ( rule__UseCaseFlow__Group__0 )
-            {
-             before(grammarAccess.getUseCaseFlowAccess().getGroup()); 
-            // InternalUseCase.g:169:3: ( rule__UseCaseFlow__Group__0 )
-            // InternalUseCase.g:169:4: rule__UseCaseFlow__Group__0
-            {
-            pushFollow(FOLLOW_2);
-            rule__UseCaseFlow__Group__0();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getUseCaseFlowAccess().getGroup()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "ruleUseCaseFlow"
-
-
-    // $ANTLR start "entryRuleCompleteActionBlock"
-    // InternalUseCase.g:178:1: entryRuleCompleteActionBlock : ruleCompleteActionBlock EOF ;
-    public final void entryRuleCompleteActionBlock() throws RecognitionException {
-        try {
-            // InternalUseCase.g:179:1: ( ruleCompleteActionBlock EOF )
-            // InternalUseCase.g:180:1: ruleCompleteActionBlock EOF
-            {
-             before(grammarAccess.getCompleteActionBlockRule()); 
-            pushFollow(FOLLOW_1);
-            ruleCompleteActionBlock();
-
-            state._fsp--;
-
-             after(grammarAccess.getCompleteActionBlockRule()); 
-            match(input,EOF,FOLLOW_2); 
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-        }
-        return ;
-    }
-    // $ANTLR end "entryRuleCompleteActionBlock"
-
-
-    // $ANTLR start "ruleCompleteActionBlock"
-    // InternalUseCase.g:187:1: ruleCompleteActionBlock : ( ( rule__CompleteActionBlock__Group__0 ) ) ;
-    public final void ruleCompleteActionBlock() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalUseCase.g:191:2: ( ( ( rule__CompleteActionBlock__Group__0 ) ) )
-            // InternalUseCase.g:192:2: ( ( rule__CompleteActionBlock__Group__0 ) )
-            {
-            // InternalUseCase.g:192:2: ( ( rule__CompleteActionBlock__Group__0 ) )
-            // InternalUseCase.g:193:3: ( rule__CompleteActionBlock__Group__0 )
-            {
-             before(grammarAccess.getCompleteActionBlockAccess().getGroup()); 
-            // InternalUseCase.g:194:3: ( rule__CompleteActionBlock__Group__0 )
-            // InternalUseCase.g:194:4: rule__CompleteActionBlock__Group__0
-            {
-            pushFollow(FOLLOW_2);
-            rule__CompleteActionBlock__Group__0();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getCompleteActionBlockAccess().getGroup()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "ruleCompleteActionBlock"
-
-
-    // $ANTLR start "entryRuleUserActionBlock"
-    // InternalUseCase.g:203:1: entryRuleUserActionBlock : ruleUserActionBlock EOF ;
-    public final void entryRuleUserActionBlock() throws RecognitionException {
-        try {
-            // InternalUseCase.g:204:1: ( ruleUserActionBlock EOF )
-            // InternalUseCase.g:205:1: ruleUserActionBlock EOF
-            {
-             before(grammarAccess.getUserActionBlockRule()); 
-            pushFollow(FOLLOW_1);
-            ruleUserActionBlock();
-
-            state._fsp--;
-
-             after(grammarAccess.getUserActionBlockRule()); 
-            match(input,EOF,FOLLOW_2); 
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-        }
-        return ;
-    }
-    // $ANTLR end "entryRuleUserActionBlock"
-
-
-    // $ANTLR start "ruleUserActionBlock"
-    // InternalUseCase.g:212:1: ruleUserActionBlock : ( 'UserActionBlock' ) ;
-    public final void ruleUserActionBlock() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalUseCase.g:216:2: ( ( 'UserActionBlock' ) )
-            // InternalUseCase.g:217:2: ( 'UserActionBlock' )
-            {
-            // InternalUseCase.g:217:2: ( 'UserActionBlock' )
-            // InternalUseCase.g:218:3: 'UserActionBlock'
-            {
-             before(grammarAccess.getUserActionBlockAccess().getUserActionBlockKeyword()); 
-            match(input,11,FOLLOW_2); 
-             after(grammarAccess.getUserActionBlockAccess().getUserActionBlockKeyword()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "ruleUserActionBlock"
-
-
-    // $ANTLR start "entryRuleSystemActionBlock"
-    // InternalUseCase.g:228:1: entryRuleSystemActionBlock : ruleSystemActionBlock EOF ;
-    public final void entryRuleSystemActionBlock() throws RecognitionException {
-        try {
-            // InternalUseCase.g:229:1: ( ruleSystemActionBlock EOF )
-            // InternalUseCase.g:230:1: ruleSystemActionBlock EOF
-            {
-             before(grammarAccess.getSystemActionBlockRule()); 
-            pushFollow(FOLLOW_1);
-            ruleSystemActionBlock();
-
-            state._fsp--;
-
-             after(grammarAccess.getSystemActionBlockRule()); 
-            match(input,EOF,FOLLOW_2); 
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-        }
-        return ;
-    }
-    // $ANTLR end "entryRuleSystemActionBlock"
-
-
-    // $ANTLR start "ruleSystemActionBlock"
-    // InternalUseCase.g:237:1: ruleSystemActionBlock : ( ( rule__SystemActionBlock__Group__0 ) ) ;
-    public final void ruleSystemActionBlock() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalUseCase.g:241:2: ( ( ( rule__SystemActionBlock__Group__0 ) ) )
-            // InternalUseCase.g:242:2: ( ( rule__SystemActionBlock__Group__0 ) )
-            {
-            // InternalUseCase.g:242:2: ( ( rule__SystemActionBlock__Group__0 ) )
-            // InternalUseCase.g:243:3: ( rule__SystemActionBlock__Group__0 )
-            {
-             before(grammarAccess.getSystemActionBlockAccess().getGroup()); 
-            // InternalUseCase.g:244:3: ( rule__SystemActionBlock__Group__0 )
-            // InternalUseCase.g:244:4: rule__SystemActionBlock__Group__0
-            {
-            pushFollow(FOLLOW_2);
-            rule__SystemActionBlock__Group__0();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getSystemActionBlockAccess().getGroup()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "ruleSystemActionBlock"
-
-
-    // $ANTLR start "rule__RequirementsUseCaseModel__Group__0"
-    // InternalUseCase.g:252:1: rule__RequirementsUseCaseModel__Group__0 : rule__RequirementsUseCaseModel__Group__0__Impl rule__RequirementsUseCaseModel__Group__1 ;
-    public final void rule__RequirementsUseCaseModel__Group__0() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalUseCase.g:256:1: ( rule__RequirementsUseCaseModel__Group__0__Impl rule__RequirementsUseCaseModel__Group__1 )
-            // InternalUseCase.g:257:2: rule__RequirementsUseCaseModel__Group__0__Impl rule__RequirementsUseCaseModel__Group__1
-            {
-            pushFollow(FOLLOW_3);
-            rule__RequirementsUseCaseModel__Group__0__Impl();
-
-            state._fsp--;
-
-            pushFollow(FOLLOW_2);
-            rule__RequirementsUseCaseModel__Group__1();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__RequirementsUseCaseModel__Group__0"
-
-
-    // $ANTLR start "rule__RequirementsUseCaseModel__Group__0__Impl"
-    // InternalUseCase.g:264:1: rule__RequirementsUseCaseModel__Group__0__Impl : ( ( ( rule__RequirementsUseCaseModel__ActorsAssignment_0 ) ) ( ( rule__RequirementsUseCaseModel__ActorsAssignment_0 )* ) ) ;
-    public final void rule__RequirementsUseCaseModel__Group__0__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalUseCase.g:268:1: ( ( ( ( rule__RequirementsUseCaseModel__ActorsAssignment_0 ) ) ( ( rule__RequirementsUseCaseModel__ActorsAssignment_0 )* ) ) )
-            // InternalUseCase.g:269:1: ( ( ( rule__RequirementsUseCaseModel__ActorsAssignment_0 ) ) ( ( rule__RequirementsUseCaseModel__ActorsAssignment_0 )* ) )
-            {
-            // InternalUseCase.g:269:1: ( ( ( rule__RequirementsUseCaseModel__ActorsAssignment_0 ) ) ( ( rule__RequirementsUseCaseModel__ActorsAssignment_0 )* ) )
-            // InternalUseCase.g:270:2: ( ( rule__RequirementsUseCaseModel__ActorsAssignment_0 ) ) ( ( rule__RequirementsUseCaseModel__ActorsAssignment_0 )* )
-            {
-            // InternalUseCase.g:270:2: ( ( rule__RequirementsUseCaseModel__ActorsAssignment_0 ) )
-            // InternalUseCase.g:271:3: ( rule__RequirementsUseCaseModel__ActorsAssignment_0 )
-            {
-             before(grammarAccess.getRequirementsUseCaseModelAccess().getActorsAssignment_0()); 
-            // InternalUseCase.g:272:3: ( rule__RequirementsUseCaseModel__ActorsAssignment_0 )
-            // InternalUseCase.g:272:4: rule__RequirementsUseCaseModel__ActorsAssignment_0
-            {
-            pushFollow(FOLLOW_4);
-            rule__RequirementsUseCaseModel__ActorsAssignment_0();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getRequirementsUseCaseModelAccess().getActorsAssignment_0()); 
-
-            }
-
-            // InternalUseCase.g:275:2: ( ( rule__RequirementsUseCaseModel__ActorsAssignment_0 )* )
-            // InternalUseCase.g:276:3: ( rule__RequirementsUseCaseModel__ActorsAssignment_0 )*
-            {
-             before(grammarAccess.getRequirementsUseCaseModelAccess().getActorsAssignment_0()); 
-            // InternalUseCase.g:277:3: ( rule__RequirementsUseCaseModel__ActorsAssignment_0 )*
+             before(grammarAccess.getDomainmodelAccess().getElementsAssignment()); 
+            // InternalUseCase.g:69:3: ( rule__Domainmodel__ElementsAssignment )*
             loop1:
             do {
                 int alt1=2;
                 int LA1_0 = input.LA(1);
 
-                if ( (LA1_0==12) ) {
+                if ( (LA1_0==11||LA1_0==15||(LA1_0>=17 && LA1_0<=18)) ) {
                     alt1=1;
                 }
 
 
                 switch (alt1) {
             	case 1 :
-            	    // InternalUseCase.g:277:4: rule__RequirementsUseCaseModel__ActorsAssignment_0
+            	    // InternalUseCase.g:69:4: rule__Domainmodel__ElementsAssignment
             	    {
-            	    pushFollow(FOLLOW_4);
-            	    rule__RequirementsUseCaseModel__ActorsAssignment_0();
+            	    pushFollow(FOLLOW_3);
+            	    rule__Domainmodel__ElementsAssignment();
 
             	    state._fsp--;
 
@@ -784,10 +152,7 @@ public class InternalUseCaseParser extends AbstractInternalContentAssistParser {
                 }
             } while (true);
 
-             after(grammarAccess.getRequirementsUseCaseModelAccess().getActorsAssignment_0()); 
-
-            }
-
+             after(grammarAccess.getDomainmodelAccess().getElementsAssignment()); 
 
             }
 
@@ -806,26 +171,906 @@ public class InternalUseCaseParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__RequirementsUseCaseModel__Group__0__Impl"
+    // $ANTLR end "ruleDomainmodel"
 
 
-    // $ANTLR start "rule__RequirementsUseCaseModel__Group__1"
-    // InternalUseCase.g:286:1: rule__RequirementsUseCaseModel__Group__1 : rule__RequirementsUseCaseModel__Group__1__Impl rule__RequirementsUseCaseModel__Group__2 ;
-    public final void rule__RequirementsUseCaseModel__Group__1() throws RecognitionException {
+    // $ANTLR start "entryRulePackageDeclaration"
+    // InternalUseCase.g:78:1: entryRulePackageDeclaration : rulePackageDeclaration EOF ;
+    public final void entryRulePackageDeclaration() throws RecognitionException {
+        try {
+            // InternalUseCase.g:79:1: ( rulePackageDeclaration EOF )
+            // InternalUseCase.g:80:1: rulePackageDeclaration EOF
+            {
+             before(grammarAccess.getPackageDeclarationRule()); 
+            pushFollow(FOLLOW_1);
+            rulePackageDeclaration();
+
+            state._fsp--;
+
+             after(grammarAccess.getPackageDeclarationRule()); 
+            match(input,EOF,FOLLOW_2); 
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+        }
+        return ;
+    }
+    // $ANTLR end "entryRulePackageDeclaration"
+
+
+    // $ANTLR start "rulePackageDeclaration"
+    // InternalUseCase.g:87:1: rulePackageDeclaration : ( ( rule__PackageDeclaration__Group__0 ) ) ;
+    public final void rulePackageDeclaration() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalUseCase.g:290:1: ( rule__RequirementsUseCaseModel__Group__1__Impl rule__RequirementsUseCaseModel__Group__2 )
-            // InternalUseCase.g:291:2: rule__RequirementsUseCaseModel__Group__1__Impl rule__RequirementsUseCaseModel__Group__2
+            // InternalUseCase.g:91:2: ( ( ( rule__PackageDeclaration__Group__0 ) ) )
+            // InternalUseCase.g:92:2: ( ( rule__PackageDeclaration__Group__0 ) )
             {
-            pushFollow(FOLLOW_3);
-            rule__RequirementsUseCaseModel__Group__1__Impl();
+            // InternalUseCase.g:92:2: ( ( rule__PackageDeclaration__Group__0 ) )
+            // InternalUseCase.g:93:3: ( rule__PackageDeclaration__Group__0 )
+            {
+             before(grammarAccess.getPackageDeclarationAccess().getGroup()); 
+            // InternalUseCase.g:94:3: ( rule__PackageDeclaration__Group__0 )
+            // InternalUseCase.g:94:4: rule__PackageDeclaration__Group__0
+            {
+            pushFollow(FOLLOW_2);
+            rule__PackageDeclaration__Group__0();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getPackageDeclarationAccess().getGroup()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rulePackageDeclaration"
+
+
+    // $ANTLR start "entryRuleAbstractElement"
+    // InternalUseCase.g:103:1: entryRuleAbstractElement : ruleAbstractElement EOF ;
+    public final void entryRuleAbstractElement() throws RecognitionException {
+        try {
+            // InternalUseCase.g:104:1: ( ruleAbstractElement EOF )
+            // InternalUseCase.g:105:1: ruleAbstractElement EOF
+            {
+             before(grammarAccess.getAbstractElementRule()); 
+            pushFollow(FOLLOW_1);
+            ruleAbstractElement();
+
+            state._fsp--;
+
+             after(grammarAccess.getAbstractElementRule()); 
+            match(input,EOF,FOLLOW_2); 
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+        }
+        return ;
+    }
+    // $ANTLR end "entryRuleAbstractElement"
+
+
+    // $ANTLR start "ruleAbstractElement"
+    // InternalUseCase.g:112:1: ruleAbstractElement : ( ( rule__AbstractElement__Alternatives ) ) ;
+    public final void ruleAbstractElement() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalUseCase.g:116:2: ( ( ( rule__AbstractElement__Alternatives ) ) )
+            // InternalUseCase.g:117:2: ( ( rule__AbstractElement__Alternatives ) )
+            {
+            // InternalUseCase.g:117:2: ( ( rule__AbstractElement__Alternatives ) )
+            // InternalUseCase.g:118:3: ( rule__AbstractElement__Alternatives )
+            {
+             before(grammarAccess.getAbstractElementAccess().getAlternatives()); 
+            // InternalUseCase.g:119:3: ( rule__AbstractElement__Alternatives )
+            // InternalUseCase.g:119:4: rule__AbstractElement__Alternatives
+            {
+            pushFollow(FOLLOW_2);
+            rule__AbstractElement__Alternatives();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getAbstractElementAccess().getAlternatives()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "ruleAbstractElement"
+
+
+    // $ANTLR start "entryRuleQualifiedName"
+    // InternalUseCase.g:128:1: entryRuleQualifiedName : ruleQualifiedName EOF ;
+    public final void entryRuleQualifiedName() throws RecognitionException {
+        try {
+            // InternalUseCase.g:129:1: ( ruleQualifiedName EOF )
+            // InternalUseCase.g:130:1: ruleQualifiedName EOF
+            {
+             before(grammarAccess.getQualifiedNameRule()); 
+            pushFollow(FOLLOW_1);
+            ruleQualifiedName();
+
+            state._fsp--;
+
+             after(grammarAccess.getQualifiedNameRule()); 
+            match(input,EOF,FOLLOW_2); 
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+        }
+        return ;
+    }
+    // $ANTLR end "entryRuleQualifiedName"
+
+
+    // $ANTLR start "ruleQualifiedName"
+    // InternalUseCase.g:137:1: ruleQualifiedName : ( ( rule__QualifiedName__Group__0 ) ) ;
+    public final void ruleQualifiedName() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalUseCase.g:141:2: ( ( ( rule__QualifiedName__Group__0 ) ) )
+            // InternalUseCase.g:142:2: ( ( rule__QualifiedName__Group__0 ) )
+            {
+            // InternalUseCase.g:142:2: ( ( rule__QualifiedName__Group__0 ) )
+            // InternalUseCase.g:143:3: ( rule__QualifiedName__Group__0 )
+            {
+             before(grammarAccess.getQualifiedNameAccess().getGroup()); 
+            // InternalUseCase.g:144:3: ( rule__QualifiedName__Group__0 )
+            // InternalUseCase.g:144:4: rule__QualifiedName__Group__0
+            {
+            pushFollow(FOLLOW_2);
+            rule__QualifiedName__Group__0();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getQualifiedNameAccess().getGroup()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "ruleQualifiedName"
+
+
+    // $ANTLR start "entryRuleImport"
+    // InternalUseCase.g:153:1: entryRuleImport : ruleImport EOF ;
+    public final void entryRuleImport() throws RecognitionException {
+        try {
+            // InternalUseCase.g:154:1: ( ruleImport EOF )
+            // InternalUseCase.g:155:1: ruleImport EOF
+            {
+             before(grammarAccess.getImportRule()); 
+            pushFollow(FOLLOW_1);
+            ruleImport();
+
+            state._fsp--;
+
+             after(grammarAccess.getImportRule()); 
+            match(input,EOF,FOLLOW_2); 
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+        }
+        return ;
+    }
+    // $ANTLR end "entryRuleImport"
+
+
+    // $ANTLR start "ruleImport"
+    // InternalUseCase.g:162:1: ruleImport : ( ( rule__Import__Group__0 ) ) ;
+    public final void ruleImport() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalUseCase.g:166:2: ( ( ( rule__Import__Group__0 ) ) )
+            // InternalUseCase.g:167:2: ( ( rule__Import__Group__0 ) )
+            {
+            // InternalUseCase.g:167:2: ( ( rule__Import__Group__0 ) )
+            // InternalUseCase.g:168:3: ( rule__Import__Group__0 )
+            {
+             before(grammarAccess.getImportAccess().getGroup()); 
+            // InternalUseCase.g:169:3: ( rule__Import__Group__0 )
+            // InternalUseCase.g:169:4: rule__Import__Group__0
+            {
+            pushFollow(FOLLOW_2);
+            rule__Import__Group__0();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getImportAccess().getGroup()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "ruleImport"
+
+
+    // $ANTLR start "entryRuleQualifiedNameWithWildcard"
+    // InternalUseCase.g:178:1: entryRuleQualifiedNameWithWildcard : ruleQualifiedNameWithWildcard EOF ;
+    public final void entryRuleQualifiedNameWithWildcard() throws RecognitionException {
+        try {
+            // InternalUseCase.g:179:1: ( ruleQualifiedNameWithWildcard EOF )
+            // InternalUseCase.g:180:1: ruleQualifiedNameWithWildcard EOF
+            {
+             before(grammarAccess.getQualifiedNameWithWildcardRule()); 
+            pushFollow(FOLLOW_1);
+            ruleQualifiedNameWithWildcard();
+
+            state._fsp--;
+
+             after(grammarAccess.getQualifiedNameWithWildcardRule()); 
+            match(input,EOF,FOLLOW_2); 
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+        }
+        return ;
+    }
+    // $ANTLR end "entryRuleQualifiedNameWithWildcard"
+
+
+    // $ANTLR start "ruleQualifiedNameWithWildcard"
+    // InternalUseCase.g:187:1: ruleQualifiedNameWithWildcard : ( ( rule__QualifiedNameWithWildcard__Group__0 ) ) ;
+    public final void ruleQualifiedNameWithWildcard() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalUseCase.g:191:2: ( ( ( rule__QualifiedNameWithWildcard__Group__0 ) ) )
+            // InternalUseCase.g:192:2: ( ( rule__QualifiedNameWithWildcard__Group__0 ) )
+            {
+            // InternalUseCase.g:192:2: ( ( rule__QualifiedNameWithWildcard__Group__0 ) )
+            // InternalUseCase.g:193:3: ( rule__QualifiedNameWithWildcard__Group__0 )
+            {
+             before(grammarAccess.getQualifiedNameWithWildcardAccess().getGroup()); 
+            // InternalUseCase.g:194:3: ( rule__QualifiedNameWithWildcard__Group__0 )
+            // InternalUseCase.g:194:4: rule__QualifiedNameWithWildcard__Group__0
+            {
+            pushFollow(FOLLOW_2);
+            rule__QualifiedNameWithWildcard__Group__0();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getQualifiedNameWithWildcardAccess().getGroup()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "ruleQualifiedNameWithWildcard"
+
+
+    // $ANTLR start "entryRuleType"
+    // InternalUseCase.g:203:1: entryRuleType : ruleType EOF ;
+    public final void entryRuleType() throws RecognitionException {
+        try {
+            // InternalUseCase.g:204:1: ( ruleType EOF )
+            // InternalUseCase.g:205:1: ruleType EOF
+            {
+             before(grammarAccess.getTypeRule()); 
+            pushFollow(FOLLOW_1);
+            ruleType();
+
+            state._fsp--;
+
+             after(grammarAccess.getTypeRule()); 
+            match(input,EOF,FOLLOW_2); 
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+        }
+        return ;
+    }
+    // $ANTLR end "entryRuleType"
+
+
+    // $ANTLR start "ruleType"
+    // InternalUseCase.g:212:1: ruleType : ( ( rule__Type__Alternatives ) ) ;
+    public final void ruleType() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalUseCase.g:216:2: ( ( ( rule__Type__Alternatives ) ) )
+            // InternalUseCase.g:217:2: ( ( rule__Type__Alternatives ) )
+            {
+            // InternalUseCase.g:217:2: ( ( rule__Type__Alternatives ) )
+            // InternalUseCase.g:218:3: ( rule__Type__Alternatives )
+            {
+             before(grammarAccess.getTypeAccess().getAlternatives()); 
+            // InternalUseCase.g:219:3: ( rule__Type__Alternatives )
+            // InternalUseCase.g:219:4: rule__Type__Alternatives
+            {
+            pushFollow(FOLLOW_2);
+            rule__Type__Alternatives();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getTypeAccess().getAlternatives()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "ruleType"
+
+
+    // $ANTLR start "entryRuleDataType"
+    // InternalUseCase.g:228:1: entryRuleDataType : ruleDataType EOF ;
+    public final void entryRuleDataType() throws RecognitionException {
+        try {
+            // InternalUseCase.g:229:1: ( ruleDataType EOF )
+            // InternalUseCase.g:230:1: ruleDataType EOF
+            {
+             before(grammarAccess.getDataTypeRule()); 
+            pushFollow(FOLLOW_1);
+            ruleDataType();
+
+            state._fsp--;
+
+             after(grammarAccess.getDataTypeRule()); 
+            match(input,EOF,FOLLOW_2); 
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+        }
+        return ;
+    }
+    // $ANTLR end "entryRuleDataType"
+
+
+    // $ANTLR start "ruleDataType"
+    // InternalUseCase.g:237:1: ruleDataType : ( ( rule__DataType__Group__0 ) ) ;
+    public final void ruleDataType() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalUseCase.g:241:2: ( ( ( rule__DataType__Group__0 ) ) )
+            // InternalUseCase.g:242:2: ( ( rule__DataType__Group__0 ) )
+            {
+            // InternalUseCase.g:242:2: ( ( rule__DataType__Group__0 ) )
+            // InternalUseCase.g:243:3: ( rule__DataType__Group__0 )
+            {
+             before(grammarAccess.getDataTypeAccess().getGroup()); 
+            // InternalUseCase.g:244:3: ( rule__DataType__Group__0 )
+            // InternalUseCase.g:244:4: rule__DataType__Group__0
+            {
+            pushFollow(FOLLOW_2);
+            rule__DataType__Group__0();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getDataTypeAccess().getGroup()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "ruleDataType"
+
+
+    // $ANTLR start "entryRuleEntity"
+    // InternalUseCase.g:253:1: entryRuleEntity : ruleEntity EOF ;
+    public final void entryRuleEntity() throws RecognitionException {
+        try {
+            // InternalUseCase.g:254:1: ( ruleEntity EOF )
+            // InternalUseCase.g:255:1: ruleEntity EOF
+            {
+             before(grammarAccess.getEntityRule()); 
+            pushFollow(FOLLOW_1);
+            ruleEntity();
+
+            state._fsp--;
+
+             after(grammarAccess.getEntityRule()); 
+            match(input,EOF,FOLLOW_2); 
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+        }
+        return ;
+    }
+    // $ANTLR end "entryRuleEntity"
+
+
+    // $ANTLR start "ruleEntity"
+    // InternalUseCase.g:262:1: ruleEntity : ( ( rule__Entity__Group__0 ) ) ;
+    public final void ruleEntity() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalUseCase.g:266:2: ( ( ( rule__Entity__Group__0 ) ) )
+            // InternalUseCase.g:267:2: ( ( rule__Entity__Group__0 ) )
+            {
+            // InternalUseCase.g:267:2: ( ( rule__Entity__Group__0 ) )
+            // InternalUseCase.g:268:3: ( rule__Entity__Group__0 )
+            {
+             before(grammarAccess.getEntityAccess().getGroup()); 
+            // InternalUseCase.g:269:3: ( rule__Entity__Group__0 )
+            // InternalUseCase.g:269:4: rule__Entity__Group__0
+            {
+            pushFollow(FOLLOW_2);
+            rule__Entity__Group__0();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getEntityAccess().getGroup()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "ruleEntity"
+
+
+    // $ANTLR start "entryRuleFeature"
+    // InternalUseCase.g:278:1: entryRuleFeature : ruleFeature EOF ;
+    public final void entryRuleFeature() throws RecognitionException {
+        try {
+            // InternalUseCase.g:279:1: ( ruleFeature EOF )
+            // InternalUseCase.g:280:1: ruleFeature EOF
+            {
+             before(grammarAccess.getFeatureRule()); 
+            pushFollow(FOLLOW_1);
+            ruleFeature();
+
+            state._fsp--;
+
+             after(grammarAccess.getFeatureRule()); 
+            match(input,EOF,FOLLOW_2); 
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+        }
+        return ;
+    }
+    // $ANTLR end "entryRuleFeature"
+
+
+    // $ANTLR start "ruleFeature"
+    // InternalUseCase.g:287:1: ruleFeature : ( ( rule__Feature__Group__0 ) ) ;
+    public final void ruleFeature() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalUseCase.g:291:2: ( ( ( rule__Feature__Group__0 ) ) )
+            // InternalUseCase.g:292:2: ( ( rule__Feature__Group__0 ) )
+            {
+            // InternalUseCase.g:292:2: ( ( rule__Feature__Group__0 ) )
+            // InternalUseCase.g:293:3: ( rule__Feature__Group__0 )
+            {
+             before(grammarAccess.getFeatureAccess().getGroup()); 
+            // InternalUseCase.g:294:3: ( rule__Feature__Group__0 )
+            // InternalUseCase.g:294:4: rule__Feature__Group__0
+            {
+            pushFollow(FOLLOW_2);
+            rule__Feature__Group__0();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getFeatureAccess().getGroup()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "ruleFeature"
+
+
+    // $ANTLR start "rule__AbstractElement__Alternatives"
+    // InternalUseCase.g:302:1: rule__AbstractElement__Alternatives : ( ( rulePackageDeclaration ) | ( ruleType ) | ( ruleImport ) );
+    public final void rule__AbstractElement__Alternatives() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalUseCase.g:306:1: ( ( rulePackageDeclaration ) | ( ruleType ) | ( ruleImport ) )
+            int alt2=3;
+            switch ( input.LA(1) ) {
+            case 11:
+                {
+                alt2=1;
+                }
+                break;
+            case 17:
+            case 18:
+                {
+                alt2=2;
+                }
+                break;
+            case 15:
+                {
+                alt2=3;
+                }
+                break;
+            default:
+                NoViableAltException nvae =
+                    new NoViableAltException("", 2, 0, input);
+
+                throw nvae;
+            }
+
+            switch (alt2) {
+                case 1 :
+                    // InternalUseCase.g:307:2: ( rulePackageDeclaration )
+                    {
+                    // InternalUseCase.g:307:2: ( rulePackageDeclaration )
+                    // InternalUseCase.g:308:3: rulePackageDeclaration
+                    {
+                     before(grammarAccess.getAbstractElementAccess().getPackageDeclarationParserRuleCall_0()); 
+                    pushFollow(FOLLOW_2);
+                    rulePackageDeclaration();
+
+                    state._fsp--;
+
+                     after(grammarAccess.getAbstractElementAccess().getPackageDeclarationParserRuleCall_0()); 
+
+                    }
+
+
+                    }
+                    break;
+                case 2 :
+                    // InternalUseCase.g:313:2: ( ruleType )
+                    {
+                    // InternalUseCase.g:313:2: ( ruleType )
+                    // InternalUseCase.g:314:3: ruleType
+                    {
+                     before(grammarAccess.getAbstractElementAccess().getTypeParserRuleCall_1()); 
+                    pushFollow(FOLLOW_2);
+                    ruleType();
+
+                    state._fsp--;
+
+                     after(grammarAccess.getAbstractElementAccess().getTypeParserRuleCall_1()); 
+
+                    }
+
+
+                    }
+                    break;
+                case 3 :
+                    // InternalUseCase.g:319:2: ( ruleImport )
+                    {
+                    // InternalUseCase.g:319:2: ( ruleImport )
+                    // InternalUseCase.g:320:3: ruleImport
+                    {
+                     before(grammarAccess.getAbstractElementAccess().getImportParserRuleCall_2()); 
+                    pushFollow(FOLLOW_2);
+                    ruleImport();
+
+                    state._fsp--;
+
+                     after(grammarAccess.getAbstractElementAccess().getImportParserRuleCall_2()); 
+
+                    }
+
+
+                    }
+                    break;
+
+            }
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__AbstractElement__Alternatives"
+
+
+    // $ANTLR start "rule__Type__Alternatives"
+    // InternalUseCase.g:329:1: rule__Type__Alternatives : ( ( ruleDataType ) | ( ruleEntity ) );
+    public final void rule__Type__Alternatives() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalUseCase.g:333:1: ( ( ruleDataType ) | ( ruleEntity ) )
+            int alt3=2;
+            int LA3_0 = input.LA(1);
+
+            if ( (LA3_0==17) ) {
+                alt3=1;
+            }
+            else if ( (LA3_0==18) ) {
+                alt3=2;
+            }
+            else {
+                NoViableAltException nvae =
+                    new NoViableAltException("", 3, 0, input);
+
+                throw nvae;
+            }
+            switch (alt3) {
+                case 1 :
+                    // InternalUseCase.g:334:2: ( ruleDataType )
+                    {
+                    // InternalUseCase.g:334:2: ( ruleDataType )
+                    // InternalUseCase.g:335:3: ruleDataType
+                    {
+                     before(grammarAccess.getTypeAccess().getDataTypeParserRuleCall_0()); 
+                    pushFollow(FOLLOW_2);
+                    ruleDataType();
+
+                    state._fsp--;
+
+                     after(grammarAccess.getTypeAccess().getDataTypeParserRuleCall_0()); 
+
+                    }
+
+
+                    }
+                    break;
+                case 2 :
+                    // InternalUseCase.g:340:2: ( ruleEntity )
+                    {
+                    // InternalUseCase.g:340:2: ( ruleEntity )
+                    // InternalUseCase.g:341:3: ruleEntity
+                    {
+                     before(grammarAccess.getTypeAccess().getEntityParserRuleCall_1()); 
+                    pushFollow(FOLLOW_2);
+                    ruleEntity();
+
+                    state._fsp--;
+
+                     after(grammarAccess.getTypeAccess().getEntityParserRuleCall_1()); 
+
+                    }
+
+
+                    }
+                    break;
+
+            }
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Type__Alternatives"
+
+
+    // $ANTLR start "rule__PackageDeclaration__Group__0"
+    // InternalUseCase.g:350:1: rule__PackageDeclaration__Group__0 : rule__PackageDeclaration__Group__0__Impl rule__PackageDeclaration__Group__1 ;
+    public final void rule__PackageDeclaration__Group__0() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalUseCase.g:354:1: ( rule__PackageDeclaration__Group__0__Impl rule__PackageDeclaration__Group__1 )
+            // InternalUseCase.g:355:2: rule__PackageDeclaration__Group__0__Impl rule__PackageDeclaration__Group__1
+            {
+            pushFollow(FOLLOW_4);
+            rule__PackageDeclaration__Group__0__Impl();
 
             state._fsp--;
 
             pushFollow(FOLLOW_2);
-            rule__RequirementsUseCaseModel__Group__2();
+            rule__PackageDeclaration__Group__1();
 
             state._fsp--;
 
@@ -844,53 +1089,25 @@ public class InternalUseCaseParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__RequirementsUseCaseModel__Group__1"
+    // $ANTLR end "rule__PackageDeclaration__Group__0"
 
 
-    // $ANTLR start "rule__RequirementsUseCaseModel__Group__1__Impl"
-    // InternalUseCase.g:298:1: rule__RequirementsUseCaseModel__Group__1__Impl : ( ( rule__RequirementsUseCaseModel__DataAssignment_1 )* ) ;
-    public final void rule__RequirementsUseCaseModel__Group__1__Impl() throws RecognitionException {
+    // $ANTLR start "rule__PackageDeclaration__Group__0__Impl"
+    // InternalUseCase.g:362:1: rule__PackageDeclaration__Group__0__Impl : ( 'package' ) ;
+    public final void rule__PackageDeclaration__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalUseCase.g:302:1: ( ( ( rule__RequirementsUseCaseModel__DataAssignment_1 )* ) )
-            // InternalUseCase.g:303:1: ( ( rule__RequirementsUseCaseModel__DataAssignment_1 )* )
+            // InternalUseCase.g:366:1: ( ( 'package' ) )
+            // InternalUseCase.g:367:1: ( 'package' )
             {
-            // InternalUseCase.g:303:1: ( ( rule__RequirementsUseCaseModel__DataAssignment_1 )* )
-            // InternalUseCase.g:304:2: ( rule__RequirementsUseCaseModel__DataAssignment_1 )*
+            // InternalUseCase.g:367:1: ( 'package' )
+            // InternalUseCase.g:368:2: 'package'
             {
-             before(grammarAccess.getRequirementsUseCaseModelAccess().getDataAssignment_1()); 
-            // InternalUseCase.g:305:2: ( rule__RequirementsUseCaseModel__DataAssignment_1 )*
-            loop2:
-            do {
-                int alt2=2;
-                int LA2_0 = input.LA(1);
-
-                if ( (LA2_0==13) ) {
-                    alt2=1;
-                }
-
-
-                switch (alt2) {
-            	case 1 :
-            	    // InternalUseCase.g:305:3: rule__RequirementsUseCaseModel__DataAssignment_1
-            	    {
-            	    pushFollow(FOLLOW_5);
-            	    rule__RequirementsUseCaseModel__DataAssignment_1();
-
-            	    state._fsp--;
-
-
-            	    }
-            	    break;
-
-            	default :
-            	    break loop2;
-                }
-            } while (true);
-
-             after(grammarAccess.getRequirementsUseCaseModelAccess().getDataAssignment_1()); 
+             before(grammarAccess.getPackageDeclarationAccess().getPackageKeyword_0()); 
+            match(input,11,FOLLOW_2); 
+             after(grammarAccess.getPackageDeclarationAccess().getPackageKeyword_0()); 
 
             }
 
@@ -909,23 +1126,75 @@ public class InternalUseCaseParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__RequirementsUseCaseModel__Group__1__Impl"
+    // $ANTLR end "rule__PackageDeclaration__Group__0__Impl"
 
 
-    // $ANTLR start "rule__RequirementsUseCaseModel__Group__2"
-    // InternalUseCase.g:313:1: rule__RequirementsUseCaseModel__Group__2 : rule__RequirementsUseCaseModel__Group__2__Impl ;
-    public final void rule__RequirementsUseCaseModel__Group__2() throws RecognitionException {
+    // $ANTLR start "rule__PackageDeclaration__Group__1"
+    // InternalUseCase.g:377:1: rule__PackageDeclaration__Group__1 : rule__PackageDeclaration__Group__1__Impl rule__PackageDeclaration__Group__2 ;
+    public final void rule__PackageDeclaration__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalUseCase.g:317:1: ( rule__RequirementsUseCaseModel__Group__2__Impl )
-            // InternalUseCase.g:318:2: rule__RequirementsUseCaseModel__Group__2__Impl
+            // InternalUseCase.g:381:1: ( rule__PackageDeclaration__Group__1__Impl rule__PackageDeclaration__Group__2 )
+            // InternalUseCase.g:382:2: rule__PackageDeclaration__Group__1__Impl rule__PackageDeclaration__Group__2
+            {
+            pushFollow(FOLLOW_5);
+            rule__PackageDeclaration__Group__1__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_2);
+            rule__PackageDeclaration__Group__2();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__PackageDeclaration__Group__1"
+
+
+    // $ANTLR start "rule__PackageDeclaration__Group__1__Impl"
+    // InternalUseCase.g:389:1: rule__PackageDeclaration__Group__1__Impl : ( ( rule__PackageDeclaration__NameAssignment_1 ) ) ;
+    public final void rule__PackageDeclaration__Group__1__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalUseCase.g:393:1: ( ( ( rule__PackageDeclaration__NameAssignment_1 ) ) )
+            // InternalUseCase.g:394:1: ( ( rule__PackageDeclaration__NameAssignment_1 ) )
+            {
+            // InternalUseCase.g:394:1: ( ( rule__PackageDeclaration__NameAssignment_1 ) )
+            // InternalUseCase.g:395:2: ( rule__PackageDeclaration__NameAssignment_1 )
+            {
+             before(grammarAccess.getPackageDeclarationAccess().getNameAssignment_1()); 
+            // InternalUseCase.g:396:2: ( rule__PackageDeclaration__NameAssignment_1 )
+            // InternalUseCase.g:396:3: rule__PackageDeclaration__NameAssignment_1
             {
             pushFollow(FOLLOW_2);
-            rule__RequirementsUseCaseModel__Group__2__Impl();
+            rule__PackageDeclaration__NameAssignment_1();
 
             state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getPackageDeclarationAccess().getNameAssignment_1()); 
+
+            }
 
 
             }
@@ -942,62 +1211,153 @@ public class InternalUseCaseParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__RequirementsUseCaseModel__Group__2"
+    // $ANTLR end "rule__PackageDeclaration__Group__1__Impl"
 
 
-    // $ANTLR start "rule__RequirementsUseCaseModel__Group__2__Impl"
-    // InternalUseCase.g:324:1: rule__RequirementsUseCaseModel__Group__2__Impl : ( ( ( rule__RequirementsUseCaseModel__UsecasesAssignment_2 ) ) ( ( rule__RequirementsUseCaseModel__UsecasesAssignment_2 )* ) ) ;
-    public final void rule__RequirementsUseCaseModel__Group__2__Impl() throws RecognitionException {
+    // $ANTLR start "rule__PackageDeclaration__Group__2"
+    // InternalUseCase.g:404:1: rule__PackageDeclaration__Group__2 : rule__PackageDeclaration__Group__2__Impl rule__PackageDeclaration__Group__3 ;
+    public final void rule__PackageDeclaration__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalUseCase.g:328:1: ( ( ( ( rule__RequirementsUseCaseModel__UsecasesAssignment_2 ) ) ( ( rule__RequirementsUseCaseModel__UsecasesAssignment_2 )* ) ) )
-            // InternalUseCase.g:329:1: ( ( ( rule__RequirementsUseCaseModel__UsecasesAssignment_2 ) ) ( ( rule__RequirementsUseCaseModel__UsecasesAssignment_2 )* ) )
-            {
-            // InternalUseCase.g:329:1: ( ( ( rule__RequirementsUseCaseModel__UsecasesAssignment_2 ) ) ( ( rule__RequirementsUseCaseModel__UsecasesAssignment_2 )* ) )
-            // InternalUseCase.g:330:2: ( ( rule__RequirementsUseCaseModel__UsecasesAssignment_2 ) ) ( ( rule__RequirementsUseCaseModel__UsecasesAssignment_2 )* )
-            {
-            // InternalUseCase.g:330:2: ( ( rule__RequirementsUseCaseModel__UsecasesAssignment_2 ) )
-            // InternalUseCase.g:331:3: ( rule__RequirementsUseCaseModel__UsecasesAssignment_2 )
-            {
-             before(grammarAccess.getRequirementsUseCaseModelAccess().getUsecasesAssignment_2()); 
-            // InternalUseCase.g:332:3: ( rule__RequirementsUseCaseModel__UsecasesAssignment_2 )
-            // InternalUseCase.g:332:4: rule__RequirementsUseCaseModel__UsecasesAssignment_2
+            // InternalUseCase.g:408:1: ( rule__PackageDeclaration__Group__2__Impl rule__PackageDeclaration__Group__3 )
+            // InternalUseCase.g:409:2: rule__PackageDeclaration__Group__2__Impl rule__PackageDeclaration__Group__3
             {
             pushFollow(FOLLOW_6);
-            rule__RequirementsUseCaseModel__UsecasesAssignment_2();
+            rule__PackageDeclaration__Group__2__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_2);
+            rule__PackageDeclaration__Group__3();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getRequirementsUseCaseModelAccess().getUsecasesAssignment_2()); 
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__PackageDeclaration__Group__2"
+
+
+    // $ANTLR start "rule__PackageDeclaration__Group__2__Impl"
+    // InternalUseCase.g:416:1: rule__PackageDeclaration__Group__2__Impl : ( '{' ) ;
+    public final void rule__PackageDeclaration__Group__2__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalUseCase.g:420:1: ( ( '{' ) )
+            // InternalUseCase.g:421:1: ( '{' )
+            {
+            // InternalUseCase.g:421:1: ( '{' )
+            // InternalUseCase.g:422:2: '{'
+            {
+             before(grammarAccess.getPackageDeclarationAccess().getLeftCurlyBracketKeyword_2()); 
+            match(input,12,FOLLOW_2); 
+             after(grammarAccess.getPackageDeclarationAccess().getLeftCurlyBracketKeyword_2()); 
 
             }
 
-            // InternalUseCase.g:335:2: ( ( rule__RequirementsUseCaseModel__UsecasesAssignment_2 )* )
-            // InternalUseCase.g:336:3: ( rule__RequirementsUseCaseModel__UsecasesAssignment_2 )*
-            {
-             before(grammarAccess.getRequirementsUseCaseModelAccess().getUsecasesAssignment_2()); 
-            // InternalUseCase.g:337:3: ( rule__RequirementsUseCaseModel__UsecasesAssignment_2 )*
-            loop3:
-            do {
-                int alt3=2;
-                int LA3_0 = input.LA(1);
 
-                if ( (LA3_0==14) ) {
-                    alt3=1;
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__PackageDeclaration__Group__2__Impl"
+
+
+    // $ANTLR start "rule__PackageDeclaration__Group__3"
+    // InternalUseCase.g:431:1: rule__PackageDeclaration__Group__3 : rule__PackageDeclaration__Group__3__Impl rule__PackageDeclaration__Group__4 ;
+    public final void rule__PackageDeclaration__Group__3() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalUseCase.g:435:1: ( rule__PackageDeclaration__Group__3__Impl rule__PackageDeclaration__Group__4 )
+            // InternalUseCase.g:436:2: rule__PackageDeclaration__Group__3__Impl rule__PackageDeclaration__Group__4
+            {
+            pushFollow(FOLLOW_6);
+            rule__PackageDeclaration__Group__3__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_2);
+            rule__PackageDeclaration__Group__4();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__PackageDeclaration__Group__3"
+
+
+    // $ANTLR start "rule__PackageDeclaration__Group__3__Impl"
+    // InternalUseCase.g:443:1: rule__PackageDeclaration__Group__3__Impl : ( ( rule__PackageDeclaration__ElementsAssignment_3 )* ) ;
+    public final void rule__PackageDeclaration__Group__3__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalUseCase.g:447:1: ( ( ( rule__PackageDeclaration__ElementsAssignment_3 )* ) )
+            // InternalUseCase.g:448:1: ( ( rule__PackageDeclaration__ElementsAssignment_3 )* )
+            {
+            // InternalUseCase.g:448:1: ( ( rule__PackageDeclaration__ElementsAssignment_3 )* )
+            // InternalUseCase.g:449:2: ( rule__PackageDeclaration__ElementsAssignment_3 )*
+            {
+             before(grammarAccess.getPackageDeclarationAccess().getElementsAssignment_3()); 
+            // InternalUseCase.g:450:2: ( rule__PackageDeclaration__ElementsAssignment_3 )*
+            loop4:
+            do {
+                int alt4=2;
+                int LA4_0 = input.LA(1);
+
+                if ( (LA4_0==11||LA4_0==15||(LA4_0>=17 && LA4_0<=18)) ) {
+                    alt4=1;
                 }
 
 
-                switch (alt3) {
+                switch (alt4) {
             	case 1 :
-            	    // InternalUseCase.g:337:4: rule__RequirementsUseCaseModel__UsecasesAssignment_2
+            	    // InternalUseCase.g:450:3: rule__PackageDeclaration__ElementsAssignment_3
             	    {
-            	    pushFollow(FOLLOW_6);
-            	    rule__RequirementsUseCaseModel__UsecasesAssignment_2();
+            	    pushFollow(FOLLOW_3);
+            	    rule__PackageDeclaration__ElementsAssignment_3();
 
             	    state._fsp--;
 
@@ -1006,89 +1366,11 @@ public class InternalUseCaseParser extends AbstractInternalContentAssistParser {
             	    break;
 
             	default :
-            	    break loop3;
+            	    break loop4;
                 }
             } while (true);
 
-             after(grammarAccess.getRequirementsUseCaseModelAccess().getUsecasesAssignment_2()); 
-
-            }
-
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__RequirementsUseCaseModel__Group__2__Impl"
-
-
-    // $ANTLR start "rule__Actor__Group__0"
-    // InternalUseCase.g:347:1: rule__Actor__Group__0 : rule__Actor__Group__0__Impl rule__Actor__Group__1 ;
-    public final void rule__Actor__Group__0() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalUseCase.g:351:1: ( rule__Actor__Group__0__Impl rule__Actor__Group__1 )
-            // InternalUseCase.g:352:2: rule__Actor__Group__0__Impl rule__Actor__Group__1
-            {
-            pushFollow(FOLLOW_7);
-            rule__Actor__Group__0__Impl();
-
-            state._fsp--;
-
-            pushFollow(FOLLOW_2);
-            rule__Actor__Group__1();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Actor__Group__0"
-
-
-    // $ANTLR start "rule__Actor__Group__0__Impl"
-    // InternalUseCase.g:359:1: rule__Actor__Group__0__Impl : ( 'Actor:' ) ;
-    public final void rule__Actor__Group__0__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalUseCase.g:363:1: ( ( 'Actor:' ) )
-            // InternalUseCase.g:364:1: ( 'Actor:' )
-            {
-            // InternalUseCase.g:364:1: ( 'Actor:' )
-            // InternalUseCase.g:365:2: 'Actor:'
-            {
-             before(grammarAccess.getActorAccess().getActorKeyword_0()); 
-            match(input,12,FOLLOW_2); 
-             after(grammarAccess.getActorAccess().getActorKeyword_0()); 
+             after(grammarAccess.getPackageDeclarationAccess().getElementsAssignment_3()); 
 
             }
 
@@ -1107,106 +1389,21 @@ public class InternalUseCaseParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Actor__Group__0__Impl"
+    // $ANTLR end "rule__PackageDeclaration__Group__3__Impl"
 
 
-    // $ANTLR start "rule__Actor__Group__1"
-    // InternalUseCase.g:374:1: rule__Actor__Group__1 : rule__Actor__Group__1__Impl rule__Actor__Group__2 ;
-    public final void rule__Actor__Group__1() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalUseCase.g:378:1: ( rule__Actor__Group__1__Impl rule__Actor__Group__2 )
-            // InternalUseCase.g:379:2: rule__Actor__Group__1__Impl rule__Actor__Group__2
-            {
-            pushFollow(FOLLOW_8);
-            rule__Actor__Group__1__Impl();
-
-            state._fsp--;
-
-            pushFollow(FOLLOW_2);
-            rule__Actor__Group__2();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Actor__Group__1"
-
-
-    // $ANTLR start "rule__Actor__Group__1__Impl"
-    // InternalUseCase.g:386:1: rule__Actor__Group__1__Impl : ( ( rule__Actor__NameAssignment_1 ) ) ;
-    public final void rule__Actor__Group__1__Impl() throws RecognitionException {
+    // $ANTLR start "rule__PackageDeclaration__Group__4"
+    // InternalUseCase.g:458:1: rule__PackageDeclaration__Group__4 : rule__PackageDeclaration__Group__4__Impl ;
+    public final void rule__PackageDeclaration__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalUseCase.g:390:1: ( ( ( rule__Actor__NameAssignment_1 ) ) )
-            // InternalUseCase.g:391:1: ( ( rule__Actor__NameAssignment_1 ) )
-            {
-            // InternalUseCase.g:391:1: ( ( rule__Actor__NameAssignment_1 ) )
-            // InternalUseCase.g:392:2: ( rule__Actor__NameAssignment_1 )
-            {
-             before(grammarAccess.getActorAccess().getNameAssignment_1()); 
-            // InternalUseCase.g:393:2: ( rule__Actor__NameAssignment_1 )
-            // InternalUseCase.g:393:3: rule__Actor__NameAssignment_1
+            // InternalUseCase.g:462:1: ( rule__PackageDeclaration__Group__4__Impl )
+            // InternalUseCase.g:463:2: rule__PackageDeclaration__Group__4__Impl
             {
             pushFollow(FOLLOW_2);
-            rule__Actor__NameAssignment_1();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getActorAccess().getNameAssignment_1()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Actor__Group__1__Impl"
-
-
-    // $ANTLR start "rule__Actor__Group__2"
-    // InternalUseCase.g:401:1: rule__Actor__Group__2 : rule__Actor__Group__2__Impl ;
-    public final void rule__Actor__Group__2() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalUseCase.g:405:1: ( rule__Actor__Group__2__Impl )
-            // InternalUseCase.g:406:2: rule__Actor__Group__2__Impl
-            {
-            pushFollow(FOLLOW_2);
-            rule__Actor__Group__2__Impl();
+            rule__PackageDeclaration__Group__4__Impl();
 
             state._fsp--;
 
@@ -1225,121 +1422,25 @@ public class InternalUseCaseParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Actor__Group__2"
+    // $ANTLR end "rule__PackageDeclaration__Group__4"
 
 
-    // $ANTLR start "rule__Actor__Group__2__Impl"
-    // InternalUseCase.g:412:1: rule__Actor__Group__2__Impl : ( ( rule__Actor__DescriptionAssignment_2 )? ) ;
-    public final void rule__Actor__Group__2__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalUseCase.g:416:1: ( ( ( rule__Actor__DescriptionAssignment_2 )? ) )
-            // InternalUseCase.g:417:1: ( ( rule__Actor__DescriptionAssignment_2 )? )
-            {
-            // InternalUseCase.g:417:1: ( ( rule__Actor__DescriptionAssignment_2 )? )
-            // InternalUseCase.g:418:2: ( rule__Actor__DescriptionAssignment_2 )?
-            {
-             before(grammarAccess.getActorAccess().getDescriptionAssignment_2()); 
-            // InternalUseCase.g:419:2: ( rule__Actor__DescriptionAssignment_2 )?
-            int alt4=2;
-            int LA4_0 = input.LA(1);
-
-            if ( (LA4_0==RULE_STRING) ) {
-                alt4=1;
-            }
-            switch (alt4) {
-                case 1 :
-                    // InternalUseCase.g:419:3: rule__Actor__DescriptionAssignment_2
-                    {
-                    pushFollow(FOLLOW_2);
-                    rule__Actor__DescriptionAssignment_2();
-
-                    state._fsp--;
-
-
-                    }
-                    break;
-
-            }
-
-             after(grammarAccess.getActorAccess().getDescriptionAssignment_2()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Actor__Group__2__Impl"
-
-
-    // $ANTLR start "rule__Concept__Group__0"
-    // InternalUseCase.g:428:1: rule__Concept__Group__0 : rule__Concept__Group__0__Impl rule__Concept__Group__1 ;
-    public final void rule__Concept__Group__0() throws RecognitionException {
+    // $ANTLR start "rule__PackageDeclaration__Group__4__Impl"
+    // InternalUseCase.g:469:1: rule__PackageDeclaration__Group__4__Impl : ( '}' ) ;
+    public final void rule__PackageDeclaration__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalUseCase.g:432:1: ( rule__Concept__Group__0__Impl rule__Concept__Group__1 )
-            // InternalUseCase.g:433:2: rule__Concept__Group__0__Impl rule__Concept__Group__1
+            // InternalUseCase.g:473:1: ( ( '}' ) )
+            // InternalUseCase.g:474:1: ( '}' )
             {
-            pushFollow(FOLLOW_7);
-            rule__Concept__Group__0__Impl();
-
-            state._fsp--;
-
-            pushFollow(FOLLOW_2);
-            rule__Concept__Group__1();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Concept__Group__0"
-
-
-    // $ANTLR start "rule__Concept__Group__0__Impl"
-    // InternalUseCase.g:440:1: rule__Concept__Group__0__Impl : ( 'DataConcept:' ) ;
-    public final void rule__Concept__Group__0__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalUseCase.g:444:1: ( ( 'DataConcept:' ) )
-            // InternalUseCase.g:445:1: ( 'DataConcept:' )
+            // InternalUseCase.g:474:1: ( '}' )
+            // InternalUseCase.g:475:2: '}'
             {
-            // InternalUseCase.g:445:1: ( 'DataConcept:' )
-            // InternalUseCase.g:446:2: 'DataConcept:'
-            {
-             before(grammarAccess.getConceptAccess().getDataConceptKeyword_0()); 
+             before(grammarAccess.getPackageDeclarationAccess().getRightCurlyBracketKeyword_4()); 
             match(input,13,FOLLOW_2); 
-             after(grammarAccess.getConceptAccess().getDataConceptKeyword_0()); 
+             after(grammarAccess.getPackageDeclarationAccess().getRightCurlyBracketKeyword_4()); 
 
             }
 
@@ -1358,202 +1459,26 @@ public class InternalUseCaseParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Concept__Group__0__Impl"
+    // $ANTLR end "rule__PackageDeclaration__Group__4__Impl"
 
 
-    // $ANTLR start "rule__Concept__Group__1"
-    // InternalUseCase.g:455:1: rule__Concept__Group__1 : rule__Concept__Group__1__Impl rule__Concept__Group__2 ;
-    public final void rule__Concept__Group__1() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalUseCase.g:459:1: ( rule__Concept__Group__1__Impl rule__Concept__Group__2 )
-            // InternalUseCase.g:460:2: rule__Concept__Group__1__Impl rule__Concept__Group__2
-            {
-            pushFollow(FOLLOW_8);
-            rule__Concept__Group__1__Impl();
-
-            state._fsp--;
-
-            pushFollow(FOLLOW_2);
-            rule__Concept__Group__2();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Concept__Group__1"
-
-
-    // $ANTLR start "rule__Concept__Group__1__Impl"
-    // InternalUseCase.g:467:1: rule__Concept__Group__1__Impl : ( ( rule__Concept__NameAssignment_1 ) ) ;
-    public final void rule__Concept__Group__1__Impl() throws RecognitionException {
+    // $ANTLR start "rule__QualifiedName__Group__0"
+    // InternalUseCase.g:485:1: rule__QualifiedName__Group__0 : rule__QualifiedName__Group__0__Impl rule__QualifiedName__Group__1 ;
+    public final void rule__QualifiedName__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalUseCase.g:471:1: ( ( ( rule__Concept__NameAssignment_1 ) ) )
-            // InternalUseCase.g:472:1: ( ( rule__Concept__NameAssignment_1 ) )
-            {
-            // InternalUseCase.g:472:1: ( ( rule__Concept__NameAssignment_1 ) )
-            // InternalUseCase.g:473:2: ( rule__Concept__NameAssignment_1 )
-            {
-             before(grammarAccess.getConceptAccess().getNameAssignment_1()); 
-            // InternalUseCase.g:474:2: ( rule__Concept__NameAssignment_1 )
-            // InternalUseCase.g:474:3: rule__Concept__NameAssignment_1
-            {
-            pushFollow(FOLLOW_2);
-            rule__Concept__NameAssignment_1();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getConceptAccess().getNameAssignment_1()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Concept__Group__1__Impl"
-
-
-    // $ANTLR start "rule__Concept__Group__2"
-    // InternalUseCase.g:482:1: rule__Concept__Group__2 : rule__Concept__Group__2__Impl ;
-    public final void rule__Concept__Group__2() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalUseCase.g:486:1: ( rule__Concept__Group__2__Impl )
-            // InternalUseCase.g:487:2: rule__Concept__Group__2__Impl
-            {
-            pushFollow(FOLLOW_2);
-            rule__Concept__Group__2__Impl();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Concept__Group__2"
-
-
-    // $ANTLR start "rule__Concept__Group__2__Impl"
-    // InternalUseCase.g:493:1: rule__Concept__Group__2__Impl : ( ( rule__Concept__ConceptDescriptionAssignment_2 )? ) ;
-    public final void rule__Concept__Group__2__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalUseCase.g:497:1: ( ( ( rule__Concept__ConceptDescriptionAssignment_2 )? ) )
-            // InternalUseCase.g:498:1: ( ( rule__Concept__ConceptDescriptionAssignment_2 )? )
-            {
-            // InternalUseCase.g:498:1: ( ( rule__Concept__ConceptDescriptionAssignment_2 )? )
-            // InternalUseCase.g:499:2: ( rule__Concept__ConceptDescriptionAssignment_2 )?
-            {
-             before(grammarAccess.getConceptAccess().getConceptDescriptionAssignment_2()); 
-            // InternalUseCase.g:500:2: ( rule__Concept__ConceptDescriptionAssignment_2 )?
-            int alt5=2;
-            int LA5_0 = input.LA(1);
-
-            if ( (LA5_0==RULE_STRING) ) {
-                alt5=1;
-            }
-            switch (alt5) {
-                case 1 :
-                    // InternalUseCase.g:500:3: rule__Concept__ConceptDescriptionAssignment_2
-                    {
-                    pushFollow(FOLLOW_2);
-                    rule__Concept__ConceptDescriptionAssignment_2();
-
-                    state._fsp--;
-
-
-                    }
-                    break;
-
-            }
-
-             after(grammarAccess.getConceptAccess().getConceptDescriptionAssignment_2()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Concept__Group__2__Impl"
-
-
-    // $ANTLR start "rule__UseCase__Group__0"
-    // InternalUseCase.g:509:1: rule__UseCase__Group__0 : rule__UseCase__Group__0__Impl rule__UseCase__Group__1 ;
-    public final void rule__UseCase__Group__0() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalUseCase.g:513:1: ( rule__UseCase__Group__0__Impl rule__UseCase__Group__1 )
-            // InternalUseCase.g:514:2: rule__UseCase__Group__0__Impl rule__UseCase__Group__1
+            // InternalUseCase.g:489:1: ( rule__QualifiedName__Group__0__Impl rule__QualifiedName__Group__1 )
+            // InternalUseCase.g:490:2: rule__QualifiedName__Group__0__Impl rule__QualifiedName__Group__1
             {
             pushFollow(FOLLOW_7);
-            rule__UseCase__Group__0__Impl();
+            rule__QualifiedName__Group__0__Impl();
 
             state._fsp--;
 
             pushFollow(FOLLOW_2);
-            rule__UseCase__Group__1();
+            rule__QualifiedName__Group__1();
 
             state._fsp--;
 
@@ -1572,25 +1497,198 @@ public class InternalUseCaseParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__UseCase__Group__0"
+    // $ANTLR end "rule__QualifiedName__Group__0"
 
 
-    // $ANTLR start "rule__UseCase__Group__0__Impl"
-    // InternalUseCase.g:521:1: rule__UseCase__Group__0__Impl : ( 'UseCase:' ) ;
-    public final void rule__UseCase__Group__0__Impl() throws RecognitionException {
+    // $ANTLR start "rule__QualifiedName__Group__0__Impl"
+    // InternalUseCase.g:497:1: rule__QualifiedName__Group__0__Impl : ( RULE_ID ) ;
+    public final void rule__QualifiedName__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalUseCase.g:525:1: ( ( 'UseCase:' ) )
-            // InternalUseCase.g:526:1: ( 'UseCase:' )
+            // InternalUseCase.g:501:1: ( ( RULE_ID ) )
+            // InternalUseCase.g:502:1: ( RULE_ID )
             {
-            // InternalUseCase.g:526:1: ( 'UseCase:' )
-            // InternalUseCase.g:527:2: 'UseCase:'
+            // InternalUseCase.g:502:1: ( RULE_ID )
+            // InternalUseCase.g:503:2: RULE_ID
             {
-             before(grammarAccess.getUseCaseAccess().getUseCaseKeyword_0()); 
+             before(grammarAccess.getQualifiedNameAccess().getIDTerminalRuleCall_0()); 
+            match(input,RULE_ID,FOLLOW_2); 
+             after(grammarAccess.getQualifiedNameAccess().getIDTerminalRuleCall_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__QualifiedName__Group__0__Impl"
+
+
+    // $ANTLR start "rule__QualifiedName__Group__1"
+    // InternalUseCase.g:512:1: rule__QualifiedName__Group__1 : rule__QualifiedName__Group__1__Impl ;
+    public final void rule__QualifiedName__Group__1() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalUseCase.g:516:1: ( rule__QualifiedName__Group__1__Impl )
+            // InternalUseCase.g:517:2: rule__QualifiedName__Group__1__Impl
+            {
+            pushFollow(FOLLOW_2);
+            rule__QualifiedName__Group__1__Impl();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__QualifiedName__Group__1"
+
+
+    // $ANTLR start "rule__QualifiedName__Group__1__Impl"
+    // InternalUseCase.g:523:1: rule__QualifiedName__Group__1__Impl : ( ( rule__QualifiedName__Group_1__0 )* ) ;
+    public final void rule__QualifiedName__Group__1__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalUseCase.g:527:1: ( ( ( rule__QualifiedName__Group_1__0 )* ) )
+            // InternalUseCase.g:528:1: ( ( rule__QualifiedName__Group_1__0 )* )
+            {
+            // InternalUseCase.g:528:1: ( ( rule__QualifiedName__Group_1__0 )* )
+            // InternalUseCase.g:529:2: ( rule__QualifiedName__Group_1__0 )*
+            {
+             before(grammarAccess.getQualifiedNameAccess().getGroup_1()); 
+            // InternalUseCase.g:530:2: ( rule__QualifiedName__Group_1__0 )*
+            loop5:
+            do {
+                int alt5=2;
+                int LA5_0 = input.LA(1);
+
+                if ( (LA5_0==14) ) {
+                    alt5=1;
+                }
+
+
+                switch (alt5) {
+            	case 1 :
+            	    // InternalUseCase.g:530:3: rule__QualifiedName__Group_1__0
+            	    {
+            	    pushFollow(FOLLOW_8);
+            	    rule__QualifiedName__Group_1__0();
+
+            	    state._fsp--;
+
+
+            	    }
+            	    break;
+
+            	default :
+            	    break loop5;
+                }
+            } while (true);
+
+             after(grammarAccess.getQualifiedNameAccess().getGroup_1()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__QualifiedName__Group__1__Impl"
+
+
+    // $ANTLR start "rule__QualifiedName__Group_1__0"
+    // InternalUseCase.g:539:1: rule__QualifiedName__Group_1__0 : rule__QualifiedName__Group_1__0__Impl rule__QualifiedName__Group_1__1 ;
+    public final void rule__QualifiedName__Group_1__0() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalUseCase.g:543:1: ( rule__QualifiedName__Group_1__0__Impl rule__QualifiedName__Group_1__1 )
+            // InternalUseCase.g:544:2: rule__QualifiedName__Group_1__0__Impl rule__QualifiedName__Group_1__1
+            {
+            pushFollow(FOLLOW_4);
+            rule__QualifiedName__Group_1__0__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_2);
+            rule__QualifiedName__Group_1__1();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__QualifiedName__Group_1__0"
+
+
+    // $ANTLR start "rule__QualifiedName__Group_1__0__Impl"
+    // InternalUseCase.g:551:1: rule__QualifiedName__Group_1__0__Impl : ( '.' ) ;
+    public final void rule__QualifiedName__Group_1__0__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalUseCase.g:555:1: ( ( '.' ) )
+            // InternalUseCase.g:556:1: ( '.' )
+            {
+            // InternalUseCase.g:556:1: ( '.' )
+            // InternalUseCase.g:557:2: '.'
+            {
+             before(grammarAccess.getQualifiedNameAccess().getFullStopKeyword_1_0()); 
             match(input,14,FOLLOW_2); 
-             after(grammarAccess.getUseCaseAccess().getUseCaseKeyword_0()); 
+             after(grammarAccess.getQualifiedNameAccess().getFullStopKeyword_1_0()); 
 
             }
 
@@ -1609,26 +1707,251 @@ public class InternalUseCaseParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__UseCase__Group__0__Impl"
+    // $ANTLR end "rule__QualifiedName__Group_1__0__Impl"
 
 
-    // $ANTLR start "rule__UseCase__Group__1"
-    // InternalUseCase.g:536:1: rule__UseCase__Group__1 : rule__UseCase__Group__1__Impl rule__UseCase__Group__2 ;
-    public final void rule__UseCase__Group__1() throws RecognitionException {
+    // $ANTLR start "rule__QualifiedName__Group_1__1"
+    // InternalUseCase.g:566:1: rule__QualifiedName__Group_1__1 : rule__QualifiedName__Group_1__1__Impl ;
+    public final void rule__QualifiedName__Group_1__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalUseCase.g:540:1: ( rule__UseCase__Group__1__Impl rule__UseCase__Group__2 )
-            // InternalUseCase.g:541:2: rule__UseCase__Group__1__Impl rule__UseCase__Group__2
+            // InternalUseCase.g:570:1: ( rule__QualifiedName__Group_1__1__Impl )
+            // InternalUseCase.g:571:2: rule__QualifiedName__Group_1__1__Impl
+            {
+            pushFollow(FOLLOW_2);
+            rule__QualifiedName__Group_1__1__Impl();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__QualifiedName__Group_1__1"
+
+
+    // $ANTLR start "rule__QualifiedName__Group_1__1__Impl"
+    // InternalUseCase.g:577:1: rule__QualifiedName__Group_1__1__Impl : ( RULE_ID ) ;
+    public final void rule__QualifiedName__Group_1__1__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalUseCase.g:581:1: ( ( RULE_ID ) )
+            // InternalUseCase.g:582:1: ( RULE_ID )
+            {
+            // InternalUseCase.g:582:1: ( RULE_ID )
+            // InternalUseCase.g:583:2: RULE_ID
+            {
+             before(grammarAccess.getQualifiedNameAccess().getIDTerminalRuleCall_1_1()); 
+            match(input,RULE_ID,FOLLOW_2); 
+             after(grammarAccess.getQualifiedNameAccess().getIDTerminalRuleCall_1_1()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__QualifiedName__Group_1__1__Impl"
+
+
+    // $ANTLR start "rule__Import__Group__0"
+    // InternalUseCase.g:593:1: rule__Import__Group__0 : rule__Import__Group__0__Impl rule__Import__Group__1 ;
+    public final void rule__Import__Group__0() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalUseCase.g:597:1: ( rule__Import__Group__0__Impl rule__Import__Group__1 )
+            // InternalUseCase.g:598:2: rule__Import__Group__0__Impl rule__Import__Group__1
+            {
+            pushFollow(FOLLOW_4);
+            rule__Import__Group__0__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_2);
+            rule__Import__Group__1();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Import__Group__0"
+
+
+    // $ANTLR start "rule__Import__Group__0__Impl"
+    // InternalUseCase.g:605:1: rule__Import__Group__0__Impl : ( 'import' ) ;
+    public final void rule__Import__Group__0__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalUseCase.g:609:1: ( ( 'import' ) )
+            // InternalUseCase.g:610:1: ( 'import' )
+            {
+            // InternalUseCase.g:610:1: ( 'import' )
+            // InternalUseCase.g:611:2: 'import'
+            {
+             before(grammarAccess.getImportAccess().getImportKeyword_0()); 
+            match(input,15,FOLLOW_2); 
+             after(grammarAccess.getImportAccess().getImportKeyword_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Import__Group__0__Impl"
+
+
+    // $ANTLR start "rule__Import__Group__1"
+    // InternalUseCase.g:620:1: rule__Import__Group__1 : rule__Import__Group__1__Impl ;
+    public final void rule__Import__Group__1() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalUseCase.g:624:1: ( rule__Import__Group__1__Impl )
+            // InternalUseCase.g:625:2: rule__Import__Group__1__Impl
+            {
+            pushFollow(FOLLOW_2);
+            rule__Import__Group__1__Impl();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Import__Group__1"
+
+
+    // $ANTLR start "rule__Import__Group__1__Impl"
+    // InternalUseCase.g:631:1: rule__Import__Group__1__Impl : ( ( rule__Import__ImportedNamespaceAssignment_1 ) ) ;
+    public final void rule__Import__Group__1__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalUseCase.g:635:1: ( ( ( rule__Import__ImportedNamespaceAssignment_1 ) ) )
+            // InternalUseCase.g:636:1: ( ( rule__Import__ImportedNamespaceAssignment_1 ) )
+            {
+            // InternalUseCase.g:636:1: ( ( rule__Import__ImportedNamespaceAssignment_1 ) )
+            // InternalUseCase.g:637:2: ( rule__Import__ImportedNamespaceAssignment_1 )
+            {
+             before(grammarAccess.getImportAccess().getImportedNamespaceAssignment_1()); 
+            // InternalUseCase.g:638:2: ( rule__Import__ImportedNamespaceAssignment_1 )
+            // InternalUseCase.g:638:3: rule__Import__ImportedNamespaceAssignment_1
+            {
+            pushFollow(FOLLOW_2);
+            rule__Import__ImportedNamespaceAssignment_1();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getImportAccess().getImportedNamespaceAssignment_1()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Import__Group__1__Impl"
+
+
+    // $ANTLR start "rule__QualifiedNameWithWildcard__Group__0"
+    // InternalUseCase.g:647:1: rule__QualifiedNameWithWildcard__Group__0 : rule__QualifiedNameWithWildcard__Group__0__Impl rule__QualifiedNameWithWildcard__Group__1 ;
+    public final void rule__QualifiedNameWithWildcard__Group__0() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalUseCase.g:651:1: ( rule__QualifiedNameWithWildcard__Group__0__Impl rule__QualifiedNameWithWildcard__Group__1 )
+            // InternalUseCase.g:652:2: rule__QualifiedNameWithWildcard__Group__0__Impl rule__QualifiedNameWithWildcard__Group__1
             {
             pushFollow(FOLLOW_9);
-            rule__UseCase__Group__1__Impl();
+            rule__QualifiedNameWithWildcard__Group__0__Impl();
 
             state._fsp--;
 
             pushFollow(FOLLOW_2);
-            rule__UseCase__Group__2();
+            rule__QualifiedNameWithWildcard__Group__1();
 
             state._fsp--;
 
@@ -1647,35 +1970,29 @@ public class InternalUseCaseParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__UseCase__Group__1"
+    // $ANTLR end "rule__QualifiedNameWithWildcard__Group__0"
 
 
-    // $ANTLR start "rule__UseCase__Group__1__Impl"
-    // InternalUseCase.g:548:1: rule__UseCase__Group__1__Impl : ( ( rule__UseCase__NameAssignment_1 ) ) ;
-    public final void rule__UseCase__Group__1__Impl() throws RecognitionException {
+    // $ANTLR start "rule__QualifiedNameWithWildcard__Group__0__Impl"
+    // InternalUseCase.g:659:1: rule__QualifiedNameWithWildcard__Group__0__Impl : ( ruleQualifiedName ) ;
+    public final void rule__QualifiedNameWithWildcard__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalUseCase.g:552:1: ( ( ( rule__UseCase__NameAssignment_1 ) ) )
-            // InternalUseCase.g:553:1: ( ( rule__UseCase__NameAssignment_1 ) )
+            // InternalUseCase.g:663:1: ( ( ruleQualifiedName ) )
+            // InternalUseCase.g:664:1: ( ruleQualifiedName )
             {
-            // InternalUseCase.g:553:1: ( ( rule__UseCase__NameAssignment_1 ) )
-            // InternalUseCase.g:554:2: ( rule__UseCase__NameAssignment_1 )
+            // InternalUseCase.g:664:1: ( ruleQualifiedName )
+            // InternalUseCase.g:665:2: ruleQualifiedName
             {
-             before(grammarAccess.getUseCaseAccess().getNameAssignment_1()); 
-            // InternalUseCase.g:555:2: ( rule__UseCase__NameAssignment_1 )
-            // InternalUseCase.g:555:3: rule__UseCase__NameAssignment_1
-            {
+             before(grammarAccess.getQualifiedNameWithWildcardAccess().getQualifiedNameParserRuleCall_0()); 
             pushFollow(FOLLOW_2);
-            rule__UseCase__NameAssignment_1();
+            ruleQualifiedName();
 
             state._fsp--;
 
-
-            }
-
-             after(grammarAccess.getUseCaseAccess().getNameAssignment_1()); 
+             after(grammarAccess.getQualifiedNameWithWildcardAccess().getQualifiedNameParserRuleCall_0()); 
 
             }
 
@@ -1694,26 +2011,21 @@ public class InternalUseCaseParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__UseCase__Group__1__Impl"
+    // $ANTLR end "rule__QualifiedNameWithWildcard__Group__0__Impl"
 
 
-    // $ANTLR start "rule__UseCase__Group__2"
-    // InternalUseCase.g:563:1: rule__UseCase__Group__2 : rule__UseCase__Group__2__Impl rule__UseCase__Group__3 ;
-    public final void rule__UseCase__Group__2() throws RecognitionException {
+    // $ANTLR start "rule__QualifiedNameWithWildcard__Group__1"
+    // InternalUseCase.g:674:1: rule__QualifiedNameWithWildcard__Group__1 : rule__QualifiedNameWithWildcard__Group__1__Impl ;
+    public final void rule__QualifiedNameWithWildcard__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalUseCase.g:567:1: ( rule__UseCase__Group__2__Impl rule__UseCase__Group__3 )
-            // InternalUseCase.g:568:2: rule__UseCase__Group__2__Impl rule__UseCase__Group__3
+            // InternalUseCase.g:678:1: ( rule__QualifiedNameWithWildcard__Group__1__Impl )
+            // InternalUseCase.g:679:2: rule__QualifiedNameWithWildcard__Group__1__Impl
             {
-            pushFollow(FOLLOW_9);
-            rule__UseCase__Group__2__Impl();
-
-            state._fsp--;
-
             pushFollow(FOLLOW_2);
-            rule__UseCase__Group__3();
+            rule__QualifiedNameWithWildcard__Group__1__Impl();
 
             state._fsp--;
 
@@ -1732,36 +2044,443 @@ public class InternalUseCaseParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__UseCase__Group__2"
+    // $ANTLR end "rule__QualifiedNameWithWildcard__Group__1"
 
 
-    // $ANTLR start "rule__UseCase__Group__2__Impl"
-    // InternalUseCase.g:575:1: rule__UseCase__Group__2__Impl : ( ( rule__UseCase__UseCaseNameAssignment_2 )? ) ;
-    public final void rule__UseCase__Group__2__Impl() throws RecognitionException {
+    // $ANTLR start "rule__QualifiedNameWithWildcard__Group__1__Impl"
+    // InternalUseCase.g:685:1: rule__QualifiedNameWithWildcard__Group__1__Impl : ( ( '.*' )? ) ;
+    public final void rule__QualifiedNameWithWildcard__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalUseCase.g:579:1: ( ( ( rule__UseCase__UseCaseNameAssignment_2 )? ) )
-            // InternalUseCase.g:580:1: ( ( rule__UseCase__UseCaseNameAssignment_2 )? )
+            // InternalUseCase.g:689:1: ( ( ( '.*' )? ) )
+            // InternalUseCase.g:690:1: ( ( '.*' )? )
             {
-            // InternalUseCase.g:580:1: ( ( rule__UseCase__UseCaseNameAssignment_2 )? )
-            // InternalUseCase.g:581:2: ( rule__UseCase__UseCaseNameAssignment_2 )?
+            // InternalUseCase.g:690:1: ( ( '.*' )? )
+            // InternalUseCase.g:691:2: ( '.*' )?
             {
-             before(grammarAccess.getUseCaseAccess().getUseCaseNameAssignment_2()); 
-            // InternalUseCase.g:582:2: ( rule__UseCase__UseCaseNameAssignment_2 )?
+             before(grammarAccess.getQualifiedNameWithWildcardAccess().getFullStopAsteriskKeyword_1()); 
+            // InternalUseCase.g:692:2: ( '.*' )?
             int alt6=2;
             int LA6_0 = input.LA(1);
 
-            if ( (LA6_0==RULE_STRING) ) {
+            if ( (LA6_0==16) ) {
                 alt6=1;
             }
             switch (alt6) {
                 case 1 :
-                    // InternalUseCase.g:582:3: rule__UseCase__UseCaseNameAssignment_2
+                    // InternalUseCase.g:692:3: '.*'
+                    {
+                    match(input,16,FOLLOW_2); 
+
+                    }
+                    break;
+
+            }
+
+             after(grammarAccess.getQualifiedNameWithWildcardAccess().getFullStopAsteriskKeyword_1()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__QualifiedNameWithWildcard__Group__1__Impl"
+
+
+    // $ANTLR start "rule__DataType__Group__0"
+    // InternalUseCase.g:701:1: rule__DataType__Group__0 : rule__DataType__Group__0__Impl rule__DataType__Group__1 ;
+    public final void rule__DataType__Group__0() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalUseCase.g:705:1: ( rule__DataType__Group__0__Impl rule__DataType__Group__1 )
+            // InternalUseCase.g:706:2: rule__DataType__Group__0__Impl rule__DataType__Group__1
+            {
+            pushFollow(FOLLOW_4);
+            rule__DataType__Group__0__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_2);
+            rule__DataType__Group__1();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__DataType__Group__0"
+
+
+    // $ANTLR start "rule__DataType__Group__0__Impl"
+    // InternalUseCase.g:713:1: rule__DataType__Group__0__Impl : ( 'datatype' ) ;
+    public final void rule__DataType__Group__0__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalUseCase.g:717:1: ( ( 'datatype' ) )
+            // InternalUseCase.g:718:1: ( 'datatype' )
+            {
+            // InternalUseCase.g:718:1: ( 'datatype' )
+            // InternalUseCase.g:719:2: 'datatype'
+            {
+             before(grammarAccess.getDataTypeAccess().getDatatypeKeyword_0()); 
+            match(input,17,FOLLOW_2); 
+             after(grammarAccess.getDataTypeAccess().getDatatypeKeyword_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__DataType__Group__0__Impl"
+
+
+    // $ANTLR start "rule__DataType__Group__1"
+    // InternalUseCase.g:728:1: rule__DataType__Group__1 : rule__DataType__Group__1__Impl ;
+    public final void rule__DataType__Group__1() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalUseCase.g:732:1: ( rule__DataType__Group__1__Impl )
+            // InternalUseCase.g:733:2: rule__DataType__Group__1__Impl
+            {
+            pushFollow(FOLLOW_2);
+            rule__DataType__Group__1__Impl();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__DataType__Group__1"
+
+
+    // $ANTLR start "rule__DataType__Group__1__Impl"
+    // InternalUseCase.g:739:1: rule__DataType__Group__1__Impl : ( ( rule__DataType__NameAssignment_1 ) ) ;
+    public final void rule__DataType__Group__1__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalUseCase.g:743:1: ( ( ( rule__DataType__NameAssignment_1 ) ) )
+            // InternalUseCase.g:744:1: ( ( rule__DataType__NameAssignment_1 ) )
+            {
+            // InternalUseCase.g:744:1: ( ( rule__DataType__NameAssignment_1 ) )
+            // InternalUseCase.g:745:2: ( rule__DataType__NameAssignment_1 )
+            {
+             before(grammarAccess.getDataTypeAccess().getNameAssignment_1()); 
+            // InternalUseCase.g:746:2: ( rule__DataType__NameAssignment_1 )
+            // InternalUseCase.g:746:3: rule__DataType__NameAssignment_1
+            {
+            pushFollow(FOLLOW_2);
+            rule__DataType__NameAssignment_1();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getDataTypeAccess().getNameAssignment_1()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__DataType__Group__1__Impl"
+
+
+    // $ANTLR start "rule__Entity__Group__0"
+    // InternalUseCase.g:755:1: rule__Entity__Group__0 : rule__Entity__Group__0__Impl rule__Entity__Group__1 ;
+    public final void rule__Entity__Group__0() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalUseCase.g:759:1: ( rule__Entity__Group__0__Impl rule__Entity__Group__1 )
+            // InternalUseCase.g:760:2: rule__Entity__Group__0__Impl rule__Entity__Group__1
+            {
+            pushFollow(FOLLOW_4);
+            rule__Entity__Group__0__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_2);
+            rule__Entity__Group__1();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Entity__Group__0"
+
+
+    // $ANTLR start "rule__Entity__Group__0__Impl"
+    // InternalUseCase.g:767:1: rule__Entity__Group__0__Impl : ( 'entity' ) ;
+    public final void rule__Entity__Group__0__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalUseCase.g:771:1: ( ( 'entity' ) )
+            // InternalUseCase.g:772:1: ( 'entity' )
+            {
+            // InternalUseCase.g:772:1: ( 'entity' )
+            // InternalUseCase.g:773:2: 'entity'
+            {
+             before(grammarAccess.getEntityAccess().getEntityKeyword_0()); 
+            match(input,18,FOLLOW_2); 
+             after(grammarAccess.getEntityAccess().getEntityKeyword_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Entity__Group__0__Impl"
+
+
+    // $ANTLR start "rule__Entity__Group__1"
+    // InternalUseCase.g:782:1: rule__Entity__Group__1 : rule__Entity__Group__1__Impl rule__Entity__Group__2 ;
+    public final void rule__Entity__Group__1() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalUseCase.g:786:1: ( rule__Entity__Group__1__Impl rule__Entity__Group__2 )
+            // InternalUseCase.g:787:2: rule__Entity__Group__1__Impl rule__Entity__Group__2
+            {
+            pushFollow(FOLLOW_10);
+            rule__Entity__Group__1__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_2);
+            rule__Entity__Group__2();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Entity__Group__1"
+
+
+    // $ANTLR start "rule__Entity__Group__1__Impl"
+    // InternalUseCase.g:794:1: rule__Entity__Group__1__Impl : ( ( rule__Entity__NameAssignment_1 ) ) ;
+    public final void rule__Entity__Group__1__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalUseCase.g:798:1: ( ( ( rule__Entity__NameAssignment_1 ) ) )
+            // InternalUseCase.g:799:1: ( ( rule__Entity__NameAssignment_1 ) )
+            {
+            // InternalUseCase.g:799:1: ( ( rule__Entity__NameAssignment_1 ) )
+            // InternalUseCase.g:800:2: ( rule__Entity__NameAssignment_1 )
+            {
+             before(grammarAccess.getEntityAccess().getNameAssignment_1()); 
+            // InternalUseCase.g:801:2: ( rule__Entity__NameAssignment_1 )
+            // InternalUseCase.g:801:3: rule__Entity__NameAssignment_1
+            {
+            pushFollow(FOLLOW_2);
+            rule__Entity__NameAssignment_1();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getEntityAccess().getNameAssignment_1()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Entity__Group__1__Impl"
+
+
+    // $ANTLR start "rule__Entity__Group__2"
+    // InternalUseCase.g:809:1: rule__Entity__Group__2 : rule__Entity__Group__2__Impl rule__Entity__Group__3 ;
+    public final void rule__Entity__Group__2() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalUseCase.g:813:1: ( rule__Entity__Group__2__Impl rule__Entity__Group__3 )
+            // InternalUseCase.g:814:2: rule__Entity__Group__2__Impl rule__Entity__Group__3
+            {
+            pushFollow(FOLLOW_10);
+            rule__Entity__Group__2__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_2);
+            rule__Entity__Group__3();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Entity__Group__2"
+
+
+    // $ANTLR start "rule__Entity__Group__2__Impl"
+    // InternalUseCase.g:821:1: rule__Entity__Group__2__Impl : ( ( rule__Entity__Group_2__0 )? ) ;
+    public final void rule__Entity__Group__2__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalUseCase.g:825:1: ( ( ( rule__Entity__Group_2__0 )? ) )
+            // InternalUseCase.g:826:1: ( ( rule__Entity__Group_2__0 )? )
+            {
+            // InternalUseCase.g:826:1: ( ( rule__Entity__Group_2__0 )? )
+            // InternalUseCase.g:827:2: ( rule__Entity__Group_2__0 )?
+            {
+             before(grammarAccess.getEntityAccess().getGroup_2()); 
+            // InternalUseCase.g:828:2: ( rule__Entity__Group_2__0 )?
+            int alt7=2;
+            int LA7_0 = input.LA(1);
+
+            if ( (LA7_0==19) ) {
+                alt7=1;
+            }
+            switch (alt7) {
+                case 1 :
+                    // InternalUseCase.g:828:3: rule__Entity__Group_2__0
                     {
                     pushFollow(FOLLOW_2);
-                    rule__UseCase__UseCaseNameAssignment_2();
+                    rule__Entity__Group_2__0();
 
                     state._fsp--;
 
@@ -1771,7 +2490,7 @@ public class InternalUseCaseParser extends AbstractInternalContentAssistParser {
 
             }
 
-             after(grammarAccess.getUseCaseAccess().getUseCaseNameAssignment_2()); 
+             after(grammarAccess.getEntityAccess().getGroup_2()); 
 
             }
 
@@ -1790,26 +2509,26 @@ public class InternalUseCaseParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__UseCase__Group__2__Impl"
+    // $ANTLR end "rule__Entity__Group__2__Impl"
 
 
-    // $ANTLR start "rule__UseCase__Group__3"
-    // InternalUseCase.g:590:1: rule__UseCase__Group__3 : rule__UseCase__Group__3__Impl rule__UseCase__Group__4 ;
-    public final void rule__UseCase__Group__3() throws RecognitionException {
+    // $ANTLR start "rule__Entity__Group__3"
+    // InternalUseCase.g:836:1: rule__Entity__Group__3 : rule__Entity__Group__3__Impl rule__Entity__Group__4 ;
+    public final void rule__Entity__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalUseCase.g:594:1: ( rule__UseCase__Group__3__Impl rule__UseCase__Group__4 )
-            // InternalUseCase.g:595:2: rule__UseCase__Group__3__Impl rule__UseCase__Group__4
+            // InternalUseCase.g:840:1: ( rule__Entity__Group__3__Impl rule__Entity__Group__4 )
+            // InternalUseCase.g:841:2: rule__Entity__Group__3__Impl rule__Entity__Group__4
             {
-            pushFollow(FOLLOW_9);
-            rule__UseCase__Group__3__Impl();
+            pushFollow(FOLLOW_11);
+            rule__Entity__Group__3__Impl();
 
             state._fsp--;
 
             pushFollow(FOLLOW_2);
-            rule__UseCase__Group__4();
+            rule__Entity__Group__4();
 
             state._fsp--;
 
@@ -1828,53 +2547,25 @@ public class InternalUseCaseParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__UseCase__Group__3"
+    // $ANTLR end "rule__Entity__Group__3"
 
 
-    // $ANTLR start "rule__UseCase__Group__3__Impl"
-    // InternalUseCase.g:602:1: rule__UseCase__Group__3__Impl : ( ( rule__UseCase__ActorsAssignment_3 )* ) ;
-    public final void rule__UseCase__Group__3__Impl() throws RecognitionException {
+    // $ANTLR start "rule__Entity__Group__3__Impl"
+    // InternalUseCase.g:848:1: rule__Entity__Group__3__Impl : ( '{' ) ;
+    public final void rule__Entity__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalUseCase.g:606:1: ( ( ( rule__UseCase__ActorsAssignment_3 )* ) )
-            // InternalUseCase.g:607:1: ( ( rule__UseCase__ActorsAssignment_3 )* )
+            // InternalUseCase.g:852:1: ( ( '{' ) )
+            // InternalUseCase.g:853:1: ( '{' )
             {
-            // InternalUseCase.g:607:1: ( ( rule__UseCase__ActorsAssignment_3 )* )
-            // InternalUseCase.g:608:2: ( rule__UseCase__ActorsAssignment_3 )*
+            // InternalUseCase.g:853:1: ( '{' )
+            // InternalUseCase.g:854:2: '{'
             {
-             before(grammarAccess.getUseCaseAccess().getActorsAssignment_3()); 
-            // InternalUseCase.g:609:2: ( rule__UseCase__ActorsAssignment_3 )*
-            loop7:
-            do {
-                int alt7=2;
-                int LA7_0 = input.LA(1);
-
-                if ( (LA7_0==RULE_ID) ) {
-                    alt7=1;
-                }
-
-
-                switch (alt7) {
-            	case 1 :
-            	    // InternalUseCase.g:609:3: rule__UseCase__ActorsAssignment_3
-            	    {
-            	    pushFollow(FOLLOW_10);
-            	    rule__UseCase__ActorsAssignment_3();
-
-            	    state._fsp--;
-
-
-            	    }
-            	    break;
-
-            	default :
-            	    break loop7;
-                }
-            } while (true);
-
-             after(grammarAccess.getUseCaseAccess().getActorsAssignment_3()); 
+             before(grammarAccess.getEntityAccess().getLeftCurlyBracketKeyword_3()); 
+            match(input,12,FOLLOW_2); 
+             after(grammarAccess.getEntityAccess().getLeftCurlyBracketKeyword_3()); 
 
             }
 
@@ -1893,26 +2584,26 @@ public class InternalUseCaseParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__UseCase__Group__3__Impl"
+    // $ANTLR end "rule__Entity__Group__3__Impl"
 
 
-    // $ANTLR start "rule__UseCase__Group__4"
-    // InternalUseCase.g:617:1: rule__UseCase__Group__4 : rule__UseCase__Group__4__Impl rule__UseCase__Group__5 ;
-    public final void rule__UseCase__Group__4() throws RecognitionException {
+    // $ANTLR start "rule__Entity__Group__4"
+    // InternalUseCase.g:863:1: rule__Entity__Group__4 : rule__Entity__Group__4__Impl rule__Entity__Group__5 ;
+    public final void rule__Entity__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalUseCase.g:621:1: ( rule__UseCase__Group__4__Impl rule__UseCase__Group__5 )
-            // InternalUseCase.g:622:2: rule__UseCase__Group__4__Impl rule__UseCase__Group__5
+            // InternalUseCase.g:867:1: ( rule__Entity__Group__4__Impl rule__Entity__Group__5 )
+            // InternalUseCase.g:868:2: rule__Entity__Group__4__Impl rule__Entity__Group__5
             {
-            pushFollow(FOLLOW_9);
-            rule__UseCase__Group__4__Impl();
+            pushFollow(FOLLOW_11);
+            rule__Entity__Group__4__Impl();
 
             state._fsp--;
 
             pushFollow(FOLLOW_2);
-            rule__UseCase__Group__5();
+            rule__Entity__Group__5();
 
             state._fsp--;
 
@@ -1931,40 +2622,40 @@ public class InternalUseCaseParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__UseCase__Group__4"
+    // $ANTLR end "rule__Entity__Group__4"
 
 
-    // $ANTLR start "rule__UseCase__Group__4__Impl"
-    // InternalUseCase.g:629:1: rule__UseCase__Group__4__Impl : ( ( rule__UseCase__ConceptsAssignment_4 )* ) ;
-    public final void rule__UseCase__Group__4__Impl() throws RecognitionException {
+    // $ANTLR start "rule__Entity__Group__4__Impl"
+    // InternalUseCase.g:875:1: rule__Entity__Group__4__Impl : ( ( rule__Entity__FeaturesAssignment_4 )* ) ;
+    public final void rule__Entity__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalUseCase.g:633:1: ( ( ( rule__UseCase__ConceptsAssignment_4 )* ) )
-            // InternalUseCase.g:634:1: ( ( rule__UseCase__ConceptsAssignment_4 )* )
+            // InternalUseCase.g:879:1: ( ( ( rule__Entity__FeaturesAssignment_4 )* ) )
+            // InternalUseCase.g:880:1: ( ( rule__Entity__FeaturesAssignment_4 )* )
             {
-            // InternalUseCase.g:634:1: ( ( rule__UseCase__ConceptsAssignment_4 )* )
-            // InternalUseCase.g:635:2: ( rule__UseCase__ConceptsAssignment_4 )*
+            // InternalUseCase.g:880:1: ( ( rule__Entity__FeaturesAssignment_4 )* )
+            // InternalUseCase.g:881:2: ( rule__Entity__FeaturesAssignment_4 )*
             {
-             before(grammarAccess.getUseCaseAccess().getConceptsAssignment_4()); 
-            // InternalUseCase.g:636:2: ( rule__UseCase__ConceptsAssignment_4 )*
+             before(grammarAccess.getEntityAccess().getFeaturesAssignment_4()); 
+            // InternalUseCase.g:882:2: ( rule__Entity__FeaturesAssignment_4 )*
             loop8:
             do {
                 int alt8=2;
                 int LA8_0 = input.LA(1);
 
-                if ( (LA8_0==RULE_ID) ) {
+                if ( (LA8_0==RULE_ID||LA8_0==21) ) {
                     alt8=1;
                 }
 
 
                 switch (alt8) {
             	case 1 :
-            	    // InternalUseCase.g:636:3: rule__UseCase__ConceptsAssignment_4
+            	    // InternalUseCase.g:882:3: rule__Entity__FeaturesAssignment_4
             	    {
-            	    pushFollow(FOLLOW_10);
-            	    rule__UseCase__ConceptsAssignment_4();
+            	    pushFollow(FOLLOW_12);
+            	    rule__Entity__FeaturesAssignment_4();
 
             	    state._fsp--;
 
@@ -1977,7 +2668,7 @@ public class InternalUseCaseParser extends AbstractInternalContentAssistParser {
                 }
             } while (true);
 
-             after(grammarAccess.getUseCaseAccess().getConceptsAssignment_4()); 
+             after(grammarAccess.getEntityAccess().getFeaturesAssignment_4()); 
 
             }
 
@@ -1996,21 +2687,21 @@ public class InternalUseCaseParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__UseCase__Group__4__Impl"
+    // $ANTLR end "rule__Entity__Group__4__Impl"
 
 
-    // $ANTLR start "rule__UseCase__Group__5"
-    // InternalUseCase.g:644:1: rule__UseCase__Group__5 : rule__UseCase__Group__5__Impl ;
-    public final void rule__UseCase__Group__5() throws RecognitionException {
+    // $ANTLR start "rule__Entity__Group__5"
+    // InternalUseCase.g:890:1: rule__Entity__Group__5 : rule__Entity__Group__5__Impl ;
+    public final void rule__Entity__Group__5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalUseCase.g:648:1: ( rule__UseCase__Group__5__Impl )
-            // InternalUseCase.g:649:2: rule__UseCase__Group__5__Impl
+            // InternalUseCase.g:894:1: ( rule__Entity__Group__5__Impl )
+            // InternalUseCase.g:895:2: rule__Entity__Group__5__Impl
             {
             pushFollow(FOLLOW_2);
-            rule__UseCase__Group__5__Impl();
+            rule__Entity__Group__5__Impl();
 
             state._fsp--;
 
@@ -2029,53 +2720,25 @@ public class InternalUseCaseParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__UseCase__Group__5"
+    // $ANTLR end "rule__Entity__Group__5"
 
 
-    // $ANTLR start "rule__UseCase__Group__5__Impl"
-    // InternalUseCase.g:655:1: rule__UseCase__Group__5__Impl : ( ( rule__UseCase__UseCasesFlowAssignment_5 )* ) ;
-    public final void rule__UseCase__Group__5__Impl() throws RecognitionException {
+    // $ANTLR start "rule__Entity__Group__5__Impl"
+    // InternalUseCase.g:901:1: rule__Entity__Group__5__Impl : ( '}' ) ;
+    public final void rule__Entity__Group__5__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalUseCase.g:659:1: ( ( ( rule__UseCase__UseCasesFlowAssignment_5 )* ) )
-            // InternalUseCase.g:660:1: ( ( rule__UseCase__UseCasesFlowAssignment_5 )* )
+            // InternalUseCase.g:905:1: ( ( '}' ) )
+            // InternalUseCase.g:906:1: ( '}' )
             {
-            // InternalUseCase.g:660:1: ( ( rule__UseCase__UseCasesFlowAssignment_5 )* )
-            // InternalUseCase.g:661:2: ( rule__UseCase__UseCasesFlowAssignment_5 )*
+            // InternalUseCase.g:906:1: ( '}' )
+            // InternalUseCase.g:907:2: '}'
             {
-             before(grammarAccess.getUseCaseAccess().getUseCasesFlowAssignment_5()); 
-            // InternalUseCase.g:662:2: ( rule__UseCase__UseCasesFlowAssignment_5 )*
-            loop9:
-            do {
-                int alt9=2;
-                int LA9_0 = input.LA(1);
-
-                if ( (LA9_0==15) ) {
-                    alt9=1;
-                }
-
-
-                switch (alt9) {
-            	case 1 :
-            	    // InternalUseCase.g:662:3: rule__UseCase__UseCasesFlowAssignment_5
-            	    {
-            	    pushFollow(FOLLOW_11);
-            	    rule__UseCase__UseCasesFlowAssignment_5();
-
-            	    state._fsp--;
-
-
-            	    }
-            	    break;
-
-            	default :
-            	    break loop9;
-                }
-            } while (true);
-
-             after(grammarAccess.getUseCaseAccess().getUseCasesFlowAssignment_5()); 
+             before(grammarAccess.getEntityAccess().getRightCurlyBracketKeyword_5()); 
+            match(input,13,FOLLOW_2); 
+             after(grammarAccess.getEntityAccess().getRightCurlyBracketKeyword_5()); 
 
             }
 
@@ -2094,26 +2757,26 @@ public class InternalUseCaseParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__UseCase__Group__5__Impl"
+    // $ANTLR end "rule__Entity__Group__5__Impl"
 
 
-    // $ANTLR start "rule__UseCaseFlow__Group__0"
-    // InternalUseCase.g:671:1: rule__UseCaseFlow__Group__0 : rule__UseCaseFlow__Group__0__Impl rule__UseCaseFlow__Group__1 ;
-    public final void rule__UseCaseFlow__Group__0() throws RecognitionException {
+    // $ANTLR start "rule__Entity__Group_2__0"
+    // InternalUseCase.g:917:1: rule__Entity__Group_2__0 : rule__Entity__Group_2__0__Impl rule__Entity__Group_2__1 ;
+    public final void rule__Entity__Group_2__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalUseCase.g:675:1: ( rule__UseCaseFlow__Group__0__Impl rule__UseCaseFlow__Group__1 )
-            // InternalUseCase.g:676:2: rule__UseCaseFlow__Group__0__Impl rule__UseCaseFlow__Group__1
+            // InternalUseCase.g:921:1: ( rule__Entity__Group_2__0__Impl rule__Entity__Group_2__1 )
+            // InternalUseCase.g:922:2: rule__Entity__Group_2__0__Impl rule__Entity__Group_2__1
             {
-            pushFollow(FOLLOW_12);
-            rule__UseCaseFlow__Group__0__Impl();
+            pushFollow(FOLLOW_4);
+            rule__Entity__Group_2__0__Impl();
 
             state._fsp--;
 
             pushFollow(FOLLOW_2);
-            rule__UseCaseFlow__Group__1();
+            rule__Entity__Group_2__1();
 
             state._fsp--;
 
@@ -2132,25 +2795,25 @@ public class InternalUseCaseParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__UseCaseFlow__Group__0"
+    // $ANTLR end "rule__Entity__Group_2__0"
 
 
-    // $ANTLR start "rule__UseCaseFlow__Group__0__Impl"
-    // InternalUseCase.g:683:1: rule__UseCaseFlow__Group__0__Impl : ( 'UseCaseFlow:' ) ;
-    public final void rule__UseCaseFlow__Group__0__Impl() throws RecognitionException {
+    // $ANTLR start "rule__Entity__Group_2__0__Impl"
+    // InternalUseCase.g:929:1: rule__Entity__Group_2__0__Impl : ( 'extends' ) ;
+    public final void rule__Entity__Group_2__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalUseCase.g:687:1: ( ( 'UseCaseFlow:' ) )
-            // InternalUseCase.g:688:1: ( 'UseCaseFlow:' )
+            // InternalUseCase.g:933:1: ( ( 'extends' ) )
+            // InternalUseCase.g:934:1: ( 'extends' )
             {
-            // InternalUseCase.g:688:1: ( 'UseCaseFlow:' )
-            // InternalUseCase.g:689:2: 'UseCaseFlow:'
+            // InternalUseCase.g:934:1: ( 'extends' )
+            // InternalUseCase.g:935:2: 'extends'
             {
-             before(grammarAccess.getUseCaseFlowAccess().getUseCaseFlowKeyword_0()); 
-            match(input,15,FOLLOW_2); 
-             after(grammarAccess.getUseCaseFlowAccess().getUseCaseFlowKeyword_0()); 
+             before(grammarAccess.getEntityAccess().getExtendsKeyword_2_0()); 
+            match(input,19,FOLLOW_2); 
+             after(grammarAccess.getEntityAccess().getExtendsKeyword_2_0()); 
 
             }
 
@@ -2169,21 +2832,21 @@ public class InternalUseCaseParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__UseCaseFlow__Group__0__Impl"
+    // $ANTLR end "rule__Entity__Group_2__0__Impl"
 
 
-    // $ANTLR start "rule__UseCaseFlow__Group__1"
-    // InternalUseCase.g:698:1: rule__UseCaseFlow__Group__1 : rule__UseCaseFlow__Group__1__Impl ;
-    public final void rule__UseCaseFlow__Group__1() throws RecognitionException {
+    // $ANTLR start "rule__Entity__Group_2__1"
+    // InternalUseCase.g:944:1: rule__Entity__Group_2__1 : rule__Entity__Group_2__1__Impl ;
+    public final void rule__Entity__Group_2__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalUseCase.g:702:1: ( rule__UseCaseFlow__Group__1__Impl )
-            // InternalUseCase.g:703:2: rule__UseCaseFlow__Group__1__Impl
+            // InternalUseCase.g:948:1: ( rule__Entity__Group_2__1__Impl )
+            // InternalUseCase.g:949:2: rule__Entity__Group_2__1__Impl
             {
             pushFollow(FOLLOW_2);
-            rule__UseCaseFlow__Group__1__Impl();
+            rule__Entity__Group_2__1__Impl();
 
             state._fsp--;
 
@@ -2202,53 +2865,35 @@ public class InternalUseCaseParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__UseCaseFlow__Group__1"
+    // $ANTLR end "rule__Entity__Group_2__1"
 
 
-    // $ANTLR start "rule__UseCaseFlow__Group__1__Impl"
-    // InternalUseCase.g:709:1: rule__UseCaseFlow__Group__1__Impl : ( ( rule__UseCaseFlow__CompleteActionsBlockAssignment_1 )* ) ;
-    public final void rule__UseCaseFlow__Group__1__Impl() throws RecognitionException {
+    // $ANTLR start "rule__Entity__Group_2__1__Impl"
+    // InternalUseCase.g:955:1: rule__Entity__Group_2__1__Impl : ( ( rule__Entity__SuperTypeAssignment_2_1 ) ) ;
+    public final void rule__Entity__Group_2__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalUseCase.g:713:1: ( ( ( rule__UseCaseFlow__CompleteActionsBlockAssignment_1 )* ) )
-            // InternalUseCase.g:714:1: ( ( rule__UseCaseFlow__CompleteActionsBlockAssignment_1 )* )
+            // InternalUseCase.g:959:1: ( ( ( rule__Entity__SuperTypeAssignment_2_1 ) ) )
+            // InternalUseCase.g:960:1: ( ( rule__Entity__SuperTypeAssignment_2_1 ) )
             {
-            // InternalUseCase.g:714:1: ( ( rule__UseCaseFlow__CompleteActionsBlockAssignment_1 )* )
-            // InternalUseCase.g:715:2: ( rule__UseCaseFlow__CompleteActionsBlockAssignment_1 )*
+            // InternalUseCase.g:960:1: ( ( rule__Entity__SuperTypeAssignment_2_1 ) )
+            // InternalUseCase.g:961:2: ( rule__Entity__SuperTypeAssignment_2_1 )
             {
-             before(grammarAccess.getUseCaseFlowAccess().getCompleteActionsBlockAssignment_1()); 
-            // InternalUseCase.g:716:2: ( rule__UseCaseFlow__CompleteActionsBlockAssignment_1 )*
-            loop10:
-            do {
-                int alt10=2;
-                int LA10_0 = input.LA(1);
+             before(grammarAccess.getEntityAccess().getSuperTypeAssignment_2_1()); 
+            // InternalUseCase.g:962:2: ( rule__Entity__SuperTypeAssignment_2_1 )
+            // InternalUseCase.g:962:3: rule__Entity__SuperTypeAssignment_2_1
+            {
+            pushFollow(FOLLOW_2);
+            rule__Entity__SuperTypeAssignment_2_1();
 
-                if ( (LA10_0==16) ) {
-                    alt10=1;
-                }
+            state._fsp--;
 
 
-                switch (alt10) {
-            	case 1 :
-            	    // InternalUseCase.g:716:3: rule__UseCaseFlow__CompleteActionsBlockAssignment_1
-            	    {
-            	    pushFollow(FOLLOW_13);
-            	    rule__UseCaseFlow__CompleteActionsBlockAssignment_1();
+            }
 
-            	    state._fsp--;
-
-
-            	    }
-            	    break;
-
-            	default :
-            	    break loop10;
-                }
-            } while (true);
-
-             after(grammarAccess.getUseCaseFlowAccess().getCompleteActionsBlockAssignment_1()); 
+             after(grammarAccess.getEntityAccess().getSuperTypeAssignment_2_1()); 
 
             }
 
@@ -2267,26 +2912,26 @@ public class InternalUseCaseParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__UseCaseFlow__Group__1__Impl"
+    // $ANTLR end "rule__Entity__Group_2__1__Impl"
 
 
-    // $ANTLR start "rule__CompleteActionBlock__Group__0"
-    // InternalUseCase.g:725:1: rule__CompleteActionBlock__Group__0 : rule__CompleteActionBlock__Group__0__Impl rule__CompleteActionBlock__Group__1 ;
-    public final void rule__CompleteActionBlock__Group__0() throws RecognitionException {
+    // $ANTLR start "rule__Feature__Group__0"
+    // InternalUseCase.g:971:1: rule__Feature__Group__0 : rule__Feature__Group__0__Impl rule__Feature__Group__1 ;
+    public final void rule__Feature__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalUseCase.g:729:1: ( rule__CompleteActionBlock__Group__0__Impl rule__CompleteActionBlock__Group__1 )
-            // InternalUseCase.g:730:2: rule__CompleteActionBlock__Group__0__Impl rule__CompleteActionBlock__Group__1
+            // InternalUseCase.g:975:1: ( rule__Feature__Group__0__Impl rule__Feature__Group__1 )
+            // InternalUseCase.g:976:2: rule__Feature__Group__0__Impl rule__Feature__Group__1
             {
-            pushFollow(FOLLOW_14);
-            rule__CompleteActionBlock__Group__0__Impl();
+            pushFollow(FOLLOW_13);
+            rule__Feature__Group__0__Impl();
 
             state._fsp--;
 
             pushFollow(FOLLOW_2);
-            rule__CompleteActionBlock__Group__1();
+            rule__Feature__Group__1();
 
             state._fsp--;
 
@@ -2305,467 +2950,36 @@ public class InternalUseCaseParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__CompleteActionBlock__Group__0"
+    // $ANTLR end "rule__Feature__Group__0"
 
 
-    // $ANTLR start "rule__CompleteActionBlock__Group__0__Impl"
-    // InternalUseCase.g:737:1: rule__CompleteActionBlock__Group__0__Impl : ( 'CompleteActionBlock:' ) ;
-    public final void rule__CompleteActionBlock__Group__0__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalUseCase.g:741:1: ( ( 'CompleteActionBlock:' ) )
-            // InternalUseCase.g:742:1: ( 'CompleteActionBlock:' )
-            {
-            // InternalUseCase.g:742:1: ( 'CompleteActionBlock:' )
-            // InternalUseCase.g:743:2: 'CompleteActionBlock:'
-            {
-             before(grammarAccess.getCompleteActionBlockAccess().getCompleteActionBlockKeyword_0()); 
-            match(input,16,FOLLOW_2); 
-             after(grammarAccess.getCompleteActionBlockAccess().getCompleteActionBlockKeyword_0()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__CompleteActionBlock__Group__0__Impl"
-
-
-    // $ANTLR start "rule__CompleteActionBlock__Group__1"
-    // InternalUseCase.g:752:1: rule__CompleteActionBlock__Group__1 : rule__CompleteActionBlock__Group__1__Impl rule__CompleteActionBlock__Group__2 ;
-    public final void rule__CompleteActionBlock__Group__1() throws RecognitionException {
+    // $ANTLR start "rule__Feature__Group__0__Impl"
+    // InternalUseCase.g:983:1: rule__Feature__Group__0__Impl : ( ( rule__Feature__ManyAssignment_0 )? ) ;
+    public final void rule__Feature__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalUseCase.g:756:1: ( rule__CompleteActionBlock__Group__1__Impl rule__CompleteActionBlock__Group__2 )
-            // InternalUseCase.g:757:2: rule__CompleteActionBlock__Group__1__Impl rule__CompleteActionBlock__Group__2
+            // InternalUseCase.g:987:1: ( ( ( rule__Feature__ManyAssignment_0 )? ) )
+            // InternalUseCase.g:988:1: ( ( rule__Feature__ManyAssignment_0 )? )
             {
-            pushFollow(FOLLOW_14);
-            rule__CompleteActionBlock__Group__1__Impl();
+            // InternalUseCase.g:988:1: ( ( rule__Feature__ManyAssignment_0 )? )
+            // InternalUseCase.g:989:2: ( rule__Feature__ManyAssignment_0 )?
+            {
+             before(grammarAccess.getFeatureAccess().getManyAssignment_0()); 
+            // InternalUseCase.g:990:2: ( rule__Feature__ManyAssignment_0 )?
+            int alt9=2;
+            int LA9_0 = input.LA(1);
 
-            state._fsp--;
-
-            pushFollow(FOLLOW_2);
-            rule__CompleteActionBlock__Group__2();
-
-            state._fsp--;
-
-
+            if ( (LA9_0==21) ) {
+                alt9=1;
             }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__CompleteActionBlock__Group__1"
-
-
-    // $ANTLR start "rule__CompleteActionBlock__Group__1__Impl"
-    // InternalUseCase.g:764:1: rule__CompleteActionBlock__Group__1__Impl : ( ( rule__CompleteActionBlock__UserActionsBlockAssignment_1 )* ) ;
-    public final void rule__CompleteActionBlock__Group__1__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalUseCase.g:768:1: ( ( ( rule__CompleteActionBlock__UserActionsBlockAssignment_1 )* ) )
-            // InternalUseCase.g:769:1: ( ( rule__CompleteActionBlock__UserActionsBlockAssignment_1 )* )
-            {
-            // InternalUseCase.g:769:1: ( ( rule__CompleteActionBlock__UserActionsBlockAssignment_1 )* )
-            // InternalUseCase.g:770:2: ( rule__CompleteActionBlock__UserActionsBlockAssignment_1 )*
-            {
-             before(grammarAccess.getCompleteActionBlockAccess().getUserActionsBlockAssignment_1()); 
-            // InternalUseCase.g:771:2: ( rule__CompleteActionBlock__UserActionsBlockAssignment_1 )*
-            loop11:
-            do {
-                int alt11=2;
-                int LA11_0 = input.LA(1);
-
-                if ( (LA11_0==11) ) {
-                    alt11=1;
-                }
-
-
-                switch (alt11) {
-            	case 1 :
-            	    // InternalUseCase.g:771:3: rule__CompleteActionBlock__UserActionsBlockAssignment_1
-            	    {
-            	    pushFollow(FOLLOW_15);
-            	    rule__CompleteActionBlock__UserActionsBlockAssignment_1();
-
-            	    state._fsp--;
-
-
-            	    }
-            	    break;
-
-            	default :
-            	    break loop11;
-                }
-            } while (true);
-
-             after(grammarAccess.getCompleteActionBlockAccess().getUserActionsBlockAssignment_1()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__CompleteActionBlock__Group__1__Impl"
-
-
-    // $ANTLR start "rule__CompleteActionBlock__Group__2"
-    // InternalUseCase.g:779:1: rule__CompleteActionBlock__Group__2 : rule__CompleteActionBlock__Group__2__Impl ;
-    public final void rule__CompleteActionBlock__Group__2() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalUseCase.g:783:1: ( rule__CompleteActionBlock__Group__2__Impl )
-            // InternalUseCase.g:784:2: rule__CompleteActionBlock__Group__2__Impl
-            {
-            pushFollow(FOLLOW_2);
-            rule__CompleteActionBlock__Group__2__Impl();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__CompleteActionBlock__Group__2"
-
-
-    // $ANTLR start "rule__CompleteActionBlock__Group__2__Impl"
-    // InternalUseCase.g:790:1: rule__CompleteActionBlock__Group__2__Impl : ( ( rule__CompleteActionBlock__SystemActionsBlockAssignment_2 )* ) ;
-    public final void rule__CompleteActionBlock__Group__2__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalUseCase.g:794:1: ( ( ( rule__CompleteActionBlock__SystemActionsBlockAssignment_2 )* ) )
-            // InternalUseCase.g:795:1: ( ( rule__CompleteActionBlock__SystemActionsBlockAssignment_2 )* )
-            {
-            // InternalUseCase.g:795:1: ( ( rule__CompleteActionBlock__SystemActionsBlockAssignment_2 )* )
-            // InternalUseCase.g:796:2: ( rule__CompleteActionBlock__SystemActionsBlockAssignment_2 )*
-            {
-             before(grammarAccess.getCompleteActionBlockAccess().getSystemActionsBlockAssignment_2()); 
-            // InternalUseCase.g:797:2: ( rule__CompleteActionBlock__SystemActionsBlockAssignment_2 )*
-            loop12:
-            do {
-                int alt12=2;
-                int LA12_0 = input.LA(1);
-
-                if ( (LA12_0==17) ) {
-                    alt12=1;
-                }
-
-
-                switch (alt12) {
-            	case 1 :
-            	    // InternalUseCase.g:797:3: rule__CompleteActionBlock__SystemActionsBlockAssignment_2
-            	    {
-            	    pushFollow(FOLLOW_16);
-            	    rule__CompleteActionBlock__SystemActionsBlockAssignment_2();
-
-            	    state._fsp--;
-
-
-            	    }
-            	    break;
-
-            	default :
-            	    break loop12;
-                }
-            } while (true);
-
-             after(grammarAccess.getCompleteActionBlockAccess().getSystemActionsBlockAssignment_2()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__CompleteActionBlock__Group__2__Impl"
-
-
-    // $ANTLR start "rule__SystemActionBlock__Group__0"
-    // InternalUseCase.g:806:1: rule__SystemActionBlock__Group__0 : rule__SystemActionBlock__Group__0__Impl rule__SystemActionBlock__Group__1 ;
-    public final void rule__SystemActionBlock__Group__0() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalUseCase.g:810:1: ( rule__SystemActionBlock__Group__0__Impl rule__SystemActionBlock__Group__1 )
-            // InternalUseCase.g:811:2: rule__SystemActionBlock__Group__0__Impl rule__SystemActionBlock__Group__1
-            {
-            pushFollow(FOLLOW_7);
-            rule__SystemActionBlock__Group__0__Impl();
-
-            state._fsp--;
-
-            pushFollow(FOLLOW_2);
-            rule__SystemActionBlock__Group__1();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__SystemActionBlock__Group__0"
-
-
-    // $ANTLR start "rule__SystemActionBlock__Group__0__Impl"
-    // InternalUseCase.g:818:1: rule__SystemActionBlock__Group__0__Impl : ( 'SystemActionBlock:' ) ;
-    public final void rule__SystemActionBlock__Group__0__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalUseCase.g:822:1: ( ( 'SystemActionBlock:' ) )
-            // InternalUseCase.g:823:1: ( 'SystemActionBlock:' )
-            {
-            // InternalUseCase.g:823:1: ( 'SystemActionBlock:' )
-            // InternalUseCase.g:824:2: 'SystemActionBlock:'
-            {
-             before(grammarAccess.getSystemActionBlockAccess().getSystemActionBlockKeyword_0()); 
-            match(input,17,FOLLOW_2); 
-             after(grammarAccess.getSystemActionBlockAccess().getSystemActionBlockKeyword_0()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__SystemActionBlock__Group__0__Impl"
-
-
-    // $ANTLR start "rule__SystemActionBlock__Group__1"
-    // InternalUseCase.g:833:1: rule__SystemActionBlock__Group__1 : rule__SystemActionBlock__Group__1__Impl rule__SystemActionBlock__Group__2 ;
-    public final void rule__SystemActionBlock__Group__1() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalUseCase.g:837:1: ( rule__SystemActionBlock__Group__1__Impl rule__SystemActionBlock__Group__2 )
-            // InternalUseCase.g:838:2: rule__SystemActionBlock__Group__1__Impl rule__SystemActionBlock__Group__2
-            {
-            pushFollow(FOLLOW_8);
-            rule__SystemActionBlock__Group__1__Impl();
-
-            state._fsp--;
-
-            pushFollow(FOLLOW_2);
-            rule__SystemActionBlock__Group__2();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__SystemActionBlock__Group__1"
-
-
-    // $ANTLR start "rule__SystemActionBlock__Group__1__Impl"
-    // InternalUseCase.g:845:1: rule__SystemActionBlock__Group__1__Impl : ( ( rule__SystemActionBlock__NameAssignment_1 ) ) ;
-    public final void rule__SystemActionBlock__Group__1__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalUseCase.g:849:1: ( ( ( rule__SystemActionBlock__NameAssignment_1 ) ) )
-            // InternalUseCase.g:850:1: ( ( rule__SystemActionBlock__NameAssignment_1 ) )
-            {
-            // InternalUseCase.g:850:1: ( ( rule__SystemActionBlock__NameAssignment_1 ) )
-            // InternalUseCase.g:851:2: ( rule__SystemActionBlock__NameAssignment_1 )
-            {
-             before(grammarAccess.getSystemActionBlockAccess().getNameAssignment_1()); 
-            // InternalUseCase.g:852:2: ( rule__SystemActionBlock__NameAssignment_1 )
-            // InternalUseCase.g:852:3: rule__SystemActionBlock__NameAssignment_1
-            {
-            pushFollow(FOLLOW_2);
-            rule__SystemActionBlock__NameAssignment_1();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getSystemActionBlockAccess().getNameAssignment_1()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__SystemActionBlock__Group__1__Impl"
-
-
-    // $ANTLR start "rule__SystemActionBlock__Group__2"
-    // InternalUseCase.g:860:1: rule__SystemActionBlock__Group__2 : rule__SystemActionBlock__Group__2__Impl ;
-    public final void rule__SystemActionBlock__Group__2() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalUseCase.g:864:1: ( rule__SystemActionBlock__Group__2__Impl )
-            // InternalUseCase.g:865:2: rule__SystemActionBlock__Group__2__Impl
-            {
-            pushFollow(FOLLOW_2);
-            rule__SystemActionBlock__Group__2__Impl();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__SystemActionBlock__Group__2"
-
-
-    // $ANTLR start "rule__SystemActionBlock__Group__2__Impl"
-    // InternalUseCase.g:871:1: rule__SystemActionBlock__Group__2__Impl : ( ( rule__SystemActionBlock__DescriptionAssignment_2 )? ) ;
-    public final void rule__SystemActionBlock__Group__2__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalUseCase.g:875:1: ( ( ( rule__SystemActionBlock__DescriptionAssignment_2 )? ) )
-            // InternalUseCase.g:876:1: ( ( rule__SystemActionBlock__DescriptionAssignment_2 )? )
-            {
-            // InternalUseCase.g:876:1: ( ( rule__SystemActionBlock__DescriptionAssignment_2 )? )
-            // InternalUseCase.g:877:2: ( rule__SystemActionBlock__DescriptionAssignment_2 )?
-            {
-             before(grammarAccess.getSystemActionBlockAccess().getDescriptionAssignment_2()); 
-            // InternalUseCase.g:878:2: ( rule__SystemActionBlock__DescriptionAssignment_2 )?
-            int alt13=2;
-            int LA13_0 = input.LA(1);
-
-            if ( (LA13_0==RULE_STRING) ) {
-                alt13=1;
-            }
-            switch (alt13) {
+            switch (alt9) {
                 case 1 :
-                    // InternalUseCase.g:878:3: rule__SystemActionBlock__DescriptionAssignment_2
+                    // InternalUseCase.g:990:3: rule__Feature__ManyAssignment_0
                     {
                     pushFollow(FOLLOW_2);
-                    rule__SystemActionBlock__DescriptionAssignment_2();
+                    rule__Feature__ManyAssignment_0();
 
                     state._fsp--;
 
@@ -2775,7 +2989,7 @@ public class InternalUseCaseParser extends AbstractInternalContentAssistParser {
 
             }
 
-             after(grammarAccess.getSystemActionBlockAccess().getDescriptionAssignment_2()); 
+             after(grammarAccess.getFeatureAccess().getManyAssignment_0()); 
 
             }
 
@@ -2794,73 +3008,29 @@ public class InternalUseCaseParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__SystemActionBlock__Group__2__Impl"
+    // $ANTLR end "rule__Feature__Group__0__Impl"
 
 
-    // $ANTLR start "rule__RequirementsUseCaseModel__ActorsAssignment_0"
-    // InternalUseCase.g:887:1: rule__RequirementsUseCaseModel__ActorsAssignment_0 : ( ruleActor ) ;
-    public final void rule__RequirementsUseCaseModel__ActorsAssignment_0() throws RecognitionException {
+    // $ANTLR start "rule__Feature__Group__1"
+    // InternalUseCase.g:998:1: rule__Feature__Group__1 : rule__Feature__Group__1__Impl rule__Feature__Group__2 ;
+    public final void rule__Feature__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalUseCase.g:891:1: ( ( ruleActor ) )
-            // InternalUseCase.g:892:2: ( ruleActor )
+            // InternalUseCase.g:1002:1: ( rule__Feature__Group__1__Impl rule__Feature__Group__2 )
+            // InternalUseCase.g:1003:2: rule__Feature__Group__1__Impl rule__Feature__Group__2
             {
-            // InternalUseCase.g:892:2: ( ruleActor )
-            // InternalUseCase.g:893:3: ruleActor
-            {
-             before(grammarAccess.getRequirementsUseCaseModelAccess().getActorsActorParserRuleCall_0_0()); 
-            pushFollow(FOLLOW_2);
-            ruleActor();
+            pushFollow(FOLLOW_14);
+            rule__Feature__Group__1__Impl();
 
             state._fsp--;
 
-             after(grammarAccess.getRequirementsUseCaseModelAccess().getActorsActorParserRuleCall_0_0()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__RequirementsUseCaseModel__ActorsAssignment_0"
-
-
-    // $ANTLR start "rule__RequirementsUseCaseModel__DataAssignment_1"
-    // InternalUseCase.g:902:1: rule__RequirementsUseCaseModel__DataAssignment_1 : ( ruleConcept ) ;
-    public final void rule__RequirementsUseCaseModel__DataAssignment_1() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalUseCase.g:906:1: ( ( ruleConcept ) )
-            // InternalUseCase.g:907:2: ( ruleConcept )
-            {
-            // InternalUseCase.g:907:2: ( ruleConcept )
-            // InternalUseCase.g:908:3: ruleConcept
-            {
-             before(grammarAccess.getRequirementsUseCaseModelAccess().getDataConceptParserRuleCall_1_0()); 
             pushFollow(FOLLOW_2);
-            ruleConcept();
+            rule__Feature__Group__2();
 
             state._fsp--;
 
-             after(grammarAccess.getRequirementsUseCaseModelAccess().getDataConceptParserRuleCall_1_0()); 
-
-            }
-
 
             }
 
@@ -2876,29 +3046,35 @@ public class InternalUseCaseParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__RequirementsUseCaseModel__DataAssignment_1"
+    // $ANTLR end "rule__Feature__Group__1"
 
 
-    // $ANTLR start "rule__RequirementsUseCaseModel__UsecasesAssignment_2"
-    // InternalUseCase.g:917:1: rule__RequirementsUseCaseModel__UsecasesAssignment_2 : ( ruleUseCase ) ;
-    public final void rule__RequirementsUseCaseModel__UsecasesAssignment_2() throws RecognitionException {
+    // $ANTLR start "rule__Feature__Group__1__Impl"
+    // InternalUseCase.g:1010:1: rule__Feature__Group__1__Impl : ( ( rule__Feature__NameAssignment_1 ) ) ;
+    public final void rule__Feature__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalUseCase.g:921:1: ( ( ruleUseCase ) )
-            // InternalUseCase.g:922:2: ( ruleUseCase )
+            // InternalUseCase.g:1014:1: ( ( ( rule__Feature__NameAssignment_1 ) ) )
+            // InternalUseCase.g:1015:1: ( ( rule__Feature__NameAssignment_1 ) )
             {
-            // InternalUseCase.g:922:2: ( ruleUseCase )
-            // InternalUseCase.g:923:3: ruleUseCase
+            // InternalUseCase.g:1015:1: ( ( rule__Feature__NameAssignment_1 ) )
+            // InternalUseCase.g:1016:2: ( rule__Feature__NameAssignment_1 )
             {
-             before(grammarAccess.getRequirementsUseCaseModelAccess().getUsecasesUseCaseParserRuleCall_2_0()); 
+             before(grammarAccess.getFeatureAccess().getNameAssignment_1()); 
+            // InternalUseCase.g:1017:2: ( rule__Feature__NameAssignment_1 )
+            // InternalUseCase.g:1017:3: rule__Feature__NameAssignment_1
+            {
             pushFollow(FOLLOW_2);
-            ruleUseCase();
+            rule__Feature__NameAssignment_1();
 
             state._fsp--;
 
-             after(grammarAccess.getRequirementsUseCaseModelAccess().getUsecasesUseCaseParserRuleCall_2_0()); 
+
+            }
+
+             after(grammarAccess.getFeatureAccess().getNameAssignment_1()); 
 
             }
 
@@ -2917,25 +3093,344 @@ public class InternalUseCaseParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__RequirementsUseCaseModel__UsecasesAssignment_2"
+    // $ANTLR end "rule__Feature__Group__1__Impl"
 
 
-    // $ANTLR start "rule__Actor__NameAssignment_1"
-    // InternalUseCase.g:932:1: rule__Actor__NameAssignment_1 : ( RULE_ID ) ;
-    public final void rule__Actor__NameAssignment_1() throws RecognitionException {
+    // $ANTLR start "rule__Feature__Group__2"
+    // InternalUseCase.g:1025:1: rule__Feature__Group__2 : rule__Feature__Group__2__Impl rule__Feature__Group__3 ;
+    public final void rule__Feature__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalUseCase.g:936:1: ( ( RULE_ID ) )
-            // InternalUseCase.g:937:2: ( RULE_ID )
+            // InternalUseCase.g:1029:1: ( rule__Feature__Group__2__Impl rule__Feature__Group__3 )
+            // InternalUseCase.g:1030:2: rule__Feature__Group__2__Impl rule__Feature__Group__3
             {
-            // InternalUseCase.g:937:2: ( RULE_ID )
-            // InternalUseCase.g:938:3: RULE_ID
+            pushFollow(FOLLOW_4);
+            rule__Feature__Group__2__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_2);
+            rule__Feature__Group__3();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Feature__Group__2"
+
+
+    // $ANTLR start "rule__Feature__Group__2__Impl"
+    // InternalUseCase.g:1037:1: rule__Feature__Group__2__Impl : ( ':' ) ;
+    public final void rule__Feature__Group__2__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalUseCase.g:1041:1: ( ( ':' ) )
+            // InternalUseCase.g:1042:1: ( ':' )
             {
-             before(grammarAccess.getActorAccess().getNameIDTerminalRuleCall_1_0()); 
+            // InternalUseCase.g:1042:1: ( ':' )
+            // InternalUseCase.g:1043:2: ':'
+            {
+             before(grammarAccess.getFeatureAccess().getColonKeyword_2()); 
+            match(input,20,FOLLOW_2); 
+             after(grammarAccess.getFeatureAccess().getColonKeyword_2()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Feature__Group__2__Impl"
+
+
+    // $ANTLR start "rule__Feature__Group__3"
+    // InternalUseCase.g:1052:1: rule__Feature__Group__3 : rule__Feature__Group__3__Impl ;
+    public final void rule__Feature__Group__3() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalUseCase.g:1056:1: ( rule__Feature__Group__3__Impl )
+            // InternalUseCase.g:1057:2: rule__Feature__Group__3__Impl
+            {
+            pushFollow(FOLLOW_2);
+            rule__Feature__Group__3__Impl();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Feature__Group__3"
+
+
+    // $ANTLR start "rule__Feature__Group__3__Impl"
+    // InternalUseCase.g:1063:1: rule__Feature__Group__3__Impl : ( ( rule__Feature__TypeAssignment_3 ) ) ;
+    public final void rule__Feature__Group__3__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalUseCase.g:1067:1: ( ( ( rule__Feature__TypeAssignment_3 ) ) )
+            // InternalUseCase.g:1068:1: ( ( rule__Feature__TypeAssignment_3 ) )
+            {
+            // InternalUseCase.g:1068:1: ( ( rule__Feature__TypeAssignment_3 ) )
+            // InternalUseCase.g:1069:2: ( rule__Feature__TypeAssignment_3 )
+            {
+             before(grammarAccess.getFeatureAccess().getTypeAssignment_3()); 
+            // InternalUseCase.g:1070:2: ( rule__Feature__TypeAssignment_3 )
+            // InternalUseCase.g:1070:3: rule__Feature__TypeAssignment_3
+            {
+            pushFollow(FOLLOW_2);
+            rule__Feature__TypeAssignment_3();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getFeatureAccess().getTypeAssignment_3()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Feature__Group__3__Impl"
+
+
+    // $ANTLR start "rule__Domainmodel__ElementsAssignment"
+    // InternalUseCase.g:1079:1: rule__Domainmodel__ElementsAssignment : ( ruleAbstractElement ) ;
+    public final void rule__Domainmodel__ElementsAssignment() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalUseCase.g:1083:1: ( ( ruleAbstractElement ) )
+            // InternalUseCase.g:1084:2: ( ruleAbstractElement )
+            {
+            // InternalUseCase.g:1084:2: ( ruleAbstractElement )
+            // InternalUseCase.g:1085:3: ruleAbstractElement
+            {
+             before(grammarAccess.getDomainmodelAccess().getElementsAbstractElementParserRuleCall_0()); 
+            pushFollow(FOLLOW_2);
+            ruleAbstractElement();
+
+            state._fsp--;
+
+             after(grammarAccess.getDomainmodelAccess().getElementsAbstractElementParserRuleCall_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Domainmodel__ElementsAssignment"
+
+
+    // $ANTLR start "rule__PackageDeclaration__NameAssignment_1"
+    // InternalUseCase.g:1094:1: rule__PackageDeclaration__NameAssignment_1 : ( ruleQualifiedName ) ;
+    public final void rule__PackageDeclaration__NameAssignment_1() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalUseCase.g:1098:1: ( ( ruleQualifiedName ) )
+            // InternalUseCase.g:1099:2: ( ruleQualifiedName )
+            {
+            // InternalUseCase.g:1099:2: ( ruleQualifiedName )
+            // InternalUseCase.g:1100:3: ruleQualifiedName
+            {
+             before(grammarAccess.getPackageDeclarationAccess().getNameQualifiedNameParserRuleCall_1_0()); 
+            pushFollow(FOLLOW_2);
+            ruleQualifiedName();
+
+            state._fsp--;
+
+             after(grammarAccess.getPackageDeclarationAccess().getNameQualifiedNameParserRuleCall_1_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__PackageDeclaration__NameAssignment_1"
+
+
+    // $ANTLR start "rule__PackageDeclaration__ElementsAssignment_3"
+    // InternalUseCase.g:1109:1: rule__PackageDeclaration__ElementsAssignment_3 : ( ruleAbstractElement ) ;
+    public final void rule__PackageDeclaration__ElementsAssignment_3() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalUseCase.g:1113:1: ( ( ruleAbstractElement ) )
+            // InternalUseCase.g:1114:2: ( ruleAbstractElement )
+            {
+            // InternalUseCase.g:1114:2: ( ruleAbstractElement )
+            // InternalUseCase.g:1115:3: ruleAbstractElement
+            {
+             before(grammarAccess.getPackageDeclarationAccess().getElementsAbstractElementParserRuleCall_3_0()); 
+            pushFollow(FOLLOW_2);
+            ruleAbstractElement();
+
+            state._fsp--;
+
+             after(grammarAccess.getPackageDeclarationAccess().getElementsAbstractElementParserRuleCall_3_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__PackageDeclaration__ElementsAssignment_3"
+
+
+    // $ANTLR start "rule__Import__ImportedNamespaceAssignment_1"
+    // InternalUseCase.g:1124:1: rule__Import__ImportedNamespaceAssignment_1 : ( ruleQualifiedNameWithWildcard ) ;
+    public final void rule__Import__ImportedNamespaceAssignment_1() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalUseCase.g:1128:1: ( ( ruleQualifiedNameWithWildcard ) )
+            // InternalUseCase.g:1129:2: ( ruleQualifiedNameWithWildcard )
+            {
+            // InternalUseCase.g:1129:2: ( ruleQualifiedNameWithWildcard )
+            // InternalUseCase.g:1130:3: ruleQualifiedNameWithWildcard
+            {
+             before(grammarAccess.getImportAccess().getImportedNamespaceQualifiedNameWithWildcardParserRuleCall_1_0()); 
+            pushFollow(FOLLOW_2);
+            ruleQualifiedNameWithWildcard();
+
+            state._fsp--;
+
+             after(grammarAccess.getImportAccess().getImportedNamespaceQualifiedNameWithWildcardParserRuleCall_1_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Import__ImportedNamespaceAssignment_1"
+
+
+    // $ANTLR start "rule__DataType__NameAssignment_1"
+    // InternalUseCase.g:1139:1: rule__DataType__NameAssignment_1 : ( RULE_ID ) ;
+    public final void rule__DataType__NameAssignment_1() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalUseCase.g:1143:1: ( ( RULE_ID ) )
+            // InternalUseCase.g:1144:2: ( RULE_ID )
+            {
+            // InternalUseCase.g:1144:2: ( RULE_ID )
+            // InternalUseCase.g:1145:3: RULE_ID
+            {
+             before(grammarAccess.getDataTypeAccess().getNameIDTerminalRuleCall_1_0()); 
             match(input,RULE_ID,FOLLOW_2); 
-             after(grammarAccess.getActorAccess().getNameIDTerminalRuleCall_1_0()); 
+             after(grammarAccess.getDataTypeAccess().getNameIDTerminalRuleCall_1_0()); 
 
             }
 
@@ -2954,62 +3449,25 @@ public class InternalUseCaseParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Actor__NameAssignment_1"
+    // $ANTLR end "rule__DataType__NameAssignment_1"
 
 
-    // $ANTLR start "rule__Actor__DescriptionAssignment_2"
-    // InternalUseCase.g:947:1: rule__Actor__DescriptionAssignment_2 : ( RULE_STRING ) ;
-    public final void rule__Actor__DescriptionAssignment_2() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalUseCase.g:951:1: ( ( RULE_STRING ) )
-            // InternalUseCase.g:952:2: ( RULE_STRING )
-            {
-            // InternalUseCase.g:952:2: ( RULE_STRING )
-            // InternalUseCase.g:953:3: RULE_STRING
-            {
-             before(grammarAccess.getActorAccess().getDescriptionSTRINGTerminalRuleCall_2_0()); 
-            match(input,RULE_STRING,FOLLOW_2); 
-             after(grammarAccess.getActorAccess().getDescriptionSTRINGTerminalRuleCall_2_0()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Actor__DescriptionAssignment_2"
-
-
-    // $ANTLR start "rule__Concept__NameAssignment_1"
-    // InternalUseCase.g:962:1: rule__Concept__NameAssignment_1 : ( RULE_ID ) ;
-    public final void rule__Concept__NameAssignment_1() throws RecognitionException {
+    // $ANTLR start "rule__Entity__NameAssignment_1"
+    // InternalUseCase.g:1154:1: rule__Entity__NameAssignment_1 : ( RULE_ID ) ;
+    public final void rule__Entity__NameAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalUseCase.g:966:1: ( ( RULE_ID ) )
-            // InternalUseCase.g:967:2: ( RULE_ID )
+            // InternalUseCase.g:1158:1: ( ( RULE_ID ) )
+            // InternalUseCase.g:1159:2: ( RULE_ID )
             {
-            // InternalUseCase.g:967:2: ( RULE_ID )
-            // InternalUseCase.g:968:3: RULE_ID
+            // InternalUseCase.g:1159:2: ( RULE_ID )
+            // InternalUseCase.g:1160:3: RULE_ID
             {
-             before(grammarAccess.getConceptAccess().getNameIDTerminalRuleCall_1_0()); 
+             before(grammarAccess.getEntityAccess().getNameIDTerminalRuleCall_1_0()); 
             match(input,RULE_ID,FOLLOW_2); 
-             after(grammarAccess.getConceptAccess().getNameIDTerminalRuleCall_1_0()); 
+             after(grammarAccess.getEntityAccess().getNameIDTerminalRuleCall_1_0()); 
 
             }
 
@@ -3028,230 +3486,37 @@ public class InternalUseCaseParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Concept__NameAssignment_1"
+    // $ANTLR end "rule__Entity__NameAssignment_1"
 
 
-    // $ANTLR start "rule__Concept__ConceptDescriptionAssignment_2"
-    // InternalUseCase.g:977:1: rule__Concept__ConceptDescriptionAssignment_2 : ( RULE_STRING ) ;
-    public final void rule__Concept__ConceptDescriptionAssignment_2() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalUseCase.g:981:1: ( ( RULE_STRING ) )
-            // InternalUseCase.g:982:2: ( RULE_STRING )
-            {
-            // InternalUseCase.g:982:2: ( RULE_STRING )
-            // InternalUseCase.g:983:3: RULE_STRING
-            {
-             before(grammarAccess.getConceptAccess().getConceptDescriptionSTRINGTerminalRuleCall_2_0()); 
-            match(input,RULE_STRING,FOLLOW_2); 
-             after(grammarAccess.getConceptAccess().getConceptDescriptionSTRINGTerminalRuleCall_2_0()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Concept__ConceptDescriptionAssignment_2"
-
-
-    // $ANTLR start "rule__UseCase__NameAssignment_1"
-    // InternalUseCase.g:992:1: rule__UseCase__NameAssignment_1 : ( RULE_ID ) ;
-    public final void rule__UseCase__NameAssignment_1() throws RecognitionException {
+    // $ANTLR start "rule__Entity__SuperTypeAssignment_2_1"
+    // InternalUseCase.g:1169:1: rule__Entity__SuperTypeAssignment_2_1 : ( ( ruleQualifiedName ) ) ;
+    public final void rule__Entity__SuperTypeAssignment_2_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalUseCase.g:996:1: ( ( RULE_ID ) )
-            // InternalUseCase.g:997:2: ( RULE_ID )
+            // InternalUseCase.g:1173:1: ( ( ( ruleQualifiedName ) ) )
+            // InternalUseCase.g:1174:2: ( ( ruleQualifiedName ) )
             {
-            // InternalUseCase.g:997:2: ( RULE_ID )
-            // InternalUseCase.g:998:3: RULE_ID
+            // InternalUseCase.g:1174:2: ( ( ruleQualifiedName ) )
+            // InternalUseCase.g:1175:3: ( ruleQualifiedName )
             {
-             before(grammarAccess.getUseCaseAccess().getNameIDTerminalRuleCall_1_0()); 
-            match(input,RULE_ID,FOLLOW_2); 
-             after(grammarAccess.getUseCaseAccess().getNameIDTerminalRuleCall_1_0()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__UseCase__NameAssignment_1"
-
-
-    // $ANTLR start "rule__UseCase__UseCaseNameAssignment_2"
-    // InternalUseCase.g:1007:1: rule__UseCase__UseCaseNameAssignment_2 : ( RULE_STRING ) ;
-    public final void rule__UseCase__UseCaseNameAssignment_2() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalUseCase.g:1011:1: ( ( RULE_STRING ) )
-            // InternalUseCase.g:1012:2: ( RULE_STRING )
+             before(grammarAccess.getEntityAccess().getSuperTypeEntityCrossReference_2_1_0()); 
+            // InternalUseCase.g:1176:3: ( ruleQualifiedName )
+            // InternalUseCase.g:1177:4: ruleQualifiedName
             {
-            // InternalUseCase.g:1012:2: ( RULE_STRING )
-            // InternalUseCase.g:1013:3: RULE_STRING
-            {
-             before(grammarAccess.getUseCaseAccess().getUseCaseNameSTRINGTerminalRuleCall_2_0()); 
-            match(input,RULE_STRING,FOLLOW_2); 
-             after(grammarAccess.getUseCaseAccess().getUseCaseNameSTRINGTerminalRuleCall_2_0()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__UseCase__UseCaseNameAssignment_2"
-
-
-    // $ANTLR start "rule__UseCase__ActorsAssignment_3"
-    // InternalUseCase.g:1022:1: rule__UseCase__ActorsAssignment_3 : ( ( RULE_ID ) ) ;
-    public final void rule__UseCase__ActorsAssignment_3() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalUseCase.g:1026:1: ( ( ( RULE_ID ) ) )
-            // InternalUseCase.g:1027:2: ( ( RULE_ID ) )
-            {
-            // InternalUseCase.g:1027:2: ( ( RULE_ID ) )
-            // InternalUseCase.g:1028:3: ( RULE_ID )
-            {
-             before(grammarAccess.getUseCaseAccess().getActorsActorCrossReference_3_0()); 
-            // InternalUseCase.g:1029:3: ( RULE_ID )
-            // InternalUseCase.g:1030:4: RULE_ID
-            {
-             before(grammarAccess.getUseCaseAccess().getActorsActorIDTerminalRuleCall_3_0_1()); 
-            match(input,RULE_ID,FOLLOW_2); 
-             after(grammarAccess.getUseCaseAccess().getActorsActorIDTerminalRuleCall_3_0_1()); 
-
-            }
-
-             after(grammarAccess.getUseCaseAccess().getActorsActorCrossReference_3_0()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__UseCase__ActorsAssignment_3"
-
-
-    // $ANTLR start "rule__UseCase__ConceptsAssignment_4"
-    // InternalUseCase.g:1041:1: rule__UseCase__ConceptsAssignment_4 : ( ( RULE_ID ) ) ;
-    public final void rule__UseCase__ConceptsAssignment_4() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalUseCase.g:1045:1: ( ( ( RULE_ID ) ) )
-            // InternalUseCase.g:1046:2: ( ( RULE_ID ) )
-            {
-            // InternalUseCase.g:1046:2: ( ( RULE_ID ) )
-            // InternalUseCase.g:1047:3: ( RULE_ID )
-            {
-             before(grammarAccess.getUseCaseAccess().getConceptsConceptCrossReference_4_0()); 
-            // InternalUseCase.g:1048:3: ( RULE_ID )
-            // InternalUseCase.g:1049:4: RULE_ID
-            {
-             before(grammarAccess.getUseCaseAccess().getConceptsConceptIDTerminalRuleCall_4_0_1()); 
-            match(input,RULE_ID,FOLLOW_2); 
-             after(grammarAccess.getUseCaseAccess().getConceptsConceptIDTerminalRuleCall_4_0_1()); 
-
-            }
-
-             after(grammarAccess.getUseCaseAccess().getConceptsConceptCrossReference_4_0()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__UseCase__ConceptsAssignment_4"
-
-
-    // $ANTLR start "rule__UseCase__UseCasesFlowAssignment_5"
-    // InternalUseCase.g:1060:1: rule__UseCase__UseCasesFlowAssignment_5 : ( ruleUseCaseFlow ) ;
-    public final void rule__UseCase__UseCasesFlowAssignment_5() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalUseCase.g:1064:1: ( ( ruleUseCaseFlow ) )
-            // InternalUseCase.g:1065:2: ( ruleUseCaseFlow )
-            {
-            // InternalUseCase.g:1065:2: ( ruleUseCaseFlow )
-            // InternalUseCase.g:1066:3: ruleUseCaseFlow
-            {
-             before(grammarAccess.getUseCaseAccess().getUseCasesFlowUseCaseFlowParserRuleCall_5_0()); 
+             before(grammarAccess.getEntityAccess().getSuperTypeEntityQualifiedNameParserRuleCall_2_1_0_1()); 
             pushFollow(FOLLOW_2);
-            ruleUseCaseFlow();
+            ruleQualifiedName();
 
             state._fsp--;
 
-             after(grammarAccess.getUseCaseAccess().getUseCasesFlowUseCaseFlowParserRuleCall_5_0()); 
+             after(grammarAccess.getEntityAccess().getSuperTypeEntityQualifiedNameParserRuleCall_2_1_0_1()); 
+
+            }
+
+             after(grammarAccess.getEntityAccess().getSuperTypeEntityCrossReference_2_1_0()); 
 
             }
 
@@ -3270,29 +3535,29 @@ public class InternalUseCaseParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__UseCase__UseCasesFlowAssignment_5"
+    // $ANTLR end "rule__Entity__SuperTypeAssignment_2_1"
 
 
-    // $ANTLR start "rule__UseCaseFlow__CompleteActionsBlockAssignment_1"
-    // InternalUseCase.g:1075:1: rule__UseCaseFlow__CompleteActionsBlockAssignment_1 : ( ruleCompleteActionBlock ) ;
-    public final void rule__UseCaseFlow__CompleteActionsBlockAssignment_1() throws RecognitionException {
+    // $ANTLR start "rule__Entity__FeaturesAssignment_4"
+    // InternalUseCase.g:1188:1: rule__Entity__FeaturesAssignment_4 : ( ruleFeature ) ;
+    public final void rule__Entity__FeaturesAssignment_4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalUseCase.g:1079:1: ( ( ruleCompleteActionBlock ) )
-            // InternalUseCase.g:1080:2: ( ruleCompleteActionBlock )
+            // InternalUseCase.g:1192:1: ( ( ruleFeature ) )
+            // InternalUseCase.g:1193:2: ( ruleFeature )
             {
-            // InternalUseCase.g:1080:2: ( ruleCompleteActionBlock )
-            // InternalUseCase.g:1081:3: ruleCompleteActionBlock
+            // InternalUseCase.g:1193:2: ( ruleFeature )
+            // InternalUseCase.g:1194:3: ruleFeature
             {
-             before(grammarAccess.getUseCaseFlowAccess().getCompleteActionsBlockCompleteActionBlockParserRuleCall_1_0()); 
+             before(grammarAccess.getEntityAccess().getFeaturesFeatureParserRuleCall_4_0()); 
             pushFollow(FOLLOW_2);
-            ruleCompleteActionBlock();
+            ruleFeature();
 
             state._fsp--;
 
-             after(grammarAccess.getUseCaseFlowAccess().getCompleteActionsBlockCompleteActionBlockParserRuleCall_1_0()); 
+             after(grammarAccess.getEntityAccess().getFeaturesFeatureParserRuleCall_4_0()); 
 
             }
 
@@ -3311,29 +3576,33 @@ public class InternalUseCaseParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__UseCaseFlow__CompleteActionsBlockAssignment_1"
+    // $ANTLR end "rule__Entity__FeaturesAssignment_4"
 
 
-    // $ANTLR start "rule__CompleteActionBlock__UserActionsBlockAssignment_1"
-    // InternalUseCase.g:1090:1: rule__CompleteActionBlock__UserActionsBlockAssignment_1 : ( ruleUserActionBlock ) ;
-    public final void rule__CompleteActionBlock__UserActionsBlockAssignment_1() throws RecognitionException {
+    // $ANTLR start "rule__Feature__ManyAssignment_0"
+    // InternalUseCase.g:1203:1: rule__Feature__ManyAssignment_0 : ( ( 'many' ) ) ;
+    public final void rule__Feature__ManyAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalUseCase.g:1094:1: ( ( ruleUserActionBlock ) )
-            // InternalUseCase.g:1095:2: ( ruleUserActionBlock )
+            // InternalUseCase.g:1207:1: ( ( ( 'many' ) ) )
+            // InternalUseCase.g:1208:2: ( ( 'many' ) )
             {
-            // InternalUseCase.g:1095:2: ( ruleUserActionBlock )
-            // InternalUseCase.g:1096:3: ruleUserActionBlock
+            // InternalUseCase.g:1208:2: ( ( 'many' ) )
+            // InternalUseCase.g:1209:3: ( 'many' )
             {
-             before(grammarAccess.getCompleteActionBlockAccess().getUserActionsBlockUserActionBlockParserRuleCall_1_0()); 
-            pushFollow(FOLLOW_2);
-            ruleUserActionBlock();
+             before(grammarAccess.getFeatureAccess().getManyManyKeyword_0_0()); 
+            // InternalUseCase.g:1210:3: ( 'many' )
+            // InternalUseCase.g:1211:4: 'many'
+            {
+             before(grammarAccess.getFeatureAccess().getManyManyKeyword_0_0()); 
+            match(input,21,FOLLOW_2); 
+             after(grammarAccess.getFeatureAccess().getManyManyKeyword_0_0()); 
 
-            state._fsp--;
+            }
 
-             after(grammarAccess.getCompleteActionBlockAccess().getUserActionsBlockUserActionBlockParserRuleCall_1_0()); 
+             after(grammarAccess.getFeatureAccess().getManyManyKeyword_0_0()); 
 
             }
 
@@ -3352,66 +3621,25 @@ public class InternalUseCaseParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__CompleteActionBlock__UserActionsBlockAssignment_1"
+    // $ANTLR end "rule__Feature__ManyAssignment_0"
 
 
-    // $ANTLR start "rule__CompleteActionBlock__SystemActionsBlockAssignment_2"
-    // InternalUseCase.g:1105:1: rule__CompleteActionBlock__SystemActionsBlockAssignment_2 : ( ruleSystemActionBlock ) ;
-    public final void rule__CompleteActionBlock__SystemActionsBlockAssignment_2() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalUseCase.g:1109:1: ( ( ruleSystemActionBlock ) )
-            // InternalUseCase.g:1110:2: ( ruleSystemActionBlock )
-            {
-            // InternalUseCase.g:1110:2: ( ruleSystemActionBlock )
-            // InternalUseCase.g:1111:3: ruleSystemActionBlock
-            {
-             before(grammarAccess.getCompleteActionBlockAccess().getSystemActionsBlockSystemActionBlockParserRuleCall_2_0()); 
-            pushFollow(FOLLOW_2);
-            ruleSystemActionBlock();
-
-            state._fsp--;
-
-             after(grammarAccess.getCompleteActionBlockAccess().getSystemActionsBlockSystemActionBlockParserRuleCall_2_0()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__CompleteActionBlock__SystemActionsBlockAssignment_2"
-
-
-    // $ANTLR start "rule__SystemActionBlock__NameAssignment_1"
-    // InternalUseCase.g:1120:1: rule__SystemActionBlock__NameAssignment_1 : ( RULE_ID ) ;
-    public final void rule__SystemActionBlock__NameAssignment_1() throws RecognitionException {
+    // $ANTLR start "rule__Feature__NameAssignment_1"
+    // InternalUseCase.g:1222:1: rule__Feature__NameAssignment_1 : ( RULE_ID ) ;
+    public final void rule__Feature__NameAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalUseCase.g:1124:1: ( ( RULE_ID ) )
-            // InternalUseCase.g:1125:2: ( RULE_ID )
+            // InternalUseCase.g:1226:1: ( ( RULE_ID ) )
+            // InternalUseCase.g:1227:2: ( RULE_ID )
             {
-            // InternalUseCase.g:1125:2: ( RULE_ID )
-            // InternalUseCase.g:1126:3: RULE_ID
+            // InternalUseCase.g:1227:2: ( RULE_ID )
+            // InternalUseCase.g:1228:3: RULE_ID
             {
-             before(grammarAccess.getSystemActionBlockAccess().getNameIDTerminalRuleCall_1_0()); 
+             before(grammarAccess.getFeatureAccess().getNameIDTerminalRuleCall_1_0()); 
             match(input,RULE_ID,FOLLOW_2); 
-             after(grammarAccess.getSystemActionBlockAccess().getNameIDTerminalRuleCall_1_0()); 
+             after(grammarAccess.getFeatureAccess().getNameIDTerminalRuleCall_1_0()); 
 
             }
 
@@ -3430,25 +3658,37 @@ public class InternalUseCaseParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__SystemActionBlock__NameAssignment_1"
+    // $ANTLR end "rule__Feature__NameAssignment_1"
 
 
-    // $ANTLR start "rule__SystemActionBlock__DescriptionAssignment_2"
-    // InternalUseCase.g:1135:1: rule__SystemActionBlock__DescriptionAssignment_2 : ( RULE_STRING ) ;
-    public final void rule__SystemActionBlock__DescriptionAssignment_2() throws RecognitionException {
+    // $ANTLR start "rule__Feature__TypeAssignment_3"
+    // InternalUseCase.g:1237:1: rule__Feature__TypeAssignment_3 : ( ( ruleQualifiedName ) ) ;
+    public final void rule__Feature__TypeAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalUseCase.g:1139:1: ( ( RULE_STRING ) )
-            // InternalUseCase.g:1140:2: ( RULE_STRING )
+            // InternalUseCase.g:1241:1: ( ( ( ruleQualifiedName ) ) )
+            // InternalUseCase.g:1242:2: ( ( ruleQualifiedName ) )
             {
-            // InternalUseCase.g:1140:2: ( RULE_STRING )
-            // InternalUseCase.g:1141:3: RULE_STRING
+            // InternalUseCase.g:1242:2: ( ( ruleQualifiedName ) )
+            // InternalUseCase.g:1243:3: ( ruleQualifiedName )
             {
-             before(grammarAccess.getSystemActionBlockAccess().getDescriptionSTRINGTerminalRuleCall_2_0()); 
-            match(input,RULE_STRING,FOLLOW_2); 
-             after(grammarAccess.getSystemActionBlockAccess().getDescriptionSTRINGTerminalRuleCall_2_0()); 
+             before(grammarAccess.getFeatureAccess().getTypeTypeCrossReference_3_0()); 
+            // InternalUseCase.g:1244:3: ( ruleQualifiedName )
+            // InternalUseCase.g:1245:4: ruleQualifiedName
+            {
+             before(grammarAccess.getFeatureAccess().getTypeTypeQualifiedNameParserRuleCall_3_0_1()); 
+            pushFollow(FOLLOW_2);
+            ruleQualifiedName();
+
+            state._fsp--;
+
+             after(grammarAccess.getFeatureAccess().getTypeTypeQualifiedNameParserRuleCall_3_0_1()); 
+
+            }
+
+             after(grammarAccess.getFeatureAccess().getTypeTypeCrossReference_3_0()); 
 
             }
 
@@ -3467,7 +3707,7 @@ public class InternalUseCaseParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__SystemActionBlock__DescriptionAssignment_2"
+    // $ANTLR end "rule__Feature__TypeAssignment_3"
 
     // Delegated rules
 
@@ -3476,19 +3716,17 @@ public class InternalUseCaseParser extends AbstractInternalContentAssistParser {
 
     public static final BitSet FOLLOW_1 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_2 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_3 = new BitSet(new long[]{0x0000000000006000L});
-    public static final BitSet FOLLOW_4 = new BitSet(new long[]{0x0000000000001002L});
-    public static final BitSet FOLLOW_5 = new BitSet(new long[]{0x0000000000002002L});
-    public static final BitSet FOLLOW_6 = new BitSet(new long[]{0x0000000000006002L});
-    public static final BitSet FOLLOW_7 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_8 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_9 = new BitSet(new long[]{0x0000000000008030L});
-    public static final BitSet FOLLOW_10 = new BitSet(new long[]{0x0000000000000012L});
-    public static final BitSet FOLLOW_11 = new BitSet(new long[]{0x0000000000008002L});
-    public static final BitSet FOLLOW_12 = new BitSet(new long[]{0x0000000000010000L});
-    public static final BitSet FOLLOW_13 = new BitSet(new long[]{0x0000000000010002L});
-    public static final BitSet FOLLOW_14 = new BitSet(new long[]{0x0000000000020800L});
-    public static final BitSet FOLLOW_15 = new BitSet(new long[]{0x0000000000000802L});
-    public static final BitSet FOLLOW_16 = new BitSet(new long[]{0x0000000000020002L});
+    public static final BitSet FOLLOW_3 = new BitSet(new long[]{0x0000000000068802L});
+    public static final BitSet FOLLOW_4 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_5 = new BitSet(new long[]{0x0000000000001000L});
+    public static final BitSet FOLLOW_6 = new BitSet(new long[]{0x000000000006A800L});
+    public static final BitSet FOLLOW_7 = new BitSet(new long[]{0x0000000000004000L});
+    public static final BitSet FOLLOW_8 = new BitSet(new long[]{0x0000000000004002L});
+    public static final BitSet FOLLOW_9 = new BitSet(new long[]{0x0000000000010000L});
+    public static final BitSet FOLLOW_10 = new BitSet(new long[]{0x0000000000081000L});
+    public static final BitSet FOLLOW_11 = new BitSet(new long[]{0x0000000000202010L});
+    public static final BitSet FOLLOW_12 = new BitSet(new long[]{0x0000000000200012L});
+    public static final BitSet FOLLOW_13 = new BitSet(new long[]{0x0000000000200010L});
+    public static final BitSet FOLLOW_14 = new BitSet(new long[]{0x0000000000100000L});
 
 }
