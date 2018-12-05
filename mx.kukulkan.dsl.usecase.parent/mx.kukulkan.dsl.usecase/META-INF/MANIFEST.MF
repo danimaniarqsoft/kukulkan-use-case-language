@@ -1,0 +1,30 @@
+Manifest-Version: 1.0
+Automatic-Module-Name: mx.kukulkan.dsl.usecase
+Bundle-ManifestVersion: 2
+Bundle-Name: mx.kukulkan.dsl.usecase
+Bundle-Vendor: My Company
+Bundle-Version: 1.0.0.qualifier
+Bundle-SymbolicName: mx.kukulkan.dsl.usecase; singleton:=true
+Bundle-ActivationPolicy: lazy
+Require-Bundle: org.eclipse.xtext,
+ org.eclipse.xtext.xbase,
+ org.eclipse.equinox.common;bundle-version="3.5.0",
+ org.eclipse.emf.ecore,
+ org.eclipse.xtext.xbase.lib;bundle-version="2.14.0",
+ org.eclipse.xtext.util,
+ org.eclipse.emf.common,
+ org.eclipse.xtend.lib;bundle-version="2.14.0",
+ org.antlr.runtime;bundle-version="[3.2.0,3.2.1)"
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Export-Package: mx.kukulkan.dsl.usecase.parser.antlr.internal,
+ mx.kukulkan.dsl.usecase.useCase.impl,
+ mx.kukulkan.dsl.usecase.services,
+ mx.kukulkan.dsl.usecase.parser.antlr,
+ mx.kukulkan.dsl.usecase.generator,
+ mx.kukulkan.dsl.usecase.useCase.util,
+ mx.kukulkan.dsl.usecase.useCase,
+ mx.kukulkan.dsl.usecase.scoping,
+ mx.kukulkan.dsl.usecase,
+ mx.kukulkan.dsl.usecase.serializer,
+ mx.kukulkan.dsl.usecase.validation
+Import-Package: org.apache.log4j
