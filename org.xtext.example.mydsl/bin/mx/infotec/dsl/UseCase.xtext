@@ -14,4 +14,22 @@ Concept:
 	"DataConcept:" name=ID conceptDescription=STRING?;
 
 UseCase:
-	"UseCase:" name=ID useCaseDescrition=STRING?;
+	"UseCase:" name=ID useCaseName=STRING?
+	(actors+=[Actor])*
+	(concepts+=[Concept])*
+	(useCasesFlow+=UseCaseFlow)*;
+
+UseCaseFlow:
+	"UseCaseFlow:"
+	(completeActionsBlock+=CompleteActionBlock)*;
+
+CompleteActionBlock:
+	"CompleteActionBlock:"
+	(userActionsBlock+=UserActionBlock)*
+	(systemActionsBlock+=SystemActionBlock)*;
+
+UserActionBlock:
+	"UserActionBlock";
+
+SystemActionBlock:
+	"SystemActionBlock:" name=ID description=STRING?;
