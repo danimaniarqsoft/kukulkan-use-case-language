@@ -20,9 +20,4 @@ mx.kukulkan.dsl.usecase/bin/.gitignore
 mx.kukulkan.dsl.usecase/model/
 mx.kukulkan.dsl.usecase/plugin.xml
 mx.kukulkan.dsl.usecase/src-gen/
-mx.kukulkan.dsl.usecase/src/mx/kukulkan/dsl/usecase/UseCaseRuntimeModule.xtend
-mx.kukulkan.dsl.usecase/src/mx/kukulkan/dsl/usecase/UseCaseStandaloneSetup.xtend
-mx.kukulkan.dsl.usecase/src/mx/kukulkan/dsl/usecase/generator/
-mx.kukulkan.dsl.usecase/src/mx/kukulkan/dsl/usecase/scoping/
-mx.kukulkan.dsl.usecase/src/mx/kukulkan/dsl/usecase/validation/
 mx.kukulkan.dsl.usecase/xtend-gen/
