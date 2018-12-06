@@ -24,7 +24,7 @@
 		<module>mx.kukulkan.dsl.usecase.ide</module>
 		<module>mx.kukulkan.dsl.usecase.ui</module>
 		<module>mx.kukulkan.dsl.usecase.target</module>
-		<module>mx.kukulkan.dsl.usecase.feature</module>
+		<module>mx.kukulkan.dsl.usecase.tests</module>
 		<module>mx.kukulkan.dsl.usecase.ui.tests</module>
 	</modules>
 	<build>
