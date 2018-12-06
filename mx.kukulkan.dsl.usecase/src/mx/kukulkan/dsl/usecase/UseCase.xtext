@@ -1,0 +1,9 @@
+grammar mx.kukulkan.dsl.usecase.UseCase with org.eclipse.xtext.common.Terminals
+
+generate useCase "http://www.kukulkan.mx/dsl/usecase/UseCase"
+
+Model:
+	greetings+=Greeting*;
+	
+Greeting:
+	'Hello' name=ID '!';
