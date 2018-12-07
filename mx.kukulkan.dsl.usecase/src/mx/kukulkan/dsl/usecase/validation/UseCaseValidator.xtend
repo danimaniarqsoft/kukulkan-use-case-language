@@ -6,8 +6,8 @@ package mx.kukulkan.dsl.usecase.validation
 import org.eclipse.xtext.validation.Check
 import mx.kukulkan.dsl.usecase.useCase.UseCasePackage
 import org.eclipse.xtext.xtext.generator.ui.quickfix.QuickfixProviderFragment2
-import mx.kukulkan.dsl.usecase.useCase.Model
-import mx.kukulkan.dsl.usecase.useCase.Entity
+import mx.kukulkan.dsl.usecase.useCase.UseCase
+import mx.kukulkan.dsl.usecase.useCase.RequirementsUseCaseModel
 
 /**
  * This class contains custom validation rules. 
@@ -27,18 +27,18 @@ class UseCaseValidator extends AbstractUseCaseValidator {
 //		}
 //	}
 	@Check
-	def void checkNameStartsWithCapital(Entity entity) {
-		if (!Character.isUpperCase(entity.name.charAt(0))) {
-			warning("Name should start with a capital", UseCasePackage.Literals.ENTITY__NAME)
+	def void checkNameStartsWithCapital(UseCase useCase) {
+		if (!Character.isUpperCase(useCase.name.charAt(0))) {
+			warning("Name should start with a capital", UseCasePackage.Literals.USE_CASE__NAME)
 		}
 	}
 
 	@Check
-	def void checkUniqueEntityName(Entity entity) {
-		val model = entity.eContainer as Model
-		for (extEntity : model.entities) {
-			if (extEntity.name.equals(entity.name) && extEntity != entity) {
-				error('Duplicated entity name', UseCasePackage.Literals.ENTITY__NAME, 'duplicatedEntityName')
+	def void checkUniqueEntityName(UseCase useCase) {
+		val model = useCase.eContainer as RequirementsUseCaseModel
+		for (extEntity : model.usecases) {
+			if (extEntity.name.equals(useCase.name) && extEntity != useCase) {
+				error('Duplicated Use Case name', UseCasePackage.Literals.USE_CASE__NAME, 'duplicatedUseCase')
 			}
 		}
 	}

@@ -10,7 +10,7 @@ import org.eclipse.xtext.generator.IGeneratorContext
 import org.eclipse.xtext.naming.IQualifiedNameProvider
 
 import com.google.inject.Inject
-import mx.kukulkan.dsl.usecase.useCase.Entity
+import mx.kukulkan.dsl.usecase.useCase.UseCase
 
 /**
  * Generates code from your model files on save.
@@ -22,7 +22,7 @@ class UseCaseGenerator extends AbstractGenerator {
 	@Inject extension IQualifiedNameProvider
 
 	override void doGenerate(Resource resource, IFileSystemAccess2 fsa, IGeneratorContext context) {
-		for (e : resource.allContents.toIterable.filter(Entity)) {
+		for (e : resource.allContents.toIterable.filter(UseCase)) {
 		}
 	}
 }

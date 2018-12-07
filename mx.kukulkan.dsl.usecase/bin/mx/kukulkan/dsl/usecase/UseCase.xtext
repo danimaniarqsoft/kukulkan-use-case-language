@@ -2,9 +2,112 @@ grammar mx.kukulkan.dsl.usecase.UseCase with org.eclipse.xtext.common.Terminals 
 
 generate useCase "http://www.kukulkan.mx/dsl/usecase/UseCase"
 
-Model:
-	(entities+=Entity)*;
+RequirementsUseCaseModel:
+	(actors+=Actor)+
+	(data+=Concept)*
+	(usecases+=UseCase)+;
 
-Entity:
-	'entity' name=ID ('extends' superType=[Entity])? '{'
-	'}';
+Actor:
+	"Actor:" name=ID description=STRING?;
+
+Concept:
+	"DataConcept:" name=ID description=STRING?;
+
+UseCase:
+	"UseCase:" name=ID useCaseName=STRING?
+	"actors:" actors+=[Actor] ("," actors+=[Actor])*
+	"data:" data=[Concept]
+	(useCaseFlow+=UseCaseFlow)+;
+
+UseCaseFlow:
+	"UseCaseFlow:"
+	(completeActionBlock+=CompleteActionBlock)+;
+
+CompleteActionBlock:
+	(userActionBlock=UserActionBlock)
+	(systemActionBlock=SystemActionBlock);
+
+	//User Action Block
+UserActionBlock:
+	(actionStepType+=UserActionStepType)+;
+
+UserActionStepType:
+	userActionStepType=(DirectiveStep | UserActionStep);
+
+DirectiveStep:
+	directiveStep=(ExtensionPoint | Include);
+
+Include:
+	"Include:" useCase=[UseCase];
+
+ExtensionPoint:
+	"Extend:" name=STRING useCase=[UseCase];
+
+UserActionStep:
+	userActionStep=(ControlUserActionStep | ActionUserActionStep);
+
+ControlUserActionStep:
+	controlUserActionStep=(UserIterateActionStep | UserIfActionStep);
+
+UserIterateActionStep:
+	"UserIterateActionStep:" name=ID;
+
+UserIfActionStep:
+	stepNumber=INT action=STRING;
+
+ActionUserActionStep:
+	(actorInStep=[Actor])?
+	actionUserActionStep=(APUSOActionStep | APSOActionStep);
+
+APUSOActionStep:
+	stepNumber=INT
+	apusoAction=STRING
+	(apusoActionData+=Data)*
+	(apusoActionDescription=STRING)?;
+
+Data:
+	chooseData=ChooseData;
+
+ChooseData:
+	chooseData=(DataConceptAttribute | Param);
+
+DataConceptAttribute:
+	(name=[Concept])?
+	(viewAttribute+=AttributeConcept)*;
+
+AttributeConcept:
+	name=STRING
+	attributeDescription=STRING;
+
+Param:
+	paramName=STRING
+	paramDescription=STRING;
+
+APSOActionStep:
+	numStep=INT
+	apsoAction=STRING
+	(apsoOPeration=APSOOperation)?;
+
+APSOOperation:
+	apsooperation=(NewOperation | ExistOperation);
+
+NewOperation:
+	name=INT description=STRING;
+
+ExistOperation:
+	(name=[NewOperation])?;
+
+	//System Action Block
+SystemActionBlock:
+	"SYSTEM ACTIONS:"
+	"VALIDATE: "
+	(rules=[Concept] "rule" description=STRING)*
+	"EXECUTE: "
+	systemOperation=APSOOperation
+	"RESPONSE:"
+	(ia=IAResponse)
+	"END SYSTEM ACTIONS";
+
+IAResponse:
+	"SUCCESSFUL" messageId=ID description=STRING '<' message=STRING '>'
+;
